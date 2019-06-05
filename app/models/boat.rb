@@ -4,4 +4,6 @@ class Boat < ApplicationRecord
   has_many :bookings, dependent: :destroy
 
   validates :name, :address, :photo, presence: true
+
+  mount_uploader :photo, PhotoUploader
 end
