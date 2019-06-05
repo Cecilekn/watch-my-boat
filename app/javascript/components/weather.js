@@ -3,7 +3,7 @@ const fetchByCoord = (lat, lon) => {
   const temp = document.querySelector("#weather-temp");
   const img = document.querySelector("#weather-img");
 
-  fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=f7e8f53ec526b533e8c9fa6a6a59885b&units=metric&lang=fr`)
+  fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=f7e8f53ec526b533e8c9fa6a6a59885b&units=metric&lang=fr`)
     .then(response => response.json())
     .then((data) => {
       console.log(data)
