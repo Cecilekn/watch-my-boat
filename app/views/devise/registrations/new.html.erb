@@ -11,6 +11,24 @@
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
+    <%= f.input :first_name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "prénom" }%>
+    <%= f.input :last_name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "nom" }%>
+    <%= f.input :phone_number,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "numéro de téléphone" }%>
+    <%= f.input :address,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "adresse" }%>
+    <%#= f.input :photo %>
+    <%#= f.input :photo_cache, as: :hidden %>
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
@@ -26,6 +44,9 @@
   <div class="form-actions">
     <%= f.button :submit, "NEXT" %>
   </div>
+
+  <%= resource.inspect %>
+  <%= resource.errors.messages %>
 <% end %>
 
 <%= render "devise/shared/links" %>
