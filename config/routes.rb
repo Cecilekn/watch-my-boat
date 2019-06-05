@@ -11,8 +11,10 @@ Rails.application.routes.draw do
   resources :bookings, only: [:update, :show]
 
   namespace :manager do
-    resources :boats, only: [:index]
+    resource :dashboard, only: [:show]
   end
+
+  resource :dashboard, only: [:show]
 
   devise_for :users, :controllers => {:registrations => "registrations"}
 end
