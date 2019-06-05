@@ -1,0 +1,14 @@
+<div class="header">
+  <div id="weather" data-lat="<%= @boat.latitude %>" data-lon="<%= @boat.longitude %>">
+    <div id="topbox">
+      <h1 id="city"><%= @boat.address %></h1>
+      <h2 id="date"><%= l(Time.now, format: "%A %d %B - %Hh%M") %></h2>
+      <p id="weather-sky">ciel</p>
+    </div>
+
+    <div id="bottombox">
+      <img id="weather-img" src="" alt="image à afficher">
+      <h2 id="weather-temp"> temperature</h2>
+    </div>
+  </div>
+</div>
