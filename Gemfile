@@ -5,10 +5,12 @@ gem 'bootsnap', require: false
 gem 'carrierwave', '~> 1.2'
 gem 'cloudinary', '~> 1.9.1'
 gem 'devise'
+gem 'devise-i18n'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.3'
+gem 'rails-i18n'
 gem 'redis'
 
 gem 'autoprefixer-rails'

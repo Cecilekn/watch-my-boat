@@ -1,1 +1,14 @@
 // Specific CSS for your home-page
+.title {
+  text-align: center;
+  padding-top: 180px;
+  padding-right: 660px;
+  padding-left: 40px;
+}
+
+.banner {
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url("https://images.pexels.com/photos/1223650/pexels-photo-1223650.jpeg?cs=srgb&dl=adventure-boat-enjoyment-1223650.jpg&fm=jpg");
+  background-size: cover;
+  background-position: center;
+  height: 130vh;
+}
