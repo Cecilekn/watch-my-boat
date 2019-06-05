@@ -43,8 +43,8 @@ puts "All users created"
 boat1 = Boat.new(
   name: "Lili",
   address: "Saint-Tropez",
-  category: "voile",
-  size: "XS"
+  category: "Voilier",
+  size: "< 10m"
   )
 boat1.owner = u1
 boat1.manager = u2
