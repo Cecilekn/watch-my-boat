@@ -196,7 +196,7 @@ puts "All items created"
 visite_janvier = Booking.new(
   title: "Visite de janvier",
   status: "Réalisé",
-  date: Date.today,
+  date: '2019-01-15',
   comment: "Votre parre-battage arrière-gauche est détaché."
   )
 visite_janvier.package = abonnement
@@ -206,7 +206,7 @@ visite_janvier.save!
 visite_fevrier = Booking.new(
   title: "Visite de février",
   status: "Réalisé",
-  date: Date.today,
+  date: '2019-02-15',
   comment: "J'ai resserré toutes les amarres."
   )
 visite_fevrier.package = abonnement
@@ -216,7 +216,7 @@ visite_fevrier.save!
 visite_mars = Booking.new(
   title: "Visite de mars",
   status: "Réalisé",
-  date: Date.today,
+  date: '2019-03-15',
   comment: "Rien à signaler, tout va bien."
   )
 visite_mars.package = abonnement
@@ -226,7 +226,7 @@ visite_mars.save!
 visite_avril = Booking.new(
   title: "Visite de avril",
   status: "Réalisé",
-  date: Date.today,
+  date: '2019-04-15',
   comment: "A votre demande, j'ai remplacé la capote."
   )
 visite_avril.package = abonnement
@@ -236,7 +236,7 @@ visite_avril.save!
 visite_mai = Booking.new(
   title: "Visite de mai",
   status: "Réalisé",
-  date: Date.today,
+  date: '2019-05-15',
   comment: "Un nettoyage des coffres extérieurs serait le bienvenu"
   )
 visite_mai.package = abonnement
@@ -246,7 +246,7 @@ visite_mai.save!
 visite_juin = Booking.new(
   title: "Visite de juin",
   status: "A venir",
-  date: Date.today,
+  date: '2019-06-15',
   comment: ""
   )
 visite_juin.package = abonnement
@@ -256,7 +256,7 @@ visite_juin.save!
 visite_juillet = Booking.new(
   title: "Visite de juillet",
   status: "A venir",
-  date: Date.today,
+  date: '2019-07-15',
   comment: ""
   )
 visite_juillet.package = abonnement
@@ -266,7 +266,7 @@ visite_juillet.save!
 visite_aout = Booking.new(
   title: "Visite de aout",
   status: "A venir",
-  date: Date.today,
+  date: '2019-08-15',
   comment: ""
   )
 visite_aout.package = abonnement
@@ -276,7 +276,7 @@ visite_aout.save!
 visite_septembre = Booking.new(
   title: "Visite de septembre",
   status: "A venir",
-  date: Date.today,
+  date: '2019-09-15',
   comment: ""
   )
 visite_septembre.package = abonnement
@@ -286,7 +286,7 @@ visite_septembre.save!
 visite_octobre = Booking.new(
   title: "Visite de octobre",
   status: "A venir",
-  date: Date.today,
+  date: '2019-10-15',
   comment: ""
   )
 visite_octobre.package = abonnement
@@ -296,7 +296,7 @@ visite_octobre.save!
 visite_novembre = Booking.new(
   title: "Visite de novembre",
   status: "A venir",
-  date: Date.today,
+  date: '2019-11-15',
   comment: ""
   )
 visite_novembre.package = abonnement
@@ -306,7 +306,7 @@ visite_novembre.save!
 visite_decembre = Booking.new(
   title: "Visite de decembre",
   status: "A venir",
-  date: Date.today,
+  date: '2019-12-15',
   comment: ""
   )
 visite_decembre.package = abonnement
