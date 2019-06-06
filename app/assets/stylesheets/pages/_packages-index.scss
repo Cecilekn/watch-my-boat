@@ -1,47 +1,121 @@
-// .package-index-header-container {
-//   background: #FFE6CE;
-//   padding: 64px;
-// }
-
-.package-index-header {
+.packages-index-container {
   height: 100vh;
-  color: white;
-  vertical-align: middle;
-  background-image: url('https://images.unsplash.com/photo-1500917832468-298fa6292e2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80');
-  background-size: cover;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+ }
+
+.hover-package {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: black;
+  opacity: 0.4;
+  transition: opacity .5s ease-in-out;
+  -moz-transition: opacity .5s ease-in-out;
+  -webkit-transition: opacity .5s ease-in-out;
+}
+
+.package-info {
+  z-index: 1000;
+  margin-top: 30%;
+  margin-bottom: 0%;
+  height: 50%;
+  position: relative;
+  justify-content: center;
+}
+
+.package-title {
+  margin-top: 0px;
+  margin-bottom: 16px;
+}
+
+.package-button {
+  position: absolute;
+  width: 100%;
+  bottom: 36px;
+}
+
+.package-1 {
+  padding: 24px;
+  background-image: url("https://images.pexels.com/photos/1295036/pexels-photo-1295036.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=3&h=750&w=1260");
   background-position: center;
+  background-size: cover;
   text-align: center;
-}
-
-.package-index-header-title {
-  padding-top: 280px;
-}
-
-.package-index-package-container {
+  color: white;
   display: flex;
-  height: 75vh;
-  margin-top: 24px;
-  margin-bottom: 24px;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+    &:hover {
+        .hover-package {
+          background: black !important;
+          opacity: 0.75 !important;
+    }
+  }
 }
 
-.package-index-package-text {
-  background: beige;
-  padding: 40px;
-  width: 40%;
+.package-2 {
+  padding: 24px;
+  background-image: url("https://images.unsplash.com/photo-1524722228493-c418381c4cac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80");
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  &:hover {
+    .hover-package {
+      background: black !important;
+      opacity: 0.7 !important;
+    }
+  }
 }
 
-.package-index-package-image-container {
-  background: lightblue;
-  padding: 40px;
-  width: 60%;
+.package-3 {
+  padding: 24px;
+  background-image: url("https://www.boatrepaircentre.co.uk/assets/jo_line_boat_repairs_home7.jpg");
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  &:hover {
+    .hover-package {
+      background: black !important;
+      opacity: 0.7 !important;
+    }
+  }
 }
 
-.package-index-package-image {
-  // max-width: 550px;
-  width: 50%;
-  display: block;
-  margin: auto;
-  float: center;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+.package-4 {
+  padding: 24px;
+  background-image: url("https://images.unsplash.com/photo-1556907794-66c4782d5e73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2551&q=80");
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  &:hover {
+    .hover-package {
+      background: black !important;
+      opacity: 0.7 !important;
+    }
+  }
 }
+
+
 

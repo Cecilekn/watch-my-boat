@@ -1,92 +1,63 @@
-<div class="package-index-header-container">
-  <div class="package-index-header">
-    <div class="package-index-header-title">
-      <h1>Nos offres</h1>
+<div class="packages-index-container">
+
+  <div class="package-container">
+    <div class="package-1">
+      <div class="package-info">
+        <div class="package-title">
+          <h2>Convoyage</h2>
+        </div>
+        <p>Si vous souhaitez naviguer au départ ou repartir d’un autre port que celui de votre port d’attache et gagner du temps sur vos vacances, nous emmènerons ou ramènerons votre bateau pour vous.</p>
+        <div class="package-button">
+          <button href="" class="button">Réserver</button>
+        </div>
+      </div>
+      <div class="hover-package"></div>
     </div>
   </div>
+
+  <div class="package-container">
+    <div class="package-2">
+      <div class="package-info">
+        <div class="package-title">
+          <h2>Sortie</h2>
+        </div>
+        <p>Partez l'esprit serein, nous nous occupons de préparer votre bateau avant votre arrivée!</p>
+        <div class="package-button">
+          <button href="" class="button">Réserver</button>
+        </div>
+      </div>
+    <div class="hover-package"></div>
+    </div>
+  </div>
+
+  <div class="package-container">
+    <div class="package-3">
+      <div class="package-info">
+        <h2>Maintenance</h2>
+        <div class="package-title">
+        </div>
+        <p>Un pépin sur votre bateau. Votre concierge intervient pour divers travaux de bricolage.</p>
+        <div class="package-button">
+          <button href="" class="button">Réserver</button>
+        </div>
+      </div>
+    <div class="hover-package"></div>
+    </div>
+  </div>
+
+  <div class="package-container">
+    <div class="package-4">
+      <div class="package-info">
+        <h2>Hivernage</h2>
+        <div class="package-title">
+        </div>
+        <p>Nettoyage intérieur et extérieur avant et après l’hiver. Hivernage des voiles et remontage, hivernage des circuits d’eau, du moteur de l’annexe</p>
+        <div class="package-button">
+          <button href="" class="button">Réserver</button>
+        </div>
+      </div>
+    <div class="hover-package"></div>
+    </div>
+  </div>
+
 </div>
-
-<% @packages.each do |package| %>
-
-<div class="package-index-package-container">
-  <div class="package-index-package-text">
-      <h2><%= package.title %></h2>
-      <p><%= package.description %></p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-  <div class="package-index-package-image-container">
-    <img class="package-index-package-image" src="https://images.unsplash.com/photo-1556907794-66c4782d5e73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2551&q=80" alt="">
-  </div>
-</div>
-
-<% end %>
-
-
-<!--
-  <% @packages.each do |package| %>
-
-  <h3><%= package.title %></h3>
-
-    <div class="row m-5">
-
-      <div class="col-sm-12">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title"><%= package.description %></h5>
-            <p><%= package.price_cents %> <%= package.price_currency%></p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="card-deck m-5">
-
-      <div class="card">
-        <img class="card-img-top" src="..." alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Service Title</h5>
-          <p class="card-text">Service Description</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img class="card-img-top" src="..." alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Service Title</h5>
-          <p class="card-text">Service Description</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img class="card-img-top" src="..." alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Service Title</h5>
-          <p class="card-text">Service Description</p>
-        </div>
-
-      </div>
-    </div>
-
-  <% end %>
-
-  <h2>Tous nos packages</h2>
-
-    <div class="card-deck m-5">
-
-      <% @packages.each do |package| %>
-
-      <div class="card">
-        <img class="card-img-top" src="..." alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title"><%= package.title %></h5>
-          <p class="card-text"><%= package.description %></p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-
-      <% end %>
-
-    </div> -->
-
