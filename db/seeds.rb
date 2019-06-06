@@ -23,7 +23,7 @@ u1 = User.new(
   address: "Villa Gaudelet",
   manager: false
   )
-u1.remote_photo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHXnOHt_HWLRU692ZnLthF0L4kZSBv9MmwNEb6bOAuing4swAfTg"
+u1.remote_photo_url = "https://banner2.kisspng.com/20180626/fhs/kisspng-avatar-user-computer-icons-software-developer-5b327cc98b5780.5684824215300354015708.jpg"
 u1.save!
 
 u2 = User.new(
@@ -48,7 +48,7 @@ boat1 = Boat.new(
   )
 boat1.owner = u1
 boat1.manager = u2
-boat1.remote_photo_url = "https://images.unsplash.com/photo-1500917832468-298fa6292e2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+boat1.remote_photo_url = "https://cdn.pixabay.com/photo/2016/08/14/18/27/sailing-boat-1593613_1280.jpg"
 boat1.save!
 
 puts "All boats created"
