@@ -18,7 +18,6 @@ class BoatsController < ApplicationController
     # @boat.manager = @manager
     if @boat.save
        @manager = User.manager.near([@boat.latitude, @boat.longitude], 1500).order('distance').first
-       raise
        @boat.manager = @manager
       redirect_to boat_path(@boat)
     else
