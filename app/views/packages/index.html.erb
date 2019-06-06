@@ -1,5 +1,28 @@
-<h1>Titre de la page</h1>
+<div class="package-index-header-container">
+  <div class="package-index-header">
+    <div class="package-index-header-title">
+      <h1>Nos offres</h1>
+    </div>
+  </div>
+</div>
 
+<% @packages.each do |package| %>
+
+<div class="package-index-package-container">
+  <div class="package-index-package-text">
+      <h2><%= package.title %></h2>
+      <p><%= package.description %></p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+  <div class="package-index-package-image-container">
+    <img class="package-index-package-image" src="https://images.unsplash.com/photo-1556907794-66c4782d5e73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2551&q=80" alt="">
+  </div>
+</div>
+
+<% end %>
+
+
+<!--
   <% @packages.each do |package| %>
 
   <h3><%= package.title %></h3>
@@ -65,5 +88,5 @@
 
       <% end %>
 
-    </div>
+    </div> -->
 
