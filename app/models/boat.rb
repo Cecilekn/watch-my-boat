@@ -8,7 +8,7 @@ class Boat < ApplicationRecord
   CATEGORIES = ["Voilier", "Moteur"]
   SIZE = ["< 10m", "10-20m", "> 20m"]
 
-  validates :name, :address, presence: true
+  validates :name, :address, :photo, presence: true
   validates :category, presence: true, inclusion: { in: CATEGORIES }
   validates :size, presence: true, inclusion: { in: SIZE }
   geocoded_by :address

@@ -9,15 +9,9 @@ class BoatsController < ApplicationController
   def create
     @boat = Boat.new(boat_params)
     @boat.owner = current_user
-
-    # @manager = User.where("manager = ?", "true").near([@boat.latitude, @boat.longitude], 1500)
-
-    # @boat = Boat.new(boat_params)
-    # @boat.owner = current_user
-    # @manager = User.where(["manager = ? and address = ?", "true", "#{@boat.address}"]).first
-    # @boat.manager = @manager
     if @boat.save
-       @manager = User.manager.near([@boat.latitude, @boat.longitude], 1500).order('distance').first
+       @boat.reload
+       @manager = User.manager.near([@boat.latitude, @boat.longitude], 20000).order('distance').first
        @boat.manager = @manager
        @boat.save!
       redirect_to boat_path(@boat)
