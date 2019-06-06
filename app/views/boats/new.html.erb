@@ -1,5 +1,34 @@
-<h1>New boat</h1>
+<div class="form-container">
+  <div class="row">
+    <div class="col-8 col-left">
+      <div class="content-left">
+        <h2>Les informations sur votre bateau</h2>
+          <div class="form-inputs">
+            <%= simple_form_for(@boat) do |f| %>
+            <%= f.input :name, label: "Nom de votre bateau" %>
+            <%= f.input :address, label: "Port d'attache" %>
+            <%= f.input :category, label: "Type de bateau", as: :radio_buttons, collection: Boat::CATEGORIES, wrapper: :vertical_collection_inline %>
+            <%= f.input :size, label: "Taille", as: :radio_buttons, collection: Boat::SIZE, wrapper: :vertical_collection_inline %>
+            <%= f.input :photo, label: "Photo de votre bateau" %>
+            <%= f.input :photo_cache, as: :hidden %>
+          </div>
+          <div class="form-actions">
+            <p>Etape 2 sur 3</p>
+            <%= f.button :submit, "Suivant" %>
+          </div>
+            <% end %>
+        </div>
+      </div>
+    <div class="col-4 col-right-boat">
+      <div class="form-text-image">
+        <p>Naviguez en toute liberté</p>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%#=  Simple_form_for pour le bateau%>
 
-<%= link_to "NEXT" %>
+
+
+
+

@@ -1,31 +1,54 @@
-<h2>Sign up</h2>
+<div class="form-container">
+  <div class="row">
+    <div class="col-8 col-left">
+      <div class="content-left">
+        <h2>Renseignez votre profil</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :first_name %>
-    <%= f.input :last_name  %>
-    <%= f.input :phone_number %>
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :address %>
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
+          <div class="form-inputs">
+              <div class="form-inline">
+                <div class="input-inline">
+                  <%= f.input :first_name, label: "Prénom" %>
+                </div>
+                <div class="input-inline">
+                  <%= f.input :last_name, label: "Nom" %>
+                </div>
+              </div>
+              <div class="form-inline">
+                <%= f.input :email,
+                            required: true,
+                            autofocus: true,
+                            input_html: { autocomplete: "email" },
+                            label: "Email" %>
+                <%= f.input :phone_number, label: "Numéro de téléphone" %>
+              </div>
+                <%= f.input :address, label: "Adresse" %>
+                <%= f.input :password,
+                            required: true,
+                            hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length),
+                            input_html: { autocomplete: "new-password" },
+                            label: "Mot de passe" %>
+                <%= f.input :password_confirmation,
+                            required: true,
+                            input_html: { autocomplete: "new-password" },
+                            label: "Confirmation du mot de passe" %>
+                <%= f.input :photo %>
+                <%= f.input :photo_cache, as: :hidden %>
+              </div>
+
+              <div class="form-actions">
+                <p>Etape 1 sur 3</p>
+                <%= f.button :submit, "Suivant" %>
+              </div>
+                <% end %>
+            </div>
+          </div>
+    <div class="col-4 col-right-user">
+      <div class="form-text-image">
+        <p>La navigation sans les contraintes</p>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "NEXT" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

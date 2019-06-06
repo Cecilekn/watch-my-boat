@@ -14,17 +14,16 @@ Item.destroy_all
 Booking.destroy_all
 Picture.destroy_all
 
-
 u1 = User.new(
   first_name: "Toto",
   last_name: "Toto",
   email: "t@t.com",
   password: "123456",
   phone_number: "0607080910",
-  photo: "test",
   address: "Villa Gaudelet",
   manager: false
   )
+u1.remote_photo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHXnOHt_HWLRU692ZnLthF0L4kZSBv9MmwNEb6bOAuing4swAfTg"
 u1.save!
 
 u2 = User.new(
@@ -33,21 +32,23 @@ u2 = User.new(
   email: "mac@gmail.com",
   password: "123456",
   phone_number: "0607080910",
-  photo: "test",
-  address: "Villa Gaudelet",
+  address: "Saint-Tropez",
   manager: true
   )
+u2.remote_photo_url = "https://www.startupleadership.fr/wp-content/uploads/2018/12/Marie-Amandine-CHEVALIER-1.jpg"
 u2.save!
 
 puts "All users created"
 
 boat1 = Boat.new(
   name: "Lili",
-  address: "Villa Gaudelet",
-  photo: "test"
+  address: "Saint-Tropez",
+  category: "Voilier",
+  size: "< 10m"
   )
 boat1.owner = u1
 boat1.manager = u2
+boat1.remote_photo_url = "https://images.unsplash.com/photo-1500917832468-298fa6292e2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
 boat1.save!
 
 puts "All boats created"

@@ -1,0 +1,57 @@
+.show-boat-container {
+  background-color: white;
+  width: 100%;
+}
+
+.col-left-show-boat {
+  height: 820px;
+}
+
+.content-left-show-boat {
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-top: 85px;
+  color: #227799;
+}
+
+.col-right-show-boat {
+  background-image: url('https://images.pexels.com/photos/533595/pexels-photo-533595.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&h=650&w=940');
+  background-size: cover;
+  color: white;
+  font-size: 34px;
+  filter: opacity(70%);
+}
+
+.show-boat-text-image {
+  position: absolute;
+  top: 82px;
+}
+
+.manager-infos {
+  padding: 20px;
+  text-align: center;
+}
+
+.manager-infos-description p {
+  margin-bottom: 30px;
+}
+
+.call-actions {
+  text-align: center;
+}
+
+.call-button {
+  background-color: #FFD582;
+  color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.call-button:hover {
+  background-color: white;
+  color: #FFD582;
+  border: 1px solid #FFD582;
+}
+

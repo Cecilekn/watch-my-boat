@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :boats, only: [:index, :new, :create, :new]
+  resources :boats, only: [:new, :create, :show]
 
   resources :packages, only: [:index, :show] do
     resources :bookings, only: [:create]
@@ -11,8 +11,10 @@ Rails.application.routes.draw do
   resources :bookings, only: [:update, :show]
 
   namespace :manager do
-    resources :boats, only: [:index]
+    resource :dashboard, only: [:show]
   end
+
+  resource :dashboard, only: [:show]
 
   devise_for :users, :controllers => {:registrations => "registrations"}
 end
