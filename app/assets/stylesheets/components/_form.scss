@@ -3,13 +3,13 @@
   width: 100%;
 }
 
-.text-image {
+.form-text-image {
   position: absolute;
   top: 82px;
 }
 
 .col-left {
-  padding-bottom: 80px;
+  height: 820px;
 }
 
 .content-left {
@@ -19,21 +19,31 @@
   color: #227799;
 }
 
+.form-actions {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
 .form-actions .btn {
   background-color: #FFD582;
   color: white;
-  position: relative;
+  // position: relative;
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left: 40px;
   padding-right: 40px;
-  right: -500px;
+  // right: -500px;
 }
 
 .form-actions .btn:hover {
   background-color: white;
   color: #FFD582;
   border: 1px solid #FFD582;
+}
+
+.form-actions p {
+  font-weight: bold;
 }
 
 .form-inline {
@@ -46,6 +56,12 @@
 .input-inline {
   width: 47%;
 }
+
+.collection_radio_buttons {
+  margin-bottom: 0px;
+  margin-left: 2px;
+}
+
 
 
 

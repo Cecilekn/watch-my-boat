@@ -11,16 +11,16 @@
             <%= f.input :size, label: "Taille", as: :radio_buttons, collection: Boat::SIZE, wrapper: :vertical_collection_inline %>
             <%= f.input :photo, label: "Photo de votre bateau" %>
             <%= f.input :photo_cache, as: :hidden %>
-            <p>Etape 2 sur 3</p>
           </div>
           <div class="form-actions">
+            <p>Etape 2 sur 3</p>
             <%= f.button :submit, "Suivant" %>
           </div>
-        <% end %>
+            <% end %>
         </div>
       </div>
     <div class="col-4 col-right-boat">
-      <div class="text-image">
+      <div class="form-text-image">
         <p>Naviguez en toute liberté</p>
       </div>
     </div>

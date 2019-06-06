@@ -24,29 +24,29 @@
                             label: "Email" %>
                 <%= f.input :phone_number, label: "Numéro de téléphone" %>
               </div>
-            <%= f.input :address, label: "Adresse" %>
-            <%= f.input :password,
-                        required: true,
-                        hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length),
-                        input_html: { autocomplete: "new-password" },
-                        label: "Mot de passe" %>
-            <%= f.input :password_confirmation,
-                        required: true,
-                        input_html: { autocomplete: "new-password" },
-                        label: "Confirmation du mot de passe" %>
-            <%= f.input :photo %>
-            <%= f.input :photo_cache, as: :hidden %>
-            <p>Etape 1 sur 3</p>
-          </div>
+                <%= f.input :address, label: "Adresse" %>
+                <%= f.input :password,
+                            required: true,
+                            hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length),
+                            input_html: { autocomplete: "new-password" },
+                            label: "Mot de passe" %>
+                <%= f.input :password_confirmation,
+                            required: true,
+                            input_html: { autocomplete: "new-password" },
+                            label: "Confirmation du mot de passe" %>
+                <%= f.input :photo %>
+                <%= f.input :photo_cache, as: :hidden %>
+              </div>
 
-          <div class="form-actions">
-            <%= f.button :submit, "Suivant" %>
+              <div class="form-actions">
+                <p>Etape 1 sur 3</p>
+                <%= f.button :submit, "Suivant" %>
+              </div>
+                <% end %>
+            </div>
           </div>
-        <% end %>
-        </div>
-      </div>
     <div class="col-4 col-right-user">
-      <div class="text-image">
+      <div class="form-text-image">
         <p>La navigation sans les contraintes</p>
       </div>
     </div>
