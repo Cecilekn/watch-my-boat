@@ -19,6 +19,7 @@ class BoatsController < ApplicationController
     if @boat.save
        @manager = User.manager.near([@boat.latitude, @boat.longitude], 1500).order('distance').first
        @boat.manager = @manager
+       @boat.save!
       redirect_to boat_path(@boat)
     else
       render :new
@@ -26,7 +27,7 @@ class BoatsController < ApplicationController
   end
 
   def show
-    @boat = current_user.owned_boats.first
+    @boat = Boat.find(params[:id])
     @manager = @boat.manager
   end
 
