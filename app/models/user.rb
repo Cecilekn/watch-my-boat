@@ -1,6 +1,11 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  mount_uploader :photo, PhotoUploader
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -9,8 +14,6 @@ class User < ApplicationRecord
   has_many :managed_providers, class_name: 'Provider', foreign_key: 'manager_id'
 
   validates :first_name, :last_name, :phone_number, :email, :address, presence: true
-  # validates :first_name, :last_name, :phone_number, :email, :photo, :address, presence: true
   validates :email, uniqueness: true
-
-  mount_uploader :photo, PhotoUploader
+  scope :manager, -> { where(manager: true) }
 end
