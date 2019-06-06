@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Dimension.destroy_all
+Category.destroy_all
 Boat.destroy_all
 Service.destroy_all
 Package.destroy_all
@@ -14,19 +16,19 @@ Item.destroy_all
 Booking.destroy_all
 Picture.destroy_all
 
-u1 = User.new(
-  first_name: "Toto",
-  last_name: "Toto",
-  email: "t@t.com",
+sebastien = User.new(
+  first_name: "Sebastien",
+  last_name: "Dupont",
+  email: "seb@gmail.com",
   password: "123456",
   phone_number: "0607080910",
-  address: "Villa Gaudelet",
+  address: "Courbevoie",
   manager: false
   )
-u1.remote_photo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHXnOHt_HWLRU692ZnLthF0L4kZSBv9MmwNEb6bOAuing4swAfTg"
-u1.save!
+sebastien.remote_photo_url = "https://images.pexels.com/photos/2257800/pexels-photo-2257800.jpeg"
+sebastien.save!
 
-u2 = User.new(
+concierge1 = User.new(
   first_name: "Marie-Amandine",
   last_name: "Chevalier",
   email: "mac@gmail.com",
@@ -35,19 +37,37 @@ u2 = User.new(
   address: "Saint-Tropez",
   manager: true
   )
-u2.remote_photo_url = "https://www.startupleadership.fr/wp-content/uploads/2018/12/Marie-Amandine-CHEVALIER-1.jpg"
-u2.save!
+concierge1.remote_photo_url = "https://www.startupleadership.fr/wp-content/uploads/2018/12/Marie-Amandine-CHEVALIER-1.jpg"
+concierge1.save!
 
 puts "All users created"
 
+small = Dimension.new(meter: "< 10m")
+small.save!
+
+medium = Dimension.new(meter: "10-20m")
+medium.save!
+
+large = Dimension.new(meter: "> 20m")
+large.save!
+
+voilier = Category.new(name: "Voilier")
+voilier.save!
+
+moteur = Category.new(name: "Moteur")
+moteur.save!
+
+puts "Dimensions and Categories created"
+
+
 boat1 = Boat.new(
   name: "Lili",
-  address: "Saint-Tropez",
-  category: "Voilier",
-  size: "< 10m"
+  address: "Saint-Tropez"
   )
-boat1.owner = u1
-boat1.manager = u2
+boat1.owner = sebastien
+boat1.manager = concierge1
+boat1.category = voilier
+boat1.dimension = small
 boat1.remote_photo_url = "https://images.unsplash.com/photo-1500917832468-298fa6292e2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
 boat1.save!
 
@@ -55,6 +75,9 @@ puts "All boats created"
 
 visite_mensuelle = Service.new(title: "Visite mensuelle du concierge")
 visite_mensuelle.save!
+
+appel = Service.new(title: "Appel du concierge")
+appel.save!
 
 nettoyage_interieur = Service.new(title: "Nettoyage intérieur de votre bateau (aspirateur, aération, poussière).")
 nettoyage_interieur.save!
@@ -82,13 +105,60 @@ rangement.save!
 
 puts "All services created"
 
-abonnement = Package.new(
+rdv_concierge = Package.new(
+  title: "Appel avec votre concierge",
+  description: "Première prise de contact",
+  price_cents: 0,
+  price_currency: "EUR"
+  )
+
+abonnement_moteur_s = Package.new(
   title: "Abonnement Watch My Boat",
   description: "Tous les mois, votre concierge effectue une visite de contrôle sur votre bateau et vous informe sur son état extérieur.",
   price_cents: 9900,
   price_currency: "EUR"
   )
-abonnement.save!
+abonnement_moteur_s.save!
+
+abonnement_moteur_m = Package.new(
+  title: "Abonnement Watch My Boat",
+  description: "Tous les mois, votre concierge effectue une visite de contrôle sur votre bateau et vous informe sur son état extérieur.",
+  price_cents: 9900,
+  price_currency: "EUR"
+  )
+abonnement_moteur_m.save!
+
+abonnement_moteur_l = Package.new(
+  title: "Abonnement Watch My Boat",
+  description: "Tous les mois, votre concierge effectue une visite de contrôle sur votre bateau et vous informe sur son état extérieur.",
+  price_cents: 9900,
+  price_currency: "EUR"
+  )
+abonnement_moteur_l.save!
+
+abonnement_voilier_s = Package.new(
+  title: "Abonnement Watch My Boat",
+  description: "Tous les mois, votre concierge effectue une visite de contrôle sur votre bateau et vous informe sur son état extérieur.",
+  price_cents: 9900,
+  price_currency: "EUR"
+  )
+abonnement_voilier_s.save!
+
+abonnement_voilier_m = Package.new(
+  title: "Abonnement Watch My Boat",
+  description: "Tous les mois, votre concierge effectue une visite de contrôle sur votre bateau et vous informe sur son état extérieur.",
+  price_cents: 9900,
+  price_currency: "EUR"
+  )
+abonnement_voilier_m.save!
+
+abonnement_voilier_l = Package.new(
+  title: "Abonnement Watch My Boat",
+  description: "Tous les mois, votre concierge effectue une visite de contrôle sur votre bateau et vous informe sur son état extérieur.",
+  price_cents: 9900,
+  price_currency: "EUR"
+  )
+abonnement_voilier_l.save!
 
 arrivee = Package.new(
   title: "Préparation de votre arrivée",
@@ -131,10 +201,35 @@ avitaillement = Package.new(
 
 puts "All packages created"
 
-item0 = Item.new
-item0.service = visite_mensuelle
-item0.package = abonnement
-item0.save!
+item101 = Item.new
+item101.service = visite_mensuelle
+item101.package = abonnement_moteur_s
+item101.save!
+
+item102 = Item.new
+item102.service = visite_mensuelle
+item102.package = abonnement_moteur_m
+item102.save!
+
+item103 = Item.new
+item103.service = visite_mensuelle
+item103.package = abonnement_moteur_l
+item103.save!
+
+item104 = Item.new
+item104.service = visite_mensuelle
+item104.package = abonnement_voilier_s
+item104.save!
+
+item105 = Item.new
+item105.service = visite_mensuelle
+item105.package = abonnement_voilier_m
+item105.save!
+
+item106 = Item.new
+item106.service = visite_mensuelle
+item106.package = abonnement_voilier_l
+item106.save!
 
 item1 = Item.new
 item1.service = nettoyage_interieur
@@ -200,7 +295,7 @@ visite_janvier = Booking.new(
   date: '2019-01-15',
   comment: "Votre parre-battage arrière-gauche est détaché."
   )
-visite_janvier.package = abonnement
+visite_janvier.package = abonnement_moteur_s
 visite_janvier.boat = boat1
 visite_janvier.save!
 
@@ -210,7 +305,7 @@ visite_fevrier = Booking.new(
   date: '2019-02-15',
   comment: "J'ai resserré toutes les amarres."
   )
-visite_fevrier.package = abonnement
+visite_fevrier.package = abonnement_moteur_s
 visite_fevrier.boat = boat1
 visite_fevrier.save!
 
@@ -220,7 +315,7 @@ visite_mars = Booking.new(
   date: '2019-03-15',
   comment: "Rien à signaler, tout va bien."
   )
-visite_mars.package = abonnement
+visite_mars.package = abonnement_moteur_s
 visite_mars.boat = boat1
 visite_mars.save!
 
@@ -230,7 +325,7 @@ visite_avril = Booking.new(
   date: '2019-04-15',
   comment: "A votre demande, j'ai remplacé la capote."
   )
-visite_avril.package = abonnement
+visite_avril.package = abonnement_moteur_s
 visite_avril.boat = boat1
 visite_avril.save!
 
@@ -240,7 +335,7 @@ visite_mai = Booking.new(
   date: '2019-05-15',
   comment: "Un nettoyage des coffres extérieurs serait le bienvenu"
   )
-visite_mai.package = abonnement
+visite_mai.package = abonnement_moteur_s
 visite_mai.boat = boat1
 visite_mai.save!
 
@@ -250,7 +345,7 @@ visite_juin = Booking.new(
   date: '2019-06-15',
   comment: ""
   )
-visite_juin.package = abonnement
+visite_juin.package = abonnement_moteur_s
 visite_juin.boat = boat1
 visite_juin.save!
 
@@ -260,7 +355,7 @@ visite_juillet = Booking.new(
   date: '2019-07-15',
   comment: ""
   )
-visite_juillet.package = abonnement
+visite_juillet.package = abonnement_moteur_s
 visite_juillet.boat = boat1
 visite_juillet.save!
 
@@ -270,7 +365,7 @@ visite_aout = Booking.new(
   date: '2019-08-15',
   comment: ""
   )
-visite_aout.package = abonnement
+visite_aout.package = abonnement_moteur_s
 visite_aout.boat = boat1
 visite_aout.save!
 
@@ -280,7 +375,7 @@ visite_septembre = Booking.new(
   date: '2019-09-15',
   comment: ""
   )
-visite_septembre.package = abonnement
+visite_septembre.package = abonnement_moteur_s
 visite_septembre.boat = boat1
 visite_septembre.save!
 
@@ -290,7 +385,7 @@ visite_octobre = Booking.new(
   date: '2019-10-15',
   comment: ""
   )
-visite_octobre.package = abonnement
+visite_octobre.package = abonnement_moteur_s
 visite_octobre.boat = boat1
 visite_octobre.save!
 
@@ -300,7 +395,7 @@ visite_novembre = Booking.new(
   date: '2019-11-15',
   comment: ""
   )
-visite_novembre.package = abonnement
+visite_novembre.package = abonnement_moteur_s
 visite_novembre.boat = boat1
 visite_novembre.save!
 
@@ -310,7 +405,7 @@ visite_decembre = Booking.new(
   date: '2019-12-15',
   comment: ""
   )
-visite_decembre.package = abonnement
+visite_decembre.package = abonnement_moteur_s
 visite_decembre.boat = boat1
 visite_decembre.save!
 

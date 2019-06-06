@@ -7,8 +7,8 @@
             <%= simple_form_for(@boat) do |f| %>
             <%= f.input :name, label: "Nom de votre bateau" %>
             <%= f.input :address, label: "Port d'attache" %>
-            <%= f.input :category, label: "Type de bateau", as: :radio_buttons, collection: Boat::CATEGORIES, wrapper: :vertical_collection_inline %>
-            <%= f.input :size, label: "Taille", as: :radio_buttons, collection: Boat::SIZE, wrapper: :vertical_collection_inline %>
+            <%= f.association :category, label: "Type de bateau", as: :radio_buttons, collection: Category.all, wrapper: :vertical_collection_inline %>
+            <%= f.association :dimension, label: "Taille", as: :radio_buttons, collection: Dimension.all, wrapper: :vertical_collection_inline %>
             <%= f.input :photo, label: "Photo de votre bateau" %>
             <%= f.input :photo_cache, as: :hidden %>
           </div>

@@ -23,12 +23,13 @@ class BoatsController < ApplicationController
   def show
     @boat = Boat.find(params[:id])
     @manager = @boat.manager
+    @package = Package.find_by(dimension: @boat.dimension, category: @boat.category)
   end
 
   def update
   end
 
   def boat_params
-    params.require(:boat).permit(:name, :address, :photo, :size, :category)
+    params.require(:boat).permit(:name, :address, :photo, :category_id, :dimension_id)
   end
 end
