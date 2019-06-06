@@ -17,12 +17,16 @@
                 </div>
               </div>
               <div class="form-inline">
-                <%= f.input :email,
-                            required: true,
-                            autofocus: true,
-                            input_html: { autocomplete: "email" },
-                            label: "Email" %>
-                <%= f.input :phone_number, label: "Numéro de téléphone" %>
+                <div class="input-inline">
+                  <%= f.input :email,
+                              required: true,
+                              autofocus: true,
+                              input_html: { autocomplete: "email" },
+                              label: "Email" %>
+                </div>
+                <div class="input-inline">
+                  <%= f.input :phone_number, label: "Numéro de téléphone" %>
+                </div>
               </div>
                 <%= f.input :address, label: "Adresse" %>
                 <%= f.input :password,

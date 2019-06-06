@@ -1,0 +1,76 @@
+.mosaic-container {
+  width: 700px;
+  height: 400px;
+  margin: auto;
+  display: flex;
+  background: white;
+  border: 10px solid white;
+  img {
+    width: 100%;
+  }
+}
+.mosaic-left {
+  flex: 0 0 20%;
+  margin-right: 10px;
+  max-height: 100%;
+  overflow: scroll;
+  img {
+    margin-bottom: 10px;
+    max-height: 90px;
+    object-fit: cover;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+.mosaic-right {
+  flex: 0 1 80%;
+  padding: 10px;
+  img {
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
+
+
+// .mosaic-border {
+//   display: flex;
+//   height: 400px;
+//   width: 700px;
+// }
+
+// .mosaic-multi {
+//   width: 30%;
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .mosaic-main {
+//   background-image: url('https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=1&w=500');
+//   width: 70%;
+//   background-size: cover;
+// }
+
+// .mosaic-multi img {
+//   height: 33.33%;
+//   width: auto;
+// }
+
+.photo-grid {
+  display: flex;
+}
+
+.photo-grid-left {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+}
+
+.photo-grid-right {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+}
+

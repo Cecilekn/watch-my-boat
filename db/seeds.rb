@@ -68,7 +68,7 @@ boat1.owner = sebastien
 boat1.manager = concierge1
 boat1.category = voilier
 boat1.dimension = small
-boat1.remote_photo_url = "https://images.unsplash.com/photo-1500917832468-298fa6292e2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+boat1.remote_photo_url = "https://cdn.pixabay.com/photo/2016/08/14/18/27/sailing-boat-1593613_1280.jpg"
 boat1.save!
 
 puts "All boats created"

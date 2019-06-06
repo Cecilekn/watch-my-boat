@@ -1,0 +1,20 @@
+.flexbox {
+  display: flex;
+}
+
+.raw-task {
+  width: 220px;
+  justify-content: space-between;
+}
+
+#left-item {
+  padding-right: 44px;
+}
+
+#right-item {
+  padding-right: 44px;
+}
+
+#comments {
+  padding-right: 44px;
+}

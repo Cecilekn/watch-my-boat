@@ -1,16 +1,92 @@
-<h1>Dashboard du propriétaire</h1>
+<div class="container">
 
-<div class="header">
+  <h1>Dashboard du propriétaire</h1>
+
   <div id="weather" data-lat="<%= @boat.latitude %>" data-lon="<%= @boat.longitude %>">
-    <div id="topbox">
-      <h1 id="city"><%= @boat.address %></h1>
-      <h2 id="date"><%= l(Time.now, format: "%A %d %B - %Hh%M") %></h2>
+    <div>
+      <h3 id="city">Votre météo à <%= @boat.address %></h3>
+      <p id="date"><%= l(Time.now, format: "%A %Hh%M") %></p>
       <p id="weather-sky">ciel</p>
+      <div class="flexbox">
+        <img id="weather-img" src="" alt="image à afficher">
+        <h2 id="weather-temp"> temperature</h2>
+      </div>
+    </div>
+  </div>
+
+  <h3>Etat de votre bateau</h3>
+
+  <div class="flexbox">
+    <div id="left-item">
+      <p><strong>extérieur</strong></p>
+      <div class="raw raw-task flexbox">
+        <p>amares</p>
+        <p>✅</p>
+      </div>
+      <div class="raw raw-task flexbox">
+        <p>bouts à bord</p>
+        <p>✅</p>
+      </div>
+      <div class="raw raw-task flexbox">
+        <p>pare-battages</p>
+        <p>✅</p>
+      </div>
+      <div class="raw raw-task flexbox">
+        <p>taud de voile</p>
+        <p>✅</p>
+      </div>
+      <div class="raw raw-task flexbox">
+        <p>propreté</p>
+        <p>★★☆☆</p>
+      </div>
     </div>
 
-    <div id="bottombox">
-      <img id="weather-img" src="" alt="image à afficher">
-      <h2 id="weather-temp"> temperature</h2>
+    <div id="right-item">
+      <p><strong>intérieur</strong></p>
+      <div class="raw raw-task flexbox">
+        <p>vannes d'arrivée d'eau</p>
+        <p>✅</p>
+      </div>
+      <div class="raw raw-task flexbox">
+        <p>vannes d'arrivée de gaz</p>
+        <p>✅</p>
+      </div>
+      <div class="raw raw-task flexbox">
+        <p>état des batteries</p>
+        <p>✅</p>
+      </div>
+      <div class="raw raw-task flexbox">
+        <p>humidité</p>
+        <p>✅</p>
+      </div>
+      <div class="raw raw-task flexbox">
+        <p>propreté</p>
+        <p>★★☆☆</p>
+      </div>
     </div>
+
+      <div id="comments">
+      <p><strong>commentaires de <%= @boat.manager_id  %></strong></p>
+      <p> Tout va bien sur votre bateau. Je préconise toutefois un nettoyage des coffres et du pont qui ont souffert du passage des mouettes cet hiver. Voulez-vous que j'organise un nettoyage ? </p>
+      <a class="btn btn-primary", href="">Oui</a>
+      <a class="btn btn-primary", href="">Non, merci</a>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+<div class="mosaic-container">
+  <div class="mosaic-left">
+    <img src="https://images.unsplash.com/photo-1559782035-bae22303f2c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="">
+    <img src="https://images.unsplash.com/photo-1559813800-e72c62ba08e5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="">
+    <img src="https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=1&w=500" alt="">
+    <img src="https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=1&w=500" alt="">
+    <img src="https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=1&w=500" alt="">
+  </div>
+  <div class="mosaic-right">
+    <img src="https://images.unsplash.com/photo-1559762691-617a33825bc6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=600" alt="">
   </div>
 </div>
