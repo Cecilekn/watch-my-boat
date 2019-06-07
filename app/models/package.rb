@@ -4,4 +4,6 @@ class Package < ApplicationRecord
   has_many :services, through: :items
   belongs_to :dimension, optional: true
   belongs_to :category, optional: true
+
+  validates :kind, inclusion: { in: ["abonnement", "additionnel"] }
 end

@@ -23,7 +23,7 @@ class BoatsController < ApplicationController
   def show
     @boat = Boat.find(params[:id])
     @manager = @boat.manager
-    @package = Package.find_by(dimension: @boat.dimension, category: @boat.category)
+    @abonnement = Package.find_by(dimension: @boat.dimension, category: @boat.category, kind: "abonnement")
   end
 
   def update
