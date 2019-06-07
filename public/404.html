@@ -2,66 +2,311 @@
 <html>
 <head>
   <title>The page you were looking for doesn't exist (404)</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+ *, *:before, *:after {
+     box-sizing: border-box;
+ }
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+ .clearfix::after {
+     display: block;
+     clear: both;
+     content: "";
+ }
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+ html, body {
+   width: 100%;
+   height: 100%;
+ }
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+ body {
+   height: 100%;
+   background: url('https://images.unsplash.com/photo-1424581342241-2b1aba4d3462?') no-repeat;
+   overflow: hidden;
 
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+ }
+
+ .wrapper {
+   width: 80%;
+   min-width: 480px;
+   margin: 10% auto 0;
+   padding: 5%;
+ }
+
+
+ .container {
+   padding: 20px 10px;
+   width: 100%;
+   text-align: center;
+ }
+
+
+
+ main hr {
+   max-width: 65%;
+ }
+
+ main p  {
+   font-weight: 500;
+ }
+ main p:nth-of-type(2)  {
+   margin-bottom: 10px;
+ }
+
+ main h1 {
+   font-size: 3rem;
+ }
+
+ main a {
+   margin-right: 20px;
+
+ }
+ main a:last-of-type {
+   margin-right: 0;
+ }
+
+ .btn {
+   background-color: rgba(221,221,221,.5);
+   color: #222;
+   margin-top: 10px;
+ }
+
+ .btn:hover {
+   background-color: rgba(124,141,148,.5);
+   color: #fdfdfd;
+ }
+
+ .meditate {
+   position: relative;
+   margin-top: 15px;
+   display: none;
+ }
+
+ .pause {
+   position: absolute;
+   top: 50%;
+   left: 22%;
+   height: 250px;
+   width: 250px;
+   border-radius: 50%;
+   background: #dbe6f6;
+   background: -webkit-linear-gradient(to right, #dbe6f6, #d4b0ab);
+   background: linear-gradient(to right, #dbe6f6, #d4b0ab);
+   color: #fff;
+   font-size: 2.255rem;
+   text-transform: lowercase;
+ }
+ .begin .btn{
+   font-size: 2.255rem;
+   background-color: rgba(0,0,0,.1);
+   border: none;
+   position: absolute;
+   top: 75px;
+   left: 62px;
+   cursor: pointer;
+   border-radius: 4px;
+ }
+ .begin .btn:hover {
+   background-color: rgba(0,0,0,.3)
+ }
+ #namaste {
+   position: absolute;
+   top: 60px;
+   left: 50px;
+   font-size: 1.995rem;
+ }
+
+ #countdown {
+   position: absolute;
+   top: 95px;
+   left: 98px;
+   font-size: 2.855rem;
+ }
+
+ .endPause {
+   position: absolute;
+   top: 280px;
+   left: 50%;
+   transform: translate(-50%, 0%);
+   display: none;
+ }
+
+ .endPause .btn {
+   color: #fff;
+   background-color: rgba(6,6,6,.6);
+ }
+ .endPause .btn:hover {
+   background-color: rgba(6,6,6,.9);
+ }
+
+ .pause.started {
+   animation: breakTime 8s ease-in-out infinite;
+   position: absolute;
+
+ }
+
+ @keyframes breakTime {
+   0% {
+     transform: translate(-50%, 0%) scale(0.4);
+     left: 50%;
+     top: 0px;
+   }
+   50% {
+     transform: translate(-50%, 0%) scale(0.9);
+     left: 50%;
+     top: 0px;
+   }
+   100% {
+     transform: translate(-50%, 0%) scale(0.4);
+     left: 50%;
+     top: 0px;
+   }
+ }
+
+
+ .cite {
+   position: absolute;
+   bottom: 0px;
+   right: 10px;
+   font-size: .975rem;
+ }
+
+ .cite a {
+   color: inherit;
+   text-decoration: underline;
+ }
+
+ .cite a:hover {
+   color: #000;
+ }
+
+ @media screen and (min-width: 768px) {
+
+
+   .pause {
+     left: 50%;
+     transform: translate(-50%, 10%);
+   }
+ }
   </style>
 </head>
 
 <body class="rails-default-error-page">
   <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+  <div class="wrapper">
+    <div class="row">
+    <div class="container">
+
+        <main>
+          <span>⛵️ Ohé Ohé ⛵️</span><h1>Capitaine abandonné ?</h1>
+          <hr>
+          <p>Vous êtes perdu(e) au milieu de l'Atlantique ?</p>
+          <p>Vous avez sûrement besoin d'un break.</p>
+          <a href="#!"><button class="btn go-back">Retournez sur la page d accueil</button></a>
+          <a href="#" id="mindfulBreak"><button class="btn break-time">Prendre une pause de 30 secondes</button></a>
+        </main>
+      <div class="meditate">
+        <div class="pause"><a href="#" class="begin"><button class="btn">START</button></a><span id="namaste">respirez</span><br><span id="countdown"></span></div>
+        <div><a href="#" class="endPause"><button class="btn">Fin de la pause</button></a></div>
+
+       </div>
+      </div>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
+  </div>
+
+<script>
+  $('#mindfulBreak').click(function (){
+    event.preventDefault();
+    $('.meditate').slideDown(500);
+    $('#namaste').hide();
+    $('#countdown').hide();
+  });
+
+  $('.begin').click(function(){
+    $('.pause').addClass('started');
+    $('.begin').hide();
+    meditate(breatheCountdown);
+    $('#namaste').show();
+    $('#countdown').show();
+    $('.endPause').show();
+
+  });
+
+
+
+  $('.endPause').click(function (){
+    event.preventDefault();
+    clearInterval(countdown);
+    clearInterval(message);
+    $('.meditate').hide(600)
+    $('.pause').removeClass('started');
+    $('.begin').show();
+  });
+
+
+  let breatheCountdown = 30;
+  let timerDisplay = document.getElementById('countdown');
+  let namasteDisplay = document.getElementById('namaste');
+  let countdown;
+  let message;
+
+  function meditate(seconds) {
+    const now = Date.now();
+    const then = now + seconds * 1000;
+    displayTimeLeft(seconds);
+    countdown = setInterval(function(){
+      const secondsLeft = Math.round((then - Date.now()) / 1000);
+      if(secondsLeft > 1 && secondsLeft < 10){
+         timerDisplay.style.left = '108px';
+         }
+      if(secondsLeft < 1) {
+        clearInterval(countdown)
+      $('.pause').removeClass('started');
+        timerDisplay.style.left = '40px';
+        namasteDisplay.textContent = '';
+        timerDisplay.textContent = 'Namaste';
+        return;
+      }
+      displayTimeLeft(secondsLeft);
+    }, 1000);
+
+    message = setInterval(function(){
+      const timeElapsed = Math.round((then - Date.now()) / 1000);
+      switch(timeElapsed){
+        case 26:
+        case 18:
+        case 10:
+        case 2:
+          namasteDisplay.textContent = 'breathe out';
+          break;
+
+       case 22:
+       case 14:
+       case 6:
+          namasteDisplay.textContent = 'breathe in';
+          break;
+
+
+        default:
+          console.log('done');
+      }
+
+      if (timeElapsed < 1) {
+        clearInterval(message);
+      }
+    }, 4000);
+  }
+
+  function displayTimeLeft(seconds){
+    const remainderSeconds = seconds % 60;
+    const display = `${remainderSeconds}`;
+    timerDisplay.textContent = display;
+
+  }
+
+</script>
 </body>
 </html>
+
