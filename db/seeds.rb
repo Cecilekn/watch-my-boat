@@ -178,51 +178,52 @@ rdv_concierge = Package.new(
   description: "Première prise de contact",
   price_cents: 0,
   price_currency: "EUR",
-  kind: "additionnel"
+  kind: "autre"
   )
-
-arrivee = Package.new(
-  title: "Préparation de votre arrivée",
-  description: "Partez l'esprit serein, nous nous occupons de préparer votre bateau avant votre arrivée!",
-  price_cents: 780,
-  price_currency: "EUR",
-  kind: "additionnel"
-  )
-arrivee.save!
-
-maintenance = Package.new(
-  title: "Maintenance",
-  description: "Un pépin sur votre bateau. Votre concierge intervient pour divers travaux de bricolage.",
-  price_cents: 780,
-  price_currency: "EUR",
-  kind: "additionnel"
-  )
-maintenance.save!
-
-hivernage = Package.new(
-  title: "Préparation à l'hivernage",
-  description: "Nettoyage intérieur et extérieur avant et après l’hiver. Hivernage des voiles et remontage, hivernage des circuits d’eau, du moteur de l’annexe",
-  price_cents: 780,
-  price_currency: "EUR",
-  kind: "additionnel"
-  )
-hivernage.save!
 
 convoyage = Package.new(
   title: "Convoyage",
   description: "Si vous souhaitez naviguer au départ ou repartir d’un autre port que celui de votre port d’attache et gagner du temps sur vos vacances, nous emmènerons ou ramènerons votre bateau pour vous.",
   price_cents: 19900,
   price_currency: "EUR",
-  kind: "additionnel"
+  kind: "offre"
   )
 convoyage.save!
+
+sortie = Package.new(
+  title: "Sortie",
+  description: "Partez l'esprit serein, nous nous occupons de préparer votre bateau avant votre arrivée!",
+  price_cents: 780,
+  price_currency: "EUR",
+  kind: "offre"
+  )
+sortie.save!
+
+maintenance = Package.new(
+  title: "Maintenance",
+  description: "Un pépin sur votre bateau. Votre concierge intervient pour divers travaux de bricolage.",
+  price_cents: 780,
+  price_currency: "EUR",
+  kind: "offre"
+  )
+maintenance.save!
+
+hivernage = Package.new(
+  title: "Hivernage",
+  description: "Nettoyage intérieur et extérieur avant et après l’hiver. Hivernage des voiles et remontage, hivernage des circuits d’eau, du moteur de l’annexe",
+  price_cents: 780,
+  price_currency: "EUR",
+  kind: "offre"
+  )
+hivernage.save!
+
 
 avitaillement = Package.new(
   title: "Avitaillement",
   description: "Récupération de votre avitaillement au supermarché « Drive » proche du Port, livraison et rangement à votre bord",
   price_cents: 4900,
   price_currency: "EUR",
-  kind: "additionnel"
+  kind: "offre"
   )
 
 puts "All packages created"
@@ -259,12 +260,12 @@ item106.save!
 
 item1 = Item.new
 item1.service = nettoyage_interieur
-item1.package = arrivee
+item1.package = sortie
 item1.save!
 
 item2 = Item.new
 item2.service = nettoyage_exterieur
-item2.package = arrivee
+item2.package = sortie
 item2.save!
 
 item3 = Item.new
@@ -284,17 +285,17 @@ item5.save!
 
 item6 = Item.new
 item6.service = achats
-item6.package = arrivee
+item6.package = sortie
 item6.save!
 
 item7 = Item.new
 item7.service = livraison
-item7.package = arrivee
+item7.package = sortie
 item7.save!
 
 item8 = Item.new
 item8.service = rangement
-item8.package = arrivee
+item8.package = sortie
 item8.save!
 
 item9 = Item.new
@@ -441,7 +442,7 @@ mon_arrivee = Booking.new(
   date: Date.today,
   comment: ""
   )
-mon_arrivee.package = arrivee
+mon_arrivee.package = sortie
 mon_arrivee.boat = boat1
 mon_arrivee.save!
 

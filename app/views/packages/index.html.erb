@@ -8,7 +8,7 @@
         </div>
         <p>Si vous souhaitez naviguer au départ ou repartir d’un autre port que celui de votre port d’attache et gagner du temps sur vos vacances, nous emmènerons ou ramènerons votre bateau pour vous.</p>
         <div class="package-button">
-          <a href="" class="button">Réserver</a>
+          <%= link_to "Réserver", package_path(@package1), class: "button"%>
         </div>
       </div>
       <div class="hover-package"></div>
@@ -23,7 +23,7 @@
         </div>
         <p>Partez l'esprit serein, nous nous occupons de préparer votre bateau avant votre arrivée!</p>
         <div class="package-button">
-          <button href="" class="button">Réserver</button>
+          <%= link_to "Réserver", package_path(@package2), class: "button"%>
         </div>
       </div>
     <div class="hover-package"></div>
@@ -38,7 +38,7 @@
         </div>
         <p>Un pépin sur votre bateau. Votre concierge intervient pour divers travaux de bricolage.</p>
         <div class="package-button">
-          <button href="" class="button">Réserver</button>
+          <%= link_to "Réserver", package_path(@package3), class: "button"%>
         </div>
       </div>
     <div class="hover-package"></div>
@@ -53,11 +53,10 @@
         </div>
         <p>Nettoyage intérieur et extérieur avant et après l’hiver. Hivernage des voiles et remontage, hivernage des circuits d’eau, du moteur de l’annexe</p>
         <div class="package-button">
-          <button href="" class="button">Réserver</button>
+          <%= link_to "Réserver", package_path(@package4), class: "button"%>
         </div>
       </div>
     <div class="hover-package"></div>
     </div>
   </div>
-
 </div>
