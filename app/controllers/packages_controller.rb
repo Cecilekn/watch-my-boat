@@ -2,7 +2,8 @@ class PackagesController < ApplicationController
 skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @packages = Package.all
+    @packages = Package.where(kind: "offre")
+    raise
   end
 
   def show

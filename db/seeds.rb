@@ -35,6 +35,7 @@ concierge1 = User.new(
   password: "123456",
   phone_number: "0607080910",
   address: "Saint-Tropez",
+  description: "Diplomé de l'Ecole navale en 1998 et formateur maritime dans la marine marchande pendant plus de 20 ans, Thierry met aujourd'hui son expertise et son carnet d'adresses au service des plaisanciers dans le Var."
   manager: true
   )
 concierge1.remote_photo_url = "https://cdn.radiofrance.fr/s3/cruiser-production/2016/11/8be75fd1-bcc5-4792-880f-af90ccd4a9d9/640_000_hq55j.jpg"
@@ -177,7 +178,7 @@ rdv_concierge = Package.new(
   description: "Première prise de contact",
   price_cents: 0,
   price_currency: "EUR",
-  kind: "additionnel"
+  kind: "autre"
   )
 
 arrivee = Package.new(
@@ -185,7 +186,7 @@ arrivee = Package.new(
   description: "Partez l'esprit serein, nous nous occupons de préparer votre bateau avant votre arrivée!",
   price_cents: 780,
   price_currency: "EUR",
-  kind: "additionnel"
+  kind: "offre"
   )
 arrivee.save!
 
@@ -194,7 +195,7 @@ maintenance = Package.new(
   description: "Un pépin sur votre bateau. Votre concierge intervient pour divers travaux de bricolage.",
   price_cents: 780,
   price_currency: "EUR",
-  kind: "additionnel"
+  kind: "offre"
   )
 maintenance.save!
 
@@ -203,7 +204,7 @@ hivernage = Package.new(
   description: "Nettoyage intérieur et extérieur avant et après l’hiver. Hivernage des voiles et remontage, hivernage des circuits d’eau, du moteur de l’annexe",
   price_cents: 780,
   price_currency: "EUR",
-  kind: "additionnel"
+  kind: "offre"
   )
 hivernage.save!
 
@@ -212,7 +213,7 @@ convoyage = Package.new(
   description: "Si vous souhaitez naviguer au départ ou repartir d’un autre port que celui de votre port d’attache et gagner du temps sur vos vacances, nous emmènerons ou ramènerons votre bateau pour vous.",
   price_cents: 19900,
   price_currency: "EUR",
-  kind: "additionnel"
+  kind: "offre"
   )
 convoyage.save!
 
@@ -221,7 +222,7 @@ avitaillement = Package.new(
   description: "Récupération de votre avitaillement au supermarché « Drive » proche du Port, livraison et rangement à votre bord",
   price_cents: 4900,
   price_currency: "EUR",
-  kind: "additionnel"
+  kind: "offre"
   )
 
 puts "All packages created"
