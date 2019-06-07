@@ -1,45 +1,49 @@
 .dashboard-header {
-  height: 80vh;
+  height: 75vh;
   background-image: url("https://images.pexels.com/photos/2231299/pexels-photo-2231299.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&h=750&w=1260");
   background-position: center;
   background-size: cover;
 }
 
+.meteo {
+  height: 25vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  padding: 24px;
+  color: #1B5456;
+}
+
 .dashboard-activity-packages {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 60vh;
+  height: 90vh;
 }
 
 .dashboard-activity {
-  padding: 24px;
+  color: #1B5456;
+  padding-top: 156px;
+  padding-left: 128px;
 }
 
 .dashboard-packages {
   padding: 24px;
 }
 
-.meteo {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-content: center;
-  padding: 32px;
-  color: #1B5456;
-}
 
 .meteo-location {
   display: flex;
-  margin-top: auto;
+  margin-top: 4px;
   margin-bottom: auto;
-  height: 20%;
+  height: 10%;
   position: relative;
   justify-content: center;
 }
 
 .meteo-weather {
   display: flex;
-  margin-top: 10%;
-  height: 20%;
+  margin-top: 4px;
+  height: 10%;
   position: relative;
   justify-content: center;
 }
@@ -58,9 +62,9 @@
 
 .meteo-wind {
   display: flex;
-  margin-top: auto;
+  margin-top: 4px;
   margin-bottom: auto;
-  height: 20%;
+  height: 10%;
   position: relative;
   justify-content: center;
 }
@@ -72,6 +76,11 @@
   padding: 32px 32px 500px 32px;
   color: #1B5456;
 }
+
+.your-boat h1 {
+  padding-left: 16px;
+}
+
 
 #left-item {
   background-color: #FFE6CE;

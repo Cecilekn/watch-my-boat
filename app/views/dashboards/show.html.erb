@@ -1,160 +1,161 @@
-<div class="dashboard-header">
-</div>
+<div class="dasboard">
 
-<div class="dashboard-activity-packages">
-  <div class="dashboard-activity">
-    <h1>Mon activité</h1>
-    <br>
-    <p>Exemple numéro 1 de message à afficher</p>
-    <p>Exemple numéro 2 de message à afficher</p>
-    <p>Exemple numéro 3 de message à afficher</p>
-    <p>Définir quoi appeler dans cette section</p>
+  <div class="dashboard-header">
   </div>
-  <div class="dashboard-packages">
-    <h1>Display javascript à insérer ici</h1>
-  </div>
-</div>
 
-<div class="meteo">
-  <div class="meteo-location">
-    <img src="https://image.flaticon.com/icons/svg/252/252025.svg" alt="" height="50px">
-    <h2 id="meteo-location-city"><%= @boat.address %></h2>
-  </div>
-  <div class="meteo-weather">
-    <div id="weather" data-lat="<%= @boat.latitude %>" data-lon="<%= @boat.longitude %>">
-      <div id="meteo-weather-info">
-        <h4 id="date"><%= l(Time.now, format: "%A %Hh%M") %></h4>
-        <div class="flexbox icon-temp">
-          <img id="weather-img" src="" alt="image à afficher" height="70px">
-          <h2 id="weather-temp"> temperature</h2>
+  <div class="meteo">
+    <div class="meteo-location">
+      <img src="https://image.flaticon.com/icons/svg/252/252025.svg" alt="" height="50px">
+      <h2 id="meteo-location-city"><%= @boat.address %></h2>
+    </div>
+    <div class="meteo-weather">
+      <div id="weather" data-lat="<%= @boat.latitude %>" data-lon="<%= @boat.longitude %>">
+        <div id="meteo-weather-info">
+          <h4 id="date"><%= l(Time.now, format: "%A %Hh%M") %></h4>
+          <div class="flexbox icon-temp">
+            <img id="weather-img" src="" alt="image à afficher" height="70px">
+            <h2 id="weather-temp"> temperature</h2>
+          </div>
+          <p id="weather-sky">ciel</p>
         </div>
-        <p id="weather-sky">ciel</p>
+      </div>
+    </div>
+    <div class="meteo-wind">
+      <img src="https://image.flaticon.com/icons/svg/1336/1336219.svg" alt="" height="50px">
+      <br>
+      <h2 id="weather-wind"></h2><h2>m/s</h2>
+    </div>
+  </div>
+
+  <div class="dashboard-activity-packages">
+    <div class="dashboard-activity">
+      <h1>Dernières actualités</h1>
+      <br>
+      <p>> La dernière visite de votre concierge date du 15 mai 2019.</p>
+      <p>> Sa prochaine visite est programmée pour le 15 juin 2019.</p>
+      <p>> Vous avez réservé le pack "Sortie" pour le 13 juillet 2019.</p>
+      </div>
+    <div class="dashboard-packages">
+      <div id="caroussel-container">
+        <div id="carousel">
+
+           <div class="hideLeft">
+            <%= image_tag "maintenance.jpg" %>
+          </div>
+
+          <div class="prevLeftSecond">
+            <%= image_tag "arrivee.jpg" %>
+          </div>
+
+          <div class="prev">
+            <%= image_tag "convoyage.jpg" %>
+          </div>
+
+          <div class="selected">
+            <%= image_tag "hivernage.jpg" %>
+          </div>
+
+          <div class="next">
+            <%= image_tag "maintenance.jpg" %>
+          </div>
+
+          <div class="nextRightSecond">
+            <%= image_tag "convoyage.jpg" %>
+          </div>
+
+          <div class="hideRight">
+            <%= image_tag "maintenance.jpg" %>
+          </div>
+
+        </div>
+
+        <div class="caroussel-buttons">
+          <button id="prev", class="button">Prev</button>
+          <button id="next" class = "button">Next</button>
+        </div>
       </div>
     </div>
   </div>
-  <div class="meteo-wind">
-    <img src="https://image.flaticon.com/icons/svg/1336/1336219.svg" alt="" height="50px">
+
+
+  <div class="your-boat">
+
+    <h1> Mon bateau</h1>
     <br>
-    <h2 id="weather-wind"></h2><h2>m/s</h2>
-  </div>
-</div>
+    <div class="flexbox">
+      <div id="left-item">
+        <p><strong>Extérieur</strong></p>
+        <div class="raw raw-task flexbox">
+          <p>Amares</p>
+          <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
+        </div>
+        <div class="raw raw-task flexbox">
+          <p>Bouts à bord</p>
+          <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
+        </div>
+        <div class="raw raw-task flexbox">
+          <p>Pare-battages</p>
+          <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
+        </div>
+        <div class="raw raw-task flexbox">
+          <p>Taud de voile</p>
+          <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
+        </div>
+        <div class="raw raw-task flexbox">
+          <p>Propreté</p>
+          <p>★★★☆</p>
+        </div>
+      </div>
 
-<div class="your-boat">
+      <div id="right-item">
+        <p><strong>Intérieur</strong></p>
+        <div class="raw raw-task flexbox">
+          <p>Vannes d'arrivée d'eau</p>
+          <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
+        </div>
+        <div class="raw raw-task flexbox">
+          <p>Vannes d'arrivée de gaz</p>
+          <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
+        </div>
+        <div class="raw raw-task flexbox">
+          <p>État des batteries</p>
+          <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
+        </div>
+        <div class="raw raw-task flexbox">
+          <p>Humidité</p>
+          <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
+        </div>
+        <div class="raw raw-task flexbox">
+          <p>Propreté</p>
+          <p>★★★★</p>
+        </div>
+      </div>
 
-  <h1>Mon bateau</h1>
-  <br>
-  <div class="flexbox">
-    <div id="left-item">
-      <p><strong>Extérieur</strong></p>
-      <div class="raw raw-task flexbox">
-        <p>Amares</p>
-        <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
+      <div id="comments">
+        <p><strong>Commentaires de <%= @boat.manager.first_name  %></strong></p>
+        <br>
+        <br>
+        <p><i>Tout va bien sur votre bateau. Je préconise toutefois un nettoyage des coffres et du pont qui ont souffert du passage des mouettes cet hiver. Voulez-vous que j'organise un nettoyage ? </i></p>
+        <br>
+        <a class="button-comments", href="">Oui</a>
+        <a class="button-comments", href="">Non, merci</a>
       </div>
-      <div class="raw raw-task flexbox">
-        <p>Bouts à bord</p>
-        <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
-      </div>
-      <div class="raw raw-task flexbox">
-        <p>Pare-battages</p>
-        <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
-      </div>
-      <div class="raw raw-task flexbox">
-        <p>Taud de voile</p>
-        <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
-      </div>
-      <div class="raw raw-task flexbox">
-        <p>Propreté</p>
-        <p>★★☆☆</p>
-      </div>
-    </div>
 
-    <div id="right-item">
-      <p><strong>Intérieur</strong></p>
-      <div class="raw raw-task flexbox">
-        <p>Vannes d'arrivée d'eau</p>
-        <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
-      </div>
-      <div class="raw raw-task flexbox">
-        <p>Vannes d'arrivée de gaz</p>
-        <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
-      </div>
-      <div class="raw raw-task flexbox">
-        <p>État des batteries</p>
-        <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
-      </div>
-      <div class="raw raw-task flexbox">
-        <p>Humidité</p>
-        <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
-      </div>
-      <div class="raw raw-task flexbox">
-        <p>Propreté</p>
-        <p>★★☆☆</p>
-      </div>
-    </div>
-
-    <div id="comments">
-      <p><strong>Commentaires de <%= @boat.manager.first_name  %></strong></p>
-      <br>
-      <br>
-      <p><i>Tout va bien sur votre bateau. Je préconise toutefois un nettoyage des coffres et du pont qui ont souffert du passage des mouettes cet hiver. Voulez-vous que j'organise un nettoyage ? </i></p>
-      <br>
-      <a class="button-comments", href="">Oui</a>
-      <a class="button-comments", href="">Non, merci</a>
     </div>
 
   </div>
 
-</div>
-
-<div class="mosaic-container">
-  <div class="mosaic-left">
-    <img src="https://images.unsplash.com/photo-1559782035-bae22303f2c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="">
-    <img src="https://images.unsplash.com/photo-1559813800-e72c62ba08e5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="">
-    <img src="https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=1&w=500" alt="">
-    <img src="https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=1&w=500" alt="">
-    <img src="https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=1&w=500" alt="">
-  </div>
-  <div class="mosaic-right">
-    <img src="https://images.unsplash.com/photo-1559762691-617a33825bc6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=600" alt="">
-  </div>
-</div>
-
-
-<div id="caroussel-container">
-  <div id="carousel">
-
-     <div class="hideLeft">
-      <%= image_tag "maintenance.jpg" %>
+  <div class="mosaic-container">
+    <div class="mosaic-left">
+      <img src="https://www.burgessyachts.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00004680_2.jpg" alt="">
+      <img src="https://www.burgessyachts.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00004680_20.jpg" alt="">
+      <img src="https://www.burgessyachts.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00004680_17.jpg" alt="">
+      <img src="https://www.burgessyachts.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00004680_14.jpg" alt="">
+      <img src="https://www.burgessyachts.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00004680_12.jpg" alt="">
     </div>
-
-    <div class="prevLeftSecond">
-      <%= image_tag "arrivee.jpg" %>
+    <div class="mosaic-right">
+      <img src="https://www.burgessyachts.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00004680_main.jpg" alt="">
     </div>
-
-    <div class="prev">
-      <%= image_tag "convoyage.jpg" %>
-    </div>
-
-    <div class="selected">
-      <%= image_tag "hivernage.jpg" %>
-    </div>
-
-    <div class="next">
-      <%= image_tag "maintenance.jpg" %>
-    </div>
-
-    <div class="nextRightSecond">
-      <%= image_tag "convoyage.jpg" %>
-    </div>
-
-    <div class="hideRight">
-      <%= image_tag "maintenance.jpg" %>
-    </div>
-
   </div>
 
-  <div class="caroussel-buttons">
-    <button id="prev", class="button">Prev</button>
-    <button id="next" class = "button">Next</button>
-  </div>
 </div>
