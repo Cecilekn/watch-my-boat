@@ -41,13 +41,41 @@
   top: 82px;
 }
 
-.manager-infos {
-  padding: 20px;
+.confirm-booking {
+  display: flex;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+.confirm-card {
+  border: 1px solid #FFD582;
+  padding: 10px;
+  border-radius: 5px;
+  width: 50%;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.confirm-photo {
   text-align: center;
 }
 
-.manager-infos-description p {
+.confirm-photo p {
+  margin-top: 10px;
+}
+
+.confirm-title {
+  font-weight: bold;
+  text-align: center;
+}
+
+.confirm-infos-description p {
   margin-bottom: 30px;
+}
+
+.valid-buttons {
+  text-align: center;
 }
 
 .call-actions {
