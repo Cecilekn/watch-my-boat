@@ -9,6 +9,7 @@
   background-color: #FFFFFF;
   box-shadow: 0 0 8px 0 rgba(0,0,0,0.15);
   margin-right: 20px;
+  border-radius: 5px;
 }
 
 .show-packages-card-top {
@@ -21,13 +22,14 @@
   justify-content: space-between;
   padding: 0 0 15px;
   min-width: 400px;
-  color: #32325D;
+  color: #227799;
 }
 
 
 .show-packages-card-bottom {
-  background-color: #32325D;
+  background-color: #227799;
   padding: 15px 20px;
+  border-radius: 5px;
 }
 
 .show-packages-card-bottom .show-packages-card-item {
