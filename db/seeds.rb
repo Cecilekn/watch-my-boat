@@ -10,10 +10,10 @@ Service.destroy_all
 Item.destroy_all
 Package.destroy_all
 Booking.destroy_all
-Dimension.destroy_all
-Category.destroy_all
 Picture.destroy_all
 Boat.destroy_all
+Dimension.destroy_all
+Category.destroy_all
 User.destroy_all
 
 sebastien = User.new(
