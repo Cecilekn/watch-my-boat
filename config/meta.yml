@@ -1,0 +1,5 @@
+meta_product_name: "Watch My Boat"
+meta_title: "Watch My Boat - Nous veillons sur votre bateau"
+meta_description: "Watch My Boat est le premier service de conciergerie pensé pour les plaisanciers qui veulent passer plus de temps à naviguer"
+meta_image: "watchmyboat.png" # should exist in `app/assets/images/`
+twitter_account: "@watch_boat"   # required for Twitter Cards
