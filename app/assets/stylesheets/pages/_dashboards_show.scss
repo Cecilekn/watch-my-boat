@@ -67,14 +67,32 @@
 
 
 .your-boat {
-  height: 60vh;
+  height: 90vh;
   background-color: #FFD582;
   padding: 32px 32px 500px 32px;
   color: #1B5456;
 }
 
+#left-item {
+  background-color: #FFE6CE;
+  padding: 8px 16px 0 16px;
+  margin: 16px;
+}
+
+#right-item {
+  background-color: #FFE6CE;
+  padding: 8px 16px 0 16px;
+  margin: 16px;
+}
+
+#comments {
+  background-color: #FFE6CE;
+  padding: 8px 16px 0 16px;
+  margin: 16px;
+}
+
 .mosaic-container {
-  margin-top: -128px;
+  margin-top: -200px;
   margin-bottom: 64px;
   padding: 24px;
 }
