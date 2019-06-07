@@ -18,26 +18,27 @@ Picture.destroy_all
 
 sebastien = User.new(
   first_name: "Sebastien",
-  last_name: "Dupont",
+  last_name: "Bureau",
   email: "seb@gmail.com",
   password: "123456",
   phone_number: "0607080910",
   address: "Courbevoie",
   manager: false
   )
-sebastien.remote_photo_url = "https://images.pexels.com/photos/2257800/pexels-photo-2257800.jpeg"
+sebastien.remote_photo_url = "https://www.vendeeglobe.org/medias/02/03/20346/portrait-du-skipper-suisse-alan-roura-r-1680-1200.jpg"
 sebastien.save!
 
 concierge1 = User.new(
-  first_name: "Marie-Amandine",
-  last_name: "Chevalier",
-  email: "mac@gmail.com",
+  first_name: "Thierry",
+  last_name: "Dubateau",
+  email: "thierry@gmail.com",
   password: "123456",
   phone_number: "0607080910",
   address: "Saint-Tropez",
+  description: "Diplomé de l'Ecole navale en 1998 et formateur maritime dans la marine marchande pendant plus de 20 ans, Thierry met aujourd'hui son expertise et son carnet d'adresses au service des plaisanciers dans le Var.",
   manager: true
   )
-concierge1.remote_photo_url = "https://www.startupleadership.fr/wp-content/uploads/2018/12/Marie-Amandine-CHEVALIER-1.jpg"
+concierge1.remote_photo_url = "https://cdn.radiofrance.fr/s3/cruiser-production/2016/11/8be75fd1-bcc5-4792-880f-af90ccd4a9d9/640_000_hq55j.jpg"
 concierge1.save!
 
 puts "All users created"
