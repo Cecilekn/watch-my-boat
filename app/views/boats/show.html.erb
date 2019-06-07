@@ -4,16 +4,35 @@
       <div class="content-left-show-boat">
         <h1>Félicitations,</h1>
         <h1>Votre bateau a bien été enregistré!</h1>
-        <div class="manager-infos">
-          <div class="manager-infos-title">
-            <p>Votre concierge : <%= @manager.first_name %></p>
+        <div class="confirm-booking">
+          <div class="confirm-card">
+            <div class="confirm-title">
+              <p>Votre bateau</p>
+            </div>
+            <div class="confirm-photo">
+              <%= cl_image_tag @boat.photo, class: "avatar-big" %>
+              <p><%= @boat.name %></p>
+            </div>
+            <div class="confirm-boat-infos">
+              <p><strong>Port d'attache :</strong> <%= @boat.address.split(',').first %></p>
+              <p><strong>Type de bateau :</strong> <%= @boat.category.name %></p>
+              <p><strong>Taille :</strong> <%= @boat.dimension.meter %></p>
+            </div>
           </div>
-          <div class="manager-infos-photo">
-            <%= cl_image_tag @manager.photo, class: "avatar-big" %>
+          <div class="confirm-card">
+            <div class="confirm-title">
+              <p>Votre concierge</p>
+            </div>
+            <div class="confirm-photo">
+              <%= cl_image_tag @manager.photo, class: "avatar-big" %>
+              <p><%= @manager.first_name %></p>
+            </div>
+            <div class="confirm-manager-description">
+              <%= cl_image_tag @manager.description %>
+            </div>
           </div>
-          <div class="manager-infos-description">
-            <%= cl_image_tag @manager.description %>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+          <div class="valid-buttons">
             <button type="button" class="call-button" data-toggle="modal" data-target="#exampleModal">
               Etre rappelé
             </button>
@@ -37,12 +56,10 @@
                 </div>
               </div>
             </div>
-
             <br><br>
             <%= link_to "M'abonner directement", dashboard_path %>
           </div>
-        </div>
-       </div>
+      </div>
     </div>
     <div class="col-4 col-right-show-boat">
       <div class="show-boat-text-image">
