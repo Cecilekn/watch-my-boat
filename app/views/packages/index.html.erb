@@ -1,62 +1,19 @@
 <div class="packages-index-container">
 
-  <div class="package-container">
-    <div class="package-1">
-      <div class="package-info">
-        <div class="package-title">
-          <h2>Convoyage</h2>
+  <% @offres.each do |offre| %>
+   <div class="package-container">
+      <div class="package-img" style="background-image: url(<%= asset_path offre.photo %>)">
+        <div class="package-info">
+          <div class="package-title">
+            <h2><%= offre.title %></h2>
+          </div>
+          <p><%= offre.description %></p>
+          <div class="package-button">
+            <%= link_to "Réserver", package_path(offre), class: "button"%>
+          </div>
         </div>
-        <p>Si vous souhaitez naviguer au départ ou repartir d’un autre port que celui de votre port d’attache et gagner du temps sur vos vacances, nous emmènerons ou ramènerons votre bateau pour vous.</p>
-        <div class="package-button">
-          <%= link_to "Réserver", package_path(@package1), class: "button"%>
-        </div>
+        <div class="hover-package"></div>
       </div>
-      <div class="hover-package"></div>
     </div>
-  </div>
-
-  <div class="package-container">
-    <div class="package-2">
-      <div class="package-info">
-        <div class="package-title">
-          <h2>Sortie</h2>
-        </div>
-        <p>Partez l'esprit serein, nous nous occupons de préparer votre bateau avant votre arrivée!</p>
-        <div class="package-button">
-          <%= link_to "Réserver", package_path(@package2), class: "button"%>
-        </div>
-      </div>
-    <div class="hover-package"></div>
-    </div>
-  </div>
-
-  <div class="package-container">
-    <div class="package-3">
-      <div class="package-info">
-        <h2>Maintenance</h2>
-        <div class="package-title">
-        </div>
-        <p>Un pépin sur votre bateau. Votre concierge intervient pour divers travaux de bricolage.</p>
-        <div class="package-button">
-          <%= link_to "Réserver", package_path(@package3), class: "button"%>
-        </div>
-      </div>
-    <div class="hover-package"></div>
-    </div>
-  </div>
-
-  <div class="package-container">
-    <div class="package-4">
-      <div class="package-info">
-        <h2>Hivernage</h2>
-        <div class="package-title">
-        </div>
-        <p>Nettoyage intérieur et extérieur avant et après l’hiver. Hivernage des voiles et remontage, hivernage des circuits d’eau, du moteur de l’annexe</p>
-        <div class="package-button">
-          <%= link_to "Réserver", package_path(@package4), class: "button"%>
-        </div>
-      </div>
-    <div class="hover-package"></div>
-    </div>
-  </div>
+  <% end %>
 </div>
