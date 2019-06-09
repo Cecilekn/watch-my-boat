@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Réserver l'offre <%= @package.title %></h1>
+
+  <%= simple_form_for([@package, @booking]) do |f| %>
+  <%= f.input :date %>
+  <%= f.input :hour %>
+  <%= f.input :comment %>
+  <%= f.submit "Confirmer la réservation", class: "button" %>
+  <% end %>
+
+</div>
