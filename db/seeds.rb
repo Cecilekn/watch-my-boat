@@ -190,7 +190,7 @@ offre1.save!
 offre2 = Package.new(
   title: "Sortie",
   description: "Partez l'esprit serein, nous nous occupons de préparer votre bateau avant votre arrivée!",
-  price_cents: 780,
+  price_cents: 15000,
   price_currency: "EUR",
   kind: "offre"
   )
@@ -200,7 +200,7 @@ offre2.save!
 offre3 = Package.new(
   title: "Maintenance",
   description: "Un pépin sur votre bateau. Votre concierge intervient pour divers travaux de bricolage.",
-  price_cents: 780,
+  price_cents: 20500,
   price_currency: "EUR",
   kind: "offre"
   )
@@ -210,7 +210,7 @@ offre3.save!
 offre4 = Package.new(
   title: "Hivernage",
   description: "Nettoyage intérieur et extérieur avant et après l’hiver. Hivernage des voiles et remontage, hivernage des circuits d’eau, du moteur de l’annexe",
-  price_cents: 780,
+  price_cents: 11000,
   price_currency: "EUR",
   kind: "offre"
   )
@@ -306,7 +306,7 @@ puts "All items created"
 
 visite_janvier = Booking.new(
   title: "Visite de janvier",
-  status: "Réalisé",
+  completed: true,
   date: '2019-01-15',
   comment: "Votre parre-battage arrière-gauche est détaché."
   )
@@ -316,7 +316,7 @@ visite_janvier.save!
 
 visite_fevrier = Booking.new(
   title: "Visite de février",
-  status: "Réalisé",
+  completed: true,
   date: '2019-02-15',
   comment: "J'ai resserré toutes les amarres."
   )
@@ -326,7 +326,7 @@ visite_fevrier.save!
 
 visite_mars = Booking.new(
   title: "Visite de mars",
-  status: "Réalisé",
+  completed: true,
   date: '2019-03-15',
   comment: "Rien à signaler, tout va bien."
   )
@@ -336,7 +336,7 @@ visite_mars.save!
 
 visite_avril = Booking.new(
   title: "Visite de avril",
-  status: "Réalisé",
+  completed: true,
   date: '2019-04-15',
   comment: "A votre demande, j'ai remplacé la capote."
   )
@@ -346,7 +346,7 @@ visite_avril.save!
 
 visite_mai = Booking.new(
   title: "Visite de mai",
-  status: "Réalisé",
+  completed: true,
   date: '2019-05-15',
   comment: "Un nettoyage des coffres extérieurs serait le bienvenu"
   )
@@ -356,7 +356,7 @@ visite_mai.save!
 
 visite_juin = Booking.new(
   title: "Visite de juin",
-  status: "A venir",
+  completed: false,
   date: '2019-06-15',
   comment: ""
   )
@@ -366,7 +366,7 @@ visite_juin.save!
 
 visite_juillet = Booking.new(
   title: "Visite de juillet",
-  status: "A venir",
+  completed: false,
   date: '2019-07-15',
   comment: ""
   )
@@ -376,7 +376,7 @@ visite_juillet.save!
 
 visite_aout = Booking.new(
   title: "Visite de aout",
-  status: "A venir",
+  completed: false,
   date: '2019-08-15',
   comment: ""
   )
@@ -386,7 +386,7 @@ visite_aout.save!
 
 visite_septembre = Booking.new(
   title: "Visite de septembre",
-  status: "A venir",
+  completed: false,
   date: '2019-09-15',
   comment: ""
   )
@@ -396,7 +396,7 @@ visite_septembre.save!
 
 visite_octobre = Booking.new(
   title: "Visite de octobre",
-  status: "A venir",
+  completed: false,
   date: '2019-10-15',
   comment: ""
   )
@@ -406,7 +406,7 @@ visite_octobre.save!
 
 visite_novembre = Booking.new(
   title: "Visite de novembre",
-  status: "A venir",
+  completed: false,
   date: '2019-11-15',
   comment: ""
   )
@@ -416,7 +416,7 @@ visite_novembre.save!
 
 visite_decembre = Booking.new(
   title: "Visite de decembre",
-  status: "A venir",
+  completed: false,
   date: '2019-12-15',
   comment: ""
   )
@@ -426,7 +426,7 @@ visite_decembre.save!
 
 mon_arrivee = Booking.new(
   title: "Préparer mon arrivéé",
-  status: "A venir",
+  completed: false,
   date: Date.today,
   comment: ""
   )

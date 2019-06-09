@@ -1,15 +1,15 @@
 <div class="packages-index-container">
 
-  <% @offres.each do |offre| %>
+  <% @packages.each do |package| %>
    <div class="package-container">
-      <div class="package-img" style="background-image: url(<%= asset_path offre.photo %>)">
+      <div class="package-img" style="background-image: url(<%= asset_path package.photo %>)">
         <div class="package-info">
           <div class="package-title">
-            <h2><%= offre.title %></h2>
+            <h2><%= package.title %></h2>
           </div>
-          <p><%= offre.description %></p>
+          <p><%= package.description %></p>
           <div class="package-button">
-            <%= link_to "Réserver", package_path(offre), class: "button"%>
+            <%= link_to "Réserver", package_path(package), class: "button"%>
           </div>
         </div>
         <div class="hover-package"></div>

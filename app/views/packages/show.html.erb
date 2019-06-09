@@ -3,31 +3,25 @@
     <div class="col-8 col-left">
       <div class="content-left">
         <div class="show-packages-title">
-          <h2>Convoyage</h2>
-          <p>Si vous souhaitez naviguer au départ ou repartir d’un autre port que celui de votre port d’attache et gagner du temps sur vos vacances, nous emmènerons ou ramènerons votre bateau pour vous.</p>
+          <h2><%= @package.title %></h2>
+          <p><%= @package.description %></p>
         </div>
+
         <div class="card-show-packages-container">
           <div class="card-show-packages">
             <div class="show-packages-card-top">
-              <div class="show-packages-card-item">
-                <div class="show-packages-card-text">
-                  <p class="show-packages-card-text-title">Ouverture avant votre arrivée</p>
-                  <p class="show-packages-card-text-subtitle">Plein d'essence, remplissage des cuves, mise en marche moteur</p>
+              <% i = 1 %>
+              <% @package.services.each do |service| %>
+                <div class="show-packages-card-item">
+                  <div class="show-packages-card-text">
+                    <p class="show-packages-card-text-title">Service <%= i %></p>
+                    <p class="show-packages-card-text-subtitle"><%= service.title %></p>
+                    <% i += 1 %>
+                  </div>
                 </div>
-              </div>
-              <div class="show-packages-card-item">
-                <div class="show-packages-card-text">
-                  <p class="show-packages-card-text-title">Avitaillement</p>
-                  <p class="show-packages-card-text-subtitle">Récupération au drive et livraison à bord</p>
-                </div>
-              </div>
-              <div class="show-packages-card-item">
-                <div class="show-packages-card-text">
-                  <p class="show-packages-card-text-title">Fermeture après votre départ</p>
-                  <p class="show-packages-card-text-subtitle">Nettoyage, fermeture des cuves</p>
-                </div>
-              </div>
+              <% end %>
             </div>
+
             <div class="show-packages-card-bottom">
               <div class="show-packages-card-item">
                 <div class="show-packages-card-text">
@@ -35,7 +29,7 @@
                   <p class="show-packages-card-text-subtitle">pour l'ensemble des prestations</p>
                 </div>
                 <div class="show-packages-card-price">
-                  <p>100€</p>
+                  <p><%= @package.price_cents/100 %> <%=  @package.price_currency %></p>
                 </div>
               </div>
             </div>
@@ -46,6 +40,7 @@
         </div>
       </div>
     </div>
+
     <div class="col-4 col-right-show">
     </div>
   </div>

@@ -2,7 +2,6 @@
   <div class="row">
     <div class="col-8 col-left-show-boat">
       <div class="content-left-show-boat">
-        <h1>Félicitations,</h1>
         <h1>Votre bateau a bien été enregistré!</h1>
         <div class="confirm-booking">
           <div class="confirm-card">
@@ -25,15 +24,17 @@
             </div>
             <div class="confirm-photo">
               <%= cl_image_tag @manager.photo, class: "avatar-big" %>
-              <p><%= @manager.first_name %></p>
+              <p><%= @manager.first_name %>, <%= @manager.address %></p>
             </div>
             <div class="confirm-manager-description">
-              <%= @manager.description %>
+              <p class="text-justify"><%= @manager.description %></p>
             </div>
           </div>
         </div>
           <div class="valid-buttons">
-            <button type="button" class="call-button" data-toggle="modal" data-target="#exampleModal">
+            <%= link_to "M'abonner", package_bookings_path(@abonnement, boat_id: @boat), method: :post, class: "button" %>
+            <br>
+            <button type="button" class="call-button-2" data-toggle="modal" data-target="#exampleModal">
               Etre rappelé
             </button>
             <!-- Modal -->
@@ -57,7 +58,6 @@
               </div>
             </div>
             <br><br>
-            <%= link_to "M'abonner directement", dashboard_path %>
           </div>
       </div>
     </div>
