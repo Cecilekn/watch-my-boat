@@ -9,6 +9,8 @@
 Service.destroy_all
 Item.destroy_all
 Package.destroy_all
+Task.destroy_all
+Provider.destroy_all
 Booking.destroy_all
 Picture.destroy_all
 Boat.destroy_all
@@ -424,19 +426,22 @@ visite_decembre.package = abo1
 visite_decembre.boat = boat1
 visite_decembre.save!
 
-mon_arrivee = Booking.new(
+booking1 = Booking.new(
   title: "Préparer mon arrivéé",
   completed: false,
   date: Date.today,
   comment: ""
   )
-mon_arrivee.package = offre2
-mon_arrivee.boat = boat1
-mon_arrivee.save!
-
+booking1.package = offre2
+booking1.boat = boat1
+booking1.save!
 
 puts "All bookings created"
 
+provider1 = Provider.new(name: "Riviera Nautique")
+provider1.manager = concierge1
+provider1.save!
+puts "All providers created"
 
-puts "All pictures created"
+puts "All tasks created"
 
