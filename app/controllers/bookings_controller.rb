@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
         @booking.boat = @boat
         @booking.save!
       end
-      redirect_to dashboard_path
+      redirect_to package_booking_tasks_path(@package, @booking)
     elsif @package.kind == "offre"
       @boat = current_user.owned_boats.first
       @booking = Booking.new(booking_params)
@@ -26,7 +26,7 @@ class BookingsController < ApplicationController
       @booking.package = @package
       @booking.boat = @boat
       if @booking.save
-        redirect_to dashboard_path
+        redirect_to package_booking_tasks_path(@package, @booking)
       else
         render 'bookings/new'
       end
