@@ -6,7 +6,7 @@
   <div class="meteo">
     <div class="meteo-location">
       <img src="https://image.flaticon.com/icons/svg/252/252025.svg" alt="" height="50px">
-      <h2 id="meteo-location-city"><%#= @boat.address %></h2>
+      <h2 id="meteo-location-city"><%= @boat.address %></h2>
     </div>
     <div class="meteo-weather">
       <div id="weather" data-lat="<%= @boat.latitude %>" data-lon="<%= @boat.longitude %>">
@@ -132,7 +132,7 @@
       </div>
 
       <div id="comments">
-        <p><strong>Commentaires de <%#= @boat.manager.first_name  %></strong></p>
+        <p><strong>Commentaires de <%= @boat.manager.first_name  %></strong></p>
         <br>
         <br>
         <p><i>Tout va bien sur votre bateau. Je préconise toutefois un nettoyage des coffres et du pont qui ont souffert du passage des mouettes cet hiver. Voulez-vous que j'organise un nettoyage ? </i></p>
