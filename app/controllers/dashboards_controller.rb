@@ -8,4 +8,5 @@ class DashboardsController < ApplicationController
       @last_visit = booking if booking.package.kind == "abonnement" && booking.completed == true && (Date.today - booking.date) < 31
       @next_visit = booking if booking.package.kind == "abonnement" && booking.completed == false && (booking.date - Date.today) < 31
     end
+  end
 end
