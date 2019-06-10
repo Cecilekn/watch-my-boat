@@ -76,6 +76,7 @@
 
 .valid-buttons {
   text-align: center;
+  margin-top: 30px;
 }
 
 .call-actions {
@@ -97,3 +98,14 @@
   border: 1px solid #FFD582;
 }
 
+.call-button-2 {
+  background-color: none;
+  color: #227799;
+  border: none;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.call-button-2:hover {
+  color: #86B4C7;
+}
