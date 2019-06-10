@@ -37,9 +37,8 @@
   bottom: 36px;
 }
 
-.package-1 {
+.package-img {
   padding: 24px;
-  background-image: url("https://images.pexels.com/photos/1295036/pexels-photo-1295036.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=3&h=750&w=1260");
   background-position: center;
   background-size: cover;
   text-align: center;
@@ -56,66 +55,3 @@
     }
   }
 }
-
-.package-2 {
-  padding: 24px;
-  background-image: url("https://images.unsplash.com/photo-1524722228493-c418381c4cac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80");
-  background-position: center;
-  background-size: cover;
-  text-align: center;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  position: relative;
-  &:hover {
-    .hover-package {
-      background: black !important;
-      opacity: 0.7 !important;
-    }
-  }
-}
-
-.package-3 {
-  padding: 24px;
-  background-image: url("https://www.boatrepaircentre.co.uk/assets/jo_line_boat_repairs_home7.jpg");
-  background-position: center;
-  background-size: cover;
-  text-align: center;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  position: relative;
-  &:hover {
-    .hover-package {
-      background: black !important;
-      opacity: 0.7 !important;
-    }
-  }
-}
-
-.package-4 {
-  padding: 24px;
-  background-image: url("https://images.unsplash.com/photo-1556907794-66c4782d5e73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2551&q=80");
-  background-position: center;
-  background-size: cover;
-  text-align: center;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  position: relative;
-  &:hover {
-    .hover-package {
-      background: black !important;
-      opacity: 0.7 !important;
-    }
-  }
-}
-
-
-
