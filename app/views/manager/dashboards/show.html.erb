@@ -1,1 +1,11 @@
 <h1>Dashboard du concierge</h1>
+
+
+
+<% @bookings.each do |booking| %>
+  <p>Offre : <%=  booking.title %></p>
+  <p>Réservée par : <%= @boat.owner.first_name %></p>
+  <p>A effectuer pour le s: <%= booking.date %></p>
+  <p>Statut : <%= booking.completed ? "Fait" : "A faire" %></p>
+  <br>
+<% end %>

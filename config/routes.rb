@@ -18,5 +18,5 @@ Rails.application.routes.draw do
 
   resource :subscriptions, only: [:new, :create]
 
-  devise_for :users, :controllers => {:registrations => "registrations"}
+  devise_for :users, :controllers => {:registrations => "registrations", :sessions => "sessions"}
 end
