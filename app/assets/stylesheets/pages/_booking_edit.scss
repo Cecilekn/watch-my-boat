@@ -12,7 +12,31 @@
   margin-bottom: 16px;
 }
 
-.exterieur-form {
+.visit-form {
   background: white;
   padding: 16px;
 }
+
+.form-check-inline .form-check-input {
+  display: none;
+}
+
+.form-check {
+  color: lightgrey;
+  cursor: pointer;
+}
+
+.form-check i {
+  font-size: 24px;
+}
+
+.form-check.text-green label:hover, .form-check.text-green input:checked + label {
+  color: green;
+  cursor: pointer;
+}
+
+.form-check.text-orange label:hover, .form-check.text-orange input:checked + label {
+  color: orange;
+  cursor: pointer;
+}
+
