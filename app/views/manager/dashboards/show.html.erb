@@ -2,27 +2,36 @@
 
   <div class="manager-dashboard-sidebar">
     <div class="manager-dashboard-menu">
-      <h5>Activités</h5>
+      <h5><strong><u>Missions</u></strong></h5>
+      <br>
       <h5>Bateaux</h5>
+      <br>
       <h5>Propriétaires</h5>
+      <br>
     </div>
   </div>
 
   <div class="manager-dashboard-part-right">
-    <h1>Tableau de bord</h1>
+    <h1>Missions</h1>
     <p>Bonjour <%= current_user.first_name %>, bienvenue sur Watch my Boat !</p>
     <p>Vous avez <%= @bookings.count %> missions en cours.</p>
 
     <% @bookings.each do |booking| %>
 
       <div class="booking-card">
-        <div class="booking-card-img">
-          <%= cl_image_tag @boat.photo %>
+        <div class="booking-card-img-container">
+          <%= cl_image_tag @boat.photo, class: "booking-card-img" %>
         </div>
-        <p>Offre : <%=  booking.title %></p>
-        <p>Réservée par : <%= @boat.owner.first_name %></p>
-        <p>A effectuer pour le : <%= booking.date %></p>
-        <p>Statut : <%= booking.completed ? "Fait" : "A faire" %></p>
+        <div class="booking-card-info">
+          <p><img src="https://image.flaticon.com/icons/svg/1096/1096713.svg" height="24px" width="24px" alt=""><strong> Mission : </strong><%=  booking.title %></p>
+          <p><img src="https://image.flaticon.com/icons/svg/1852/1852551.svg" height="24px" width="24px" alt=""><strong> Bateau : </strong><%=  booking.boat.name %></p>
+          <p><img src="https://image.flaticon.com/icons/svg/252/252025.svg" height="24px" width="24px" alt=""><strong> Port : </strong><%=  booking.boat.address %></p>
+          <p><img src="https://image.flaticon.com/icons/svg/1077/1077012.svg" height="24px" width="24px" alt=""><strong> Réservée par : </strong><%= @boat.owner.first_name %></p>
+          <p><img src="https://image.flaticon.com/icons/svg/1142/1142792.svg" height="24px" width="24px" alt=""><strong> À effectuer pour le : </strong><%= booking.date %></p>
+        </div>
+        <div class="booking-card-cta">
+          <p class="button">Gérer</p>
+        </div>
       </div>
     <% end %>
   </div>

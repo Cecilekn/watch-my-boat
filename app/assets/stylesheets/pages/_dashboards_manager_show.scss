@@ -1,4 +1,5 @@
 .manager-dashboard {
+  color: #1B5456;
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100vh;
@@ -10,7 +11,7 @@
   height: 100vh;
   background-color: #FFD582;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  padding-top: 88px;
+  padding-top: 104px;
   position: -webkit-sticky;
   position: sticky;
   top: 0px;
@@ -24,22 +25,39 @@
 .manager-dashboard-part-right {
 
   background-color: #FEF5ED;
-  width: 100vh;
+  width: 109vh;
   margin-right: 0;
-  padding-left: 24px;
+  padding-top: 8px;
+  padding-left: 20px;
   padding-right: 24px;
 }
 
 .booking-card {
+  height: 224px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   background-color: white;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   border-radius: 10px;
-  margin-top: 24px;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 .booking-card-img {
-  border-radius: 0 0 10px 10px;
+  width: 224px;
+  height: 224px;
+  object-fit: cover;
+  border-radius: 10px 0 0 10px;
   margin-top: 0;
   margin-left: 0;
   padding: 0;
+}
+
+.booking-card-info {
+  width: 304px;
+  margin: 16px 0 0 56px;
+}
+
+.booking-card-cta {
+  margin: auto;
 }
