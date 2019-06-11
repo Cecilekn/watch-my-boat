@@ -1,5 +1,6 @@
-class DashboardsController < ApplicationController
+class Manager::DashboardsController < ApplicationController
   def show
-    @tasks = current_user.tasks
+    @boat = current_user.managed_boats.first
+    @bookings = @boat.bookings
   end
 end

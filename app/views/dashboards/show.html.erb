@@ -31,40 +31,28 @@
     <div class="dashboard-activity">
       <h1>Dernières actualités</h1>
       <br>
-      <p>> La dernière visite de votre concierge date du 15 mai 2019.</p>
-      <p>> Sa prochaine visite est programmée pour le 15 juin 2019.</p>
-      <p>> Vous avez réservé le pack "Sortie" pour le 13 juillet 2019.</p>
-      </div>
+      <p>> La dernière visite de votre concierge date du <%= @last_visit.date.strftime("%d-%m-%y") %>.</p>
+      <p>> Sa prochaine visite est programmée pour le <%= @next_visit.date.strftime("%d-%m-%y") %>.</p>
+      <% if !@next_booked_offers.nil? %>
+        <% @next_booked_offers.each do |offer| %>
+          <p>> Vous avez réservé le pack "<%= offer.title %>" pour le <%= offer.date.strftime("%d-%m-%y") %>.</p>
+        <% end %>
+      <% end %>
+    </div>
     <div class="dashboard-packages">
+      <h1>Nos offres</h1>
       <div id="caroussel-container">
         <div id="carousel">
-
-           <div class="hideLeft">
-            <%= image_tag "maintenance.jpg" %>
+          <div class="selected" style="background-image: url(<%= asset_path 'hivernage.jpg' %>)">
           </div>
 
-          <div class="prevLeftSecond">
-            <%= image_tag "sortie.jpg" %>
+          <div class="next" style="background-image: url(<%= asset_path 'maintenance.jpg' %>)">
           </div>
 
-          <div class="prev">
-            <%= image_tag "convoyage.jpg" %>
+          <div class="nextRightSecond" style="background-image: url(<%= asset_path 'convoyage.jpg' %>)">
           </div>
 
-          <div class="selected">
-            <%= image_tag "hivernage.jpg" %>
-          </div>
-
-          <div class="next">
-            <%= image_tag "maintenance.jpg" %>
-          </div>
-
-          <div class="nextRightSecond">
-            <%= image_tag "convoyage.jpg" %>
-          </div>
-
-          <div class="hideRight">
-            <%= image_tag "maintenance.jpg" %>
+          <div class="hideRight" style="background-image: url(<%= asset_path 'sortie.jpg' %>)">
           </div>
 
         </div>
