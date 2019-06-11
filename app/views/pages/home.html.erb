@@ -2,14 +2,17 @@
   <div class="home-card">
     <h2 class="tagline"><strong>Naviguez,
       <br> on s'occupe du reste.</strong></h2>
-    <h5 class=sub-tagline>Toute l'année, votre concierge veille sur votre bateau</h5>
+    <h5 class=sub-tagline>Toute l'année, votre concierge veille sur votre bateau.</h5>
     <ul class="home-list">
-      <li>✔️ Visite mensuelle avec photo et compte-rendu</li>
-      <li>✔️ Accès direct à votre concierge 24h/24</li>
-      <li>✔️ Accès aux services premium</li>
+      <li> <i class="fas fa-check"></i> Visite mensuelle avec photo et compte-rendu</li>
+      <li><i class="fas fa-check"></i> Accès direct à votre concierge 24h/24</li>
+      <li><i class="fas fa-check"></i> Accès aux services premium</li>
     </ul>
-    <h5 class="home-price">à partir de 19,99€ / mois</h5>
-    <%= link_to "Abonnez-vous", new_user_registration_path, class: "btn btn-primary button btn-cent" %>
+    <div class="home-price-card">
+      <h5 class="home-price">dès 19,99€</h5>
+      <p>par mois</p>
+    </div>
+    <%= link_to "Abonnez-vous", new_user_registration_path, class: "btn btn-primary btn-cent" %>
   </div>
 </div>
 
