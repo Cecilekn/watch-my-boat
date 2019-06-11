@@ -3,9 +3,10 @@
 
 
 <% @bookings.each do |booking| %>
-  <p>Offre : <%=  booking.title %></p>
+  <p>Offre : <%= booking.title %></p>
   <p>Réservée par : <%= @boat.owner.first_name %></p>
   <p>A effectuer pour le : <%= booking.date %></p>
   <p>Statut : <%= booking.completed ? "Fait" : "A faire" %></p>
+  <%= link_to "Editer", edit_booking_path(booking), class: "button" %>
   <br>
 <% end %>
