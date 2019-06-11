@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_09_192815) do
+ActiveRecord::Schema.define(version: 2019_06_11_120900) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,16 @@ ActiveRecord::Schema.define(version: 2019_06_09_192815) do
     t.string "title"
     t.date "hour"
     t.boolean "completed", default: false
+    t.boolean "check1"
+    t.boolean "check2"
+    t.boolean "check3"
+    t.boolean "check4"
+    t.boolean "check5"
+    t.boolean "check6"
+    t.boolean "check7"
+    t.boolean "check8"
+    t.text "comment2"
+    t.text "comment3"
     t.index ["boat_id"], name: "index_bookings_on_boat_id"
     t.index ["package_id"], name: "index_bookings_on_package_id"
   end
