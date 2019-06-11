@@ -15,8 +15,8 @@ if (datepickerDiv) {
       enableTime: true,
       noCalendar: true,
       dateFormat: "H:i",
-      minDate: "16:00",
-      maxDate: "22:30",
+      minDate: "6:00",
+      maxDate: "23:00",
   })
 }
 

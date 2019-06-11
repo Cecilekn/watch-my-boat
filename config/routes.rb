@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :bookings, only: [:show, :update]
+  resources :bookings, only: [:show, :edit, :update]
 
   namespace :manager do
     resource :dashboard, only: [:show]

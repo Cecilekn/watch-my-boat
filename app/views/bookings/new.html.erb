@@ -1,5 +1,8 @@
+<!-- a priori cette vue est inutile, on pourra la supprimer -->
+
 <div class="container">
   <h1>Réserver l'offre <%= @package.title %></h1>
+  <h2>prévenir MAC si cette page s'affiche</h2>
 
   <%= simple_form_for([@package, @booking]) do |f| %>
   <%= f.input :date %>
@@ -8,4 +11,30 @@
   <%= f.submit "Confirmer la réservation", class: "button" %>
   <% end %>
 
+</div>
+
+<!-- format avec la belle modal de Célia -->
+
+<button type="button" class="call-button-2" data-toggle="modal" data-target="#exampleModal">
+booking
+</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Quand souhaitez-vous naviguer ?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+        <%= simple_form_for([@package, @booking]) do |f| %>
+          <%= f.input :date, :label => "Date :", as: :string, required: true, input_html: {class: "datepicker"} %>
+          <%= f.input :hour, :label => "Heure :", as: :string, required: true, input_html: {class: "timepicker"} %>
+          <%= f.button :submit, "Valider", class: "call-button" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
