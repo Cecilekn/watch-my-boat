@@ -41,10 +41,6 @@ ActiveRecord::Schema.define(version: 2019_06_11_153044) do
     t.datetime "updated_at", null: false
     t.string "title"
     t.boolean "completed", default: false
-    t.integer "amount_cents", default: 0, null: false
-    t.jsonb "payment"
-    t.boolean "paid", default: false
-    t.datetime "date"
     t.boolean "check1"
     t.boolean "check2"
     t.boolean "check3"
@@ -55,6 +51,10 @@ ActiveRecord::Schema.define(version: 2019_06_11_153044) do
     t.boolean "check8"
     t.text "comment2"
     t.text "comment3"
+    t.integer "amount_cents", default: 0, null: false
+    t.jsonb "payment"
+    t.boolean "paid", default: false
+    t.datetime "date"
     t.index ["boat_id"], name: "index_bookings_on_boat_id"
     t.index ["package_id"], name: "index_bookings_on_package_id"
   end
