@@ -1,9 +1,18 @@
 <div class="banner">
-  <div class="title">
-    <h1><strong>Naviguez, on s'occupe du reste.</strong></h1>
-    <h4>Toute l'année, votre concierge veille sur votre bateau</h4>
-    <br>
-    <%= link_to "Abonnez-vous", new_user_registration_path, class: "button" %>
+  <div class="home-card">
+    <h2 class="tagline"><strong>Naviguez,
+      <br> on s'occupe du reste.</strong></h2>
+    <h5 class=sub-tagline>Toute l'année, votre concierge veille sur votre bateau.</h5>
+    <ul class="home-list">
+      <li> <i class="fas fa-check"></i> Visite mensuelle avec photo et compte-rendu</li>
+      <li><i class="fas fa-check"></i> Accès direct à votre concierge 24h/24</li>
+      <li><i class="fas fa-check"></i> Accès aux services premium</li>
+    </ul>
+    <div class="home-price-card">
+      <h5 class="home-price">dès 19,99€</h5>
+      <p>par mois</p>
+    </div>
+    <%= link_to "Abonnez-vous", new_user_registration_path, class: "btn btn-primary btn-cent" %>
   </div>
 </div>
 

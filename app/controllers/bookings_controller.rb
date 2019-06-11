@@ -44,11 +44,11 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
-    redirect_to booking_path(@booking)
+    redirect_to dashboard_path
     BookingMailer.monthly_visit(@booking).deliver_now
   end
 
   def booking_params
-    params.require(:booking).permit(:date)
+    params.require(:booking).permit(:title, :date, :comment, :comment2, :comment3, :check1, :check2, :check3, :check4, :check5, :check6, :check7, :check8)
   end
 end

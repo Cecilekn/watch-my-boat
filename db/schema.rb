@@ -45,6 +45,16 @@ ActiveRecord::Schema.define(version: 2019_06_11_153044) do
     t.jsonb "payment"
     t.boolean "paid", default: false
     t.datetime "date"
+    t.boolean "check1"
+    t.boolean "check2"
+    t.boolean "check3"
+    t.boolean "check4"
+    t.boolean "check5"
+    t.boolean "check6"
+    t.boolean "check7"
+    t.boolean "check8"
+    t.text "comment2"
+    t.text "comment3"
     t.index ["boat_id"], name: "index_bookings_on_boat_id"
     t.index ["package_id"], name: "index_bookings_on_package_id"
   end

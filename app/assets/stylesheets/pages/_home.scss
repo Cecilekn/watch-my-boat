@@ -1,15 +1,69 @@
 // Specific CSS for your home-page
-.title {
-  text-align: center;
-  padding-top: 180px;
-  padding-right: 660px;
-  padding-left: 40px;
-  color: white;
+.home-card {
+  width: 430px;
+  background-color: white;
+  opacity: 0.9;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12) !important;
+  color: black;
+  text-align: left;
+  padding: 32px;
+  margin-left: 64px;
+  border-radius: 10px;
 }
 
 .banner {
-  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url("https://images.pexels.com/photos/1223650/pexels-photo-1223650.jpeg?cs=srgb&dl=adventure-boat-enjoyment-1223650.jpg&fm=jpg");
+  background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url("background-image-home");
   background-size: cover;
   background-position: center;
-  height: 130vh;
+  padding-top: 132px;
+  height: 100vh;
+}
+
+.home-list {
+  margin: 18px 0px;
+  text-align: left;
+  list-style-type: none;
+  padding-inline-start: 8px;
+}
+
+.home-list li {
+  margin: 18px 0px;
+  color: hsl(0, 0%, 45%);
+}
+
+.tagline {
+  font-size: 32px;
+  padding-bottom: 8px;
+  color: hsl(0, 0%, 13%);
+  font-weight: 700;
+}
+
+.sub-tagline {
+  padding-bottom: 8px;
+  color: hsl(0, 0%, 29%);
+  font-weight: 400;
+}
+
+
+.btn-cent {
+  width: 100%;
+  margin-top: 16px;
+  background: #0092BC;
+  // background: #3D4F66;
+  border: 1px solid #0092BC;
+  font-size: 24px;
+}
+
+.home-price-card {
+  display: flex;
+  margin-top: 40px;
+  align-items: baseline;
+  color: hsl(0, 0%, 29%);
+  font-weight: 400;
+}
+
+.home-price {
+  font-size: 24px;
+  font-weight: 400;
+  margin-right: 10px;
 }
