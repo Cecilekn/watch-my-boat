@@ -1,0 +1,68 @@
+.manager-dashboard {
+  color: #1B5456;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100vh;
+  padding: 0;
+}
+
+.manager-dashboard-sidebar {
+  width: 25vh;
+  height: 100vh;
+  background-color: #FFD582;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding-top: 104px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  justify-content: center
+}
+
+.manager-dashboard-menu {
+  margin-left: 24px;
+}
+
+.dashboard-menu-icon {
+  height: 16px;
+  width: 16px;
+}
+
+.manager-dashboard-part-right {
+
+  background-color: #FEF5ED;
+  width: 109vh;
+  margin-right: 0;
+  padding-top: 8px;
+  padding-left: 20px;
+  padding-right: 24px;
+}
+
+.booking-card {
+  height: 224px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.booking-card-img {
+  width: 224px;
+  height: 224px;
+  object-fit: cover;
+  border-radius: 10px 0 0 10px;
+  margin-top: 0;
+  margin-left: 0;
+  padding: 0;
+}
+
+.booking-card-info {
+  width: 304px;
+  margin: 16px 0 0 56px;
+}
+
+.booking-card-cta {
+  margin: auto;
+}
