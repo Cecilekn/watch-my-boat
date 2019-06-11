@@ -5,4 +5,6 @@ class Booking < ApplicationRecord
   has_many :pictures, dependent: :destroy
 
   validates :date, presence: true
+
+  monetize :amount_cents
 end

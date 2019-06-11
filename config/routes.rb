@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :packages, only: [:index, :show] do
     resources :bookings, only: [:new, :create] do
       resources :tasks, only: [:create, :index]
+      resources :payments, only: [:new, :create]
     end
   end
 
