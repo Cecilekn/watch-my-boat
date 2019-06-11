@@ -2,24 +2,24 @@
 #caroussel-container{
   position: relative;
   width: 100%;
-  height: 420px;
+  height: 500px;
   margin: 40px 0px 100px 0px;
   padding: 0;
 }
 
 #carousel{
   position: relative;
-  height: 400px;
+  height: 500px;
   top: 50%;
   transform: translateY(-50%);
   overflow: hidden;
 
   div{
     position: absolute;
-    // transition: transform 1s, left 1s, opacity 1s, z-index 0s;
     opacity: 1;
+    transition: transform 1s, left 1s, opacity 1s, z-index 0s;
 
-    // &.hideLeft{
+    // &.hidePrevThird{
     //   left: 0%;
     //   opacity: 0;
     //   transform: translateY(50%) translateX(-50%);
@@ -29,43 +29,33 @@
     //   background-position: center;
     // }
 
-    &.hideRight{
-      left: 100%;
-      opacity: 1;
+    &.hidePrevSecond{
+      z-index: 4;
+      opacity: 0;
+      left: 15%;
       transform: translateY(50%) translateX(-50%);
-      width: 200px;
+      width: 100px;
       height: 200px;
       background-size: cover;
       background-position: center;
     }
 
-    // &.prev{
-    //   z-index: 5;
-    //   left: 30%;
-    //   transform: translateY(50px) translateX(-50%);
-    //   width: 300px;
-    //   height: 300px;
-    //   background-size: cover;
-    //   background-position: center;
-    // }
-
-    // &.prevLeftSecond{
-    //   z-index: 4;
-    //   left: 15%;
-    //   transform: translateY(50%) translateX(-50%);
-    //   opacity: .7;
-    //   width: 200px;
-    //   height: 200px;
-    //   background-size: cover;
-    //   background-position: center;
-    // }
+    &.prev{
+      z-index: 5;
+      left: 30%;
+      transform: translateY(50px) translateX(-50%);
+      width: 250px;
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+    }
 
     &.selected{
       z-index: 10;
       left: 50%;
       transform: translateY(0px) translateX(-50%);
-      width: 400px;
-      height: 400px;
+      width: 350px;
+      height: 500px;
       background-size: cover;
       background-position: center;
     }
@@ -74,22 +64,35 @@
       z-index: 5;
       left: 70%;
       transform: translateY(50px) translateX(-50%);
-      width: 300px;
-      height: 300px;
+      width: 250px;
+      height: 400px;
       background-size: cover;
       background-position: center;
     }
 
-    &.nextRightSecond{
+    &.hideNextSecond{
       z-index: 4;
+      opacity: 0;
       left: 85%;
       transform: translateY(50%) translateX(-50%);
-      opacity: .7;
-      width: 200px;
+      width: 100px;
       height: 200px;
       background-size: cover;
       background-position: center;
     }
+
+    // &.hideNextThird{
+    //   left: 0%;
+    //   opacity: 0;
+    //   transform: translateY(50%) translateX(-50%);
+    //   width: 200px;
+    //   height: 200px;
+    //   background-size: cover;
+    //   background-position: center;
+    // }
+  }
+  h2 {
+    color: white;
   }
 }
 
@@ -98,4 +101,37 @@
   left: 50%;
   transform: translateX(-50%);
   bottom: -50px;
+}
+
+.button-none{
+  display: none;
+}
+
+.caroussel-card-button{
+  background: white;
+  color: #2B7799;
+  border: 1px solid #2B7799;
+  padding: 8px 20px;
+  border-radius: 10px;
+  transition: background-color .3s ease-in-out;
+  -moz-transition: background-color .3s ease-in-out;
+  -webkit-transition: background-color .3s ease-in-out;
+  &:hover{
+    text-decoration: none;
+    background: #2B7799;
+    color: white;
+    border: 1px solid #2B7799;
+  }
+}
+
+.caroussel-card{
+  position: relative;
+  .caroussel-card-button{
+    position: absolute;
+    top: 48%;
+  }
+  h2 {
+    position: absolute;
+    top: 38%;
+  }
 }

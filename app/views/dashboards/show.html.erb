@@ -41,30 +41,6 @@
         <% end %>
       <% end %>
     </div>
-    <div class="dashboard-packages">
-      <h1>Nos offres</h1>
-      <div id="caroussel-container">
-        <div id="carousel">
-          <div class="selected" style="background-image: url(<%= asset_path 'hivernage.jpg' %>)">
-          </div>
-
-          <div class="next" style="background-image: url(<%= asset_path 'maintenance.jpg' %>)">
-          </div>
-
-          <div class="nextRightSecond" style="background-image: url(<%= asset_path 'convoyage.jpg' %>)">
-          </div>
-
-          <div class="hideRight" style="background-image: url(<%= asset_path 'sortie.jpg' %>)">
-          </div>
-
-        </div>
-
-        <div class="caroussel-buttons">
-          <button id="prev", class="button">Prev</button>
-          <button id="next" class = "button">Next</button>
-        </div>
-      </div>
-    </div>
   </div>
 
 
@@ -147,5 +123,37 @@
       <img src="https://www.burgessyachts.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00004680_main.jpg" alt="">
     </div>
   </div>
+
+  <div class="dashboard-packages">
+      <h1>Sélectionner l'une de nos offres</h1>
+      <div id="caroussel-container">
+        <div id="carousel">
+          <div class="prev caroussel-card" style="background-image: url(<%= asset_path @offre1.photo %>)">
+            <h2><%= @offre1.title %></h2>
+            <%= link_to "Voir", package_path(@offre1), class: "button-none caroussel-card-button" %>
+          </div>
+
+          <div class="selected caroussel-card" style="background-image: url(<%= asset_path @offre2.photo %>)">
+            <h2><%= @offre2.title %></h2>
+            <%= link_to "Voir", package_path(@offre2), class: "caroussel-card-button" %>
+          </div>
+
+          <div class="next caroussel-card" style="background-image: url(<%= asset_path @offre3.photo %>)">
+            <h2><%= @offre3.title %></h2>
+            <%= link_to "Voir", package_path(@offre3), class: "button-none caroussel-card-button" %>
+          </div>
+
+          <div class="hideNextSecond caroussel-card" style="background-image: url(<%= asset_path @offre4.photo %>)">
+            <h2><%= @offre4.title %></h2>
+            <%= link_to "Voir", package_path(@offre4), class: "button-none caroussel-card-button" %>
+          </div>
+        </div>
+
+        <div class="caroussel-buttons">
+          <button id="prev", class="button">Prev</button>
+          <button id="next" class = "button">Next</button>
+        </div>
+      </div>
+    </div>
 
 </div>

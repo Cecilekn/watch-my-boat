@@ -14,11 +14,11 @@
   color: #1B5456;
 }
 
-.dashboard-activity-packages {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 90vh;
-}
+// .dashboard-activity-packages {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+//   height: 90vh;
+// }
 
 .dashboard-activity {
   color: #1B5456;
@@ -28,6 +28,9 @@
 
 .dashboard-packages {
   padding: 24px;
+  h1{
+    text-align: center;
+  }
 }
 
 

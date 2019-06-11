@@ -11,19 +11,29 @@ function moveToSelected(element) {
 
   var next = $(selected).next();
   var prev = $(selected).prev();
-  var prevSecond = $(prev).prev();
-  var nextSecond = $(next).next();
+  var hidePrevSecond = $(prev).prev();
+  var hideNextSecond = $(next).next();
 
   $(selected).removeClass().addClass("selected");
 
   $(prev).removeClass().addClass("prev");
   $(next).removeClass().addClass("next");
 
-  $(nextSecond).removeClass().addClass("nextRightSecond");
-  $(prevSecond).removeClass().addClass("prevLeftSecond");
+  $(hideNextSecond).removeClass().addClass("hideNextSecond");
+  $(hidePrevSecond).removeClass().addClass("hidePrevSecond");
 
-  $(nextSecond).nextAll().removeClass().addClass('hideRight');
-  $(prevSecond).prevAll().removeClass().addClass('hideLeft');
+  // $(nextSecond).nextAll().removeClass().addClass('hidePrevSecond');
+  // $(prevSecond).prevAll().removeClass().addClass('hideNextSecond');
+
+  const buttons = document.querySelectorAll(".caroussel-card-button");
+  buttons.forEach((button) => {
+    if (button.parentNode.classList.contains("selected")){
+      button.classList.remove("button-none");
+    }
+    else {
+      button.classList.add("button-none");
+    }
+  })
 }
 
 export { moveToSelected }
