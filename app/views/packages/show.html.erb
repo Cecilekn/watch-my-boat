@@ -29,7 +29,7 @@
                   <p class="show-packages-card-text-subtitle">pour l'ensemble des prestations</p>
                 </div>
                 <div class="show-packages-card-price">
-                  <p><%= @package.price_cents/100 %> <%=  @package.price_currency %></p>
+                  <p><%= @package.price %>€</p>
                 </div>
               </div>
             </div>
@@ -52,9 +52,8 @@
               </div>
               <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
                 <%= simple_form_for([@package, @booking]) do |f| %>
-                  <%= f.input :date, :label => "Date :", as: :string, required: true, input_html: {class: "datepicker"} %>
-                  <%= f.input :hour, :label => "Heure :", as: :string, required: true, input_html: {class: "timepicker"} %>
-                  <%= f.button :submit, "Valider", class: "call-button" %>
+                  <%= f.input :date, :label => "Date :", as: :string, required: true, input_html: {class: "datetimepicker"} %>
+                  <%= f.button :submit, "Payer", class: "call-button", id: 'toto' %>
                 <% end %>
               </div>
             </div>

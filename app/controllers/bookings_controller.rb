@@ -26,10 +26,9 @@ class BookingsController < ApplicationController
       @booking.title = "#{@package.title}"
       @booking.package = @package
       @booking.boat = @boat
+      @booking.amount = @package.price
       if @booking.save
-        redirect_to dashboard_path
-      else
-        render 'bookings/new'
+        redirect_to new_package_booking_payment_path(@package, @booking)
       end
     end
   end
@@ -50,6 +49,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:title, :date, :hour, :comment, :comment2, :comment3, :check1, :check2, :check3, :check4, :check5, :check6, :check7, :check8)
+    params.require(:booking).permit(:title, :date, :comment, :comment2, :comment3, :check1, :check2, :check3, :check4, :check5, :check6, :check7, :check8)
   end
 end

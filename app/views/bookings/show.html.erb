@@ -1,1 +1,7 @@
-<h1>Show du booking</h1>
+<h1>Booking</h1>
+
+<ul>
+  <li>Status: <%= @booking.paid ? "Payé" : "En attente de paiement" %></li>
+  <li>Pack: <%= @booking.package.title %></li>
+  <li>Montant: <%= @booking.amount %>€</li>
+<ul>

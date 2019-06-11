@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_11_120900) do
+ActiveRecord::Schema.define(version: 2019_06_11_153044) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,14 +35,16 @@ ActiveRecord::Schema.define(version: 2019_06_11_120900) do
 
   create_table "bookings", force: :cascade do |t|
     t.bigint "boat_id"
-    t.date "date"
     t.bigint "package_id"
     t.string "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
-    t.date "hour"
     t.boolean "completed", default: false
+    t.integer "amount_cents", default: 0, null: false
+    t.jsonb "payment"
+    t.boolean "paid", default: false
+    t.datetime "date"
     t.boolean "check1"
     t.boolean "check2"
     t.boolean "check3"
@@ -81,14 +83,13 @@ ActiveRecord::Schema.define(version: 2019_06_11_120900) do
   create_table "packages", force: :cascade do |t|
     t.string "title"
     t.string "description"
-    t.integer "price_cents"
-    t.string "price_currency"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
     t.bigint "dimension_id"
     t.bigint "category_id"
     t.string "kind"
+    t.integer "price_cents", default: 0, null: false
     t.index ["category_id"], name: "index_packages_on_category_id"
     t.index ["dimension_id"], name: "index_packages_on_dimension_id"
   end
