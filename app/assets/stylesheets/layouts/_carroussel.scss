@@ -18,6 +18,10 @@
     position: absolute;
     opacity: 1;
     transition: transform 1s, left 1s, opacity 1s, z-index 0s;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
 
     // &.hidePrevThird{
     //   left: 0%;
@@ -121,17 +125,5 @@
     background: #2B7799;
     color: white;
     border: 1px solid #2B7799;
-  }
-}
-
-.caroussel-card{
-  position: relative;
-  .caroussel-card-button{
-    position: absolute;
-    top: 48%;
-  }
-  h2 {
-    position: absolute;
-    top: 38%;
   }
 }
