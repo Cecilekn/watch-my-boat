@@ -115,8 +115,7 @@ puts "All services created"
 abo1 = Package.new(
   title: "Abonnement Watch My Boat",
   description: "Tous les mois, votre concierge effectue une visite de contrôle sur votre bateau et vous informe sur son état extérieur.",
-  price_cents: 1900,
-  price_currency: "EUR",
+  price: 19.00,
   kind: "abonnement"
   )
 abo1.category = moteur
@@ -126,8 +125,7 @@ abo1.save!
 abo2 = Package.new(
   title: "Abonnement Watch My Boat",
   description: "Tous les mois, votre concierge effectue une visite de contrôle sur votre bateau et vous informe sur son état extérieur.",
-  price_cents: 2900,
-  price_currency: "EUR",
+  price: 29.00,
   kind: "abonnement"
   )
 abo2.category = moteur
@@ -137,8 +135,7 @@ abo2.save!
 abo3 = Package.new(
   title: "Abonnement Watch My Boat",
   description: "Tous les mois, votre concierge effectue une visite de contrôle sur votre bateau et vous informe sur son état extérieur.",
-  price_cents: 3900,
-  price_currency: "EUR",
+  price: 39.00,
   kind: "abonnement"
   )
 abo3.category = moteur
@@ -148,8 +145,7 @@ abo3.save!
 abo4 = Package.new(
   title: "Abonnement Watch My Boat",
   description: "Tous les mois, votre concierge effectue une visite de contrôle sur votre bateau et vous informe sur son état extérieur.",
-  price_cents: 1500,
-  price_currency: "EUR",
+  price: 15.00,
   kind: "abonnement"
   )
 abo4.category = voilier
@@ -159,8 +155,7 @@ abo4.save!
 abo5 = Package.new(
   title: "Abonnement Watch My Boat",
   description: "Tous les mois, votre concierge effectue une visite de contrôle sur votre bateau et vous informe sur son état extérieur.",
-  price_cents: 2500,
-  price_currency: "EUR",
+  price: 25.00,
   kind: "abonnement"
   )
 abo5.category = voilier
@@ -170,8 +165,7 @@ abo5.save!
 abo6 = Package.new(
   title: "Abonnement Watch My Boat",
   description: "Tous les mois, votre concierge effectue une visite de contrôle sur votre bateau et vous informe sur son état extérieur.",
-  price_cents: 3500,
-  price_currency: "EUR",
+  price: 35.00,
   kind: "abonnement"
   )
 abo6.category = voilier
@@ -182,8 +176,7 @@ abo6.save!
 offre1 = Package.new(
   title: "Convoyage",
   description: "Si vous souhaitez naviguer au départ ou repartir d’un autre port que celui de votre port d’attache et gagner du temps sur vos vacances, nous emmènerons ou ramènerons votre bateau pour vous.",
-  price_cents: 19900,
-  price_currency: "EUR",
+  price: 199.00,
   kind: "offre"
   )
 offre1.photo = 'convoyage.jpg'
@@ -192,8 +185,7 @@ offre1.save!
 offre2 = Package.new(
   title: "Sortie",
   description: "Partez l'esprit serein, nous nous occupons de préparer votre bateau avant votre arrivée!",
-  price_cents: 15000,
-  price_currency: "EUR",
+  price: 150.00,
   kind: "offre"
   )
 offre2.photo = 'sortie.jpg'
@@ -202,8 +194,7 @@ offre2.save!
 offre3 = Package.new(
   title: "Maintenance",
   description: "Un pépin sur votre bateau. Votre concierge intervient pour divers travaux de bricolage.",
-  price_cents: 20500,
-  price_currency: "EUR",
+  price: 205.00,
   kind: "offre"
   )
 offre3.photo = 'maintenance.jpg'
@@ -212,8 +203,7 @@ offre3.save!
 offre4 = Package.new(
   title: "Hivernage",
   description: "Nettoyage intérieur et extérieur avant et après l’hiver. Hivernage des voiles et remontage, hivernage des circuits d’eau, du moteur de l’annexe",
-  price_cents: 11000,
-  price_currency: "EUR",
+  price: 110.00,
   kind: "offre"
   )
 offre4.photo = 'hivernage.jpg'
@@ -222,8 +212,7 @@ offre4.save!
 rdv_concierge = Package.new(
   title: "Appel avec votre concierge",
   description: "Première prise de contact",
-  price_cents: 0,
-  price_currency: "EUR",
+  price: 0,
   kind: "autre"
   )
 

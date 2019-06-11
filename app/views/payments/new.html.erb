@@ -1,0 +1,18 @@
+<h1>Paiement du Pack <%= @booking.title %></h1>
+<%= form_tag  package_booking_payments_path(@package, @booking) do %>
+  <article>
+    <label class="amount">
+      <span>Montant: <%= @booking.amount %>€</span>
+    </label>
+  </article>
+
+  <!-- Commented for the lecture, remove comments. -->
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    data-name="My Package"
+    data-email="<%= current_user.email %>"
+    data-description="Package <%= @booking.title %>"
+    data-amount="<%= @booking.amount_cents %>"
+    data-currency="<%= @booking.amount.currency %>"></script>
+
+<% end %>

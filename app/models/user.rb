@@ -13,6 +13,8 @@ class User < ApplicationRecord
   has_many :managed_boats, class_name: 'Boat', foreign_key: 'manager_id', dependent: :nullify
   has_many :managed_providers, class_name: 'Provider', foreign_key: 'manager_id', dependent: :destroy
   has_many :tasks, class_name: 'Task', foreign_key: 'manager_id', dependent: :destroy
+  has_many :bookings, through: :owned_boats
+  has_many :bookinfs, through: :managed_boats
 
   validates :first_name, :last_name, :phone_number, :email, :address, :photo, presence: true
   validates :email, uniqueness: true

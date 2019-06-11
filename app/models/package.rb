@@ -6,4 +6,5 @@ class Package < ApplicationRecord
   belongs_to :category, optional: true
 
   validates :kind, inclusion: { in: ["abonnement", "offre", "autre"] }
+  monetize :price_cents
 end
