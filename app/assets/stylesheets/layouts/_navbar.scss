@@ -32,3 +32,17 @@
 .nav-link:hover {
   color: #FFD582 !important;
 }
+
+.dropdown-menu {
+  border-radius: 2px;
+  border: none;
+}
+
+a.dropdown-item {
+  color: #227799;
+}
+
+a.dropdown-item:hover {
+  color: white;
+  background: #FFD582;
+}
