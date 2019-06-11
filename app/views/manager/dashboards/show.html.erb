@@ -1,11 +1,30 @@
-<h1>Dashboard du concierge</h1>
+<div class="manager-dashboard">
 
+  <div class="manager-dashboard-sidebar">
+    <div class="manager-dashboard-menu">
+      <h5>Activités</h5>
+      <h5>Bateaux</h5>
+      <h5>Propriétaires</h5>
+    </div>
+  </div>
 
+  <div class="manager-dashboard-part-right">
+    <h1>Tableau de bord</h1>
+    <p>Bonjour <%= current_user.first_name %>, bienvenue sur Watch my Boat !</p>
+    <p>Vous avez <%= @bookings.count %> missions en cours.</p>
 
-<% @bookings.each do |booking| %>
-  <p>Offre : <%=  booking.title %></p>
-  <p>Réservée par : <%= @boat.owner.first_name %></p>
-  <p>A effectuer pour le : <%= booking.date %></p>
-  <p>Statut : <%= booking.completed ? "Fait" : "A faire" %></p>
-  <br>
-<% end %>
+    <% @bookings.each do |booking| %>
+
+      <div class="booking-card">
+        <div class="booking-card-img">
+          <%= cl_image_tag @boat.photo %>
+        </div>
+        <p>Offre : <%=  booking.title %></p>
+        <p>Réservée par : <%= @boat.owner.first_name %></p>
+        <p>A effectuer pour le : <%= booking.date %></p>
+        <p>Statut : <%= booking.completed ? "Fait" : "A faire" %></p>
+      </div>
+    <% end %>
+  </div>
+
+</div>
