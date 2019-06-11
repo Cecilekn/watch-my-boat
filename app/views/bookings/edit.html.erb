@@ -1,0 +1,23 @@
+<h1>Edit du booking</h1>
+<div class="title-page">
+  <%= @booking.boat.name %>
+</div>
+<div class="infos-page">
+  <%= @booking.boat.owner.first_name %>
+  <%= @booking.boat.address %>
+  <%= @booking.date %>
+  <%= @booking.title %>
+  <%= @booking.boat.owner.phone_number %>
+</div>
+<div class="exterieur-form">
+  <p>Inspection extérieure</p>
+  <div class="form-inputs">
+    <%#= simple_form_for(@tasks) do |f| %>
+    <%#= f.input :name, label: "" %>
+    <%#= f.input :address, label: "" %>
+  </div>
+  <div class="form-actions">
+    <%#= f.button :submit, "Suivant" %>
+  </div>
+</div>
+
