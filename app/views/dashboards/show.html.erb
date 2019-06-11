@@ -40,34 +40,19 @@
       <% end %>
     </div>
     <div class="dashboard-packages">
+      <h1>Nos offres</h1>
       <div id="caroussel-container">
         <div id="carousel">
-
-           <div class="hideLeft">
-            <%= image_tag "maintenance.jpg" %>
+          <div class="selected" style="background-image: url(<%= asset_path 'hivernage.jpg' %>)">
           </div>
 
-          <div class="prevLeftSecond">
-            <%= image_tag "sortie.jpg" %>
+          <div class="next" style="background-image: url(<%= asset_path 'maintenance.jpg' %>)">
           </div>
 
-          <div class="prev">
-            <%= image_tag "convoyage.jpg" %>
+          <div class="nextRightSecond" style="background-image: url(<%= asset_path 'convoyage.jpg' %>)">
           </div>
 
-          <div class="selected caroussel-img" style="background-image: url(<%= asset_path 'hivernage.jpg' %>)">
-          </div>
-
-          <div class="next">
-            <%= image_tag "maintenance.jpg" %>
-          </div>
-
-          <div class="nextRightSecond">
-            <%= image_tag "convoyage.jpg" %>
-          </div>
-
-          <div class="hideRight">
-            <%= image_tag "maintenance.jpg" %>
+          <div class="hideRight" style="background-image: url(<%= asset_path 'sortie.jpg' %>)">
           </div>
 
         </div>

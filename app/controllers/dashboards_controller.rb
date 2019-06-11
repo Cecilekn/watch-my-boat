@@ -2,6 +2,10 @@ class DashboardsController < ApplicationController
   def show
     @boat = current_user.owned_boats.first
     @bookings = @boat.bookings
+    @offre1 = Package.where(kind: "offre", title: "Convoyage")
+    @offre2 = Package.where(kind: "offre", title: "Sortie")
+    @offre3 = Package.where(kind: "offre", title: "Maintenance")
+    @offre4 = Package.where(kind: "offre", title: "Hivernage")
     @next_booked_offers = []
     @bookings.each do |booking|
       @next_booked_offers << booking if booking.package.kind == "offre" && booking.date > Date.today
