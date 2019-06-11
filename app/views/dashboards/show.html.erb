@@ -31,7 +31,9 @@
     <div class="dashboard-activity">
       <h1>Dernières actualités</h1>
       <br>
-      <p>> La dernière visite de votre concierge date du <%= @last_visit.date.strftime("%d-%m-%y") %>.</p>
+      <% if @last_visit.present? %>
+        <p>> La dernière visite de votre concierge date du <%= @last_visit.date.strftime("%d-%m-%y") %>.</p>
+      <% end %>
       <p>> Sa prochaine visite est programmée pour le <%= @next_visit.date.strftime("%d-%m-%y") %>.</p>
       <% if !@next_booked_offers.nil? %>
         <% @next_booked_offers.each do |offer| %>
