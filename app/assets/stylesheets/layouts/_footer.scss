@@ -15,6 +15,7 @@
 
 .footer h5 {
   font-size: 18px;
+  font-weight: 700;
 }
 
 .footer
@@ -23,6 +24,11 @@
   font-size: 12px;
   padding: 0;
   list-style-type: none;
+}
+
+.footer-elements li {
+  padding: 4px 0;
+  font-size: 12px;
 }
 
 .footer-elements a {
@@ -37,6 +43,18 @@
   color: #FFD582;
 }
 
-#button-newsletter {
-  padding: 4px;
+.footer {
+  #button-newsletter {
+    padding: 4px;
+    border: none;
+    color: #3D3D3D;
+    border-radius: 8px;
+    height: 32px;
+  }
+  #name {
+    border-radius: 8px;
+    border: none;
+    height: 32px;
+  }
 }
+
