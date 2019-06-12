@@ -31,7 +31,7 @@
           <p><img src="https://image.flaticon.com/icons/svg/1142/1142792.svg" height="24px" width="24px" alt=""><strong> À effectuer pour le : </strong><%= booking.date %></p>
         </div>
         <div class="booking-card-cta">
-          <p class="button">Gérer</p>
+          <%= link_to "Gérer", edit_booking_path(booking) %>
         </div>
       </div>
     <% end %>

@@ -158,7 +158,7 @@
 
             <%= f.input :comment3, label: "Commentaire", placeholder: "Rédiger ici votre commentaire" %>
             <p>Photos</p>
-            <%= @booking.pictures.photo %>
+
             <p>Commentaire général</p>
             <%= f.input :comment, placeholder: "Rédiger ici votre commentaire" %>
         </div>
@@ -166,6 +166,17 @@
           <%= f.button :submit, "Valider" %>
         </div>
           <% end %>
+              <%= simple_form_for([@booking, Picture.new]) do |f| %>
+                <%= f.input :photo, label: "Photo" %>
+                <%= f.input :photo_cache, as: :hidden %>
+                <%= f.submit "Uploader vos photos une par une!" %>
+              <% end %>
+              <br>
+              <div class="pictures-container">
+                <% @booking.pictures.each do |picture| %>
+                  <%= cl_image_tag picture.photo %>
+                <% end %>
+              </div>
       </div>
     </div>
   </div>
