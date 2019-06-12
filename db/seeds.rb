@@ -348,7 +348,7 @@ visite_mai.save!
 visite_juin = Booking.new(
   title: "Visite de juin",
   completed: false,
-  date: '2019-06-15',
+  date: '2019-06-18',
   comment: ""
   )
 visite_juin.package = abo1
@@ -418,7 +418,7 @@ visite_decembre.save!
 booking1 = Booking.new(
   title: "Préparer mon arrivéé",
   completed: false,
-  date: Date.today,
+  date: '2019-06-14',
   comment: ""
   )
 booking1.package = offre2

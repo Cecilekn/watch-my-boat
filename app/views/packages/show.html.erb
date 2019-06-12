@@ -36,12 +36,21 @@
           </div>
         </div>
         <div class="booking-button">
-          <button type="button" class="button" data-toggle="modal" data-target="#exampleModal">
+
+          <%#= simple_form_for([@package, @booking]) do |f| %>
+            <%#= f.input :date, :label => "Date :", as: :string, required: true, input_html: {class: "datetimepicker"} %>
+            <%#= f.button :submit, "Réserver", class: "call-button" %>
+          <%# end %>
+
+
+
+          <%= link_to "Réserver", package_bookings_path(@package), method: :post, class: "button" %>
+<!--           <button type="button" class="button" data-toggle="modal" data-target="#exampleModal">
           Réserver
-          </button>
+          </button> -->
         </div>
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -51,15 +60,12 @@
                 </button>
               </div>
               <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-                <%= simple_form_for([@package, @booking]) do |f| %>
-                  <%= f.input :date, :label => "Date :", as: :string, required: true, input_html: {class: "datetimepicker"} %>
-                  <%= f.button :submit, "Payer", class: "call-button", id: 'toto' %>
-                <% end %>
+
               </div>
             </div>
           </div>
         </div>
-
+ -->
       </div>
     </div>
 

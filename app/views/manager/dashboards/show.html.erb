@@ -27,7 +27,7 @@
           <p><img src="https://image.flaticon.com/icons/svg/1852/1852551.svg" height="24px" width="24px" alt=""><strong> Bateau : </strong><%=  booking.boat.name %></p>
           <p><img src="https://image.flaticon.com/icons/svg/252/252025.svg" height="24px" width="24px" alt=""><strong> Port : </strong><%=  booking.boat.address %></p>
           <p><img src="https://image.flaticon.com/icons/svg/1077/1077012.svg" height="24px" width="24px" alt=""><strong> Réservée par : </strong><%= @boat.owner.first_name %></p>
-          <p><img src="https://image.flaticon.com/icons/svg/1142/1142792.svg" height="24px" width="24px" alt=""><strong> À effectuer pour le : </strong><%= booking.date %></p>
+          <p><img src="https://image.flaticon.com/icons/svg/1142/1142792.svg" height="24px" width="24px" alt=""><strong> À effectuer pour le : </strong><%= booking.date.strftime("%d-%m-%Y") %></p>
         </div>
         <div class="booking-card-cta">
           <%= link_to "Gérer", edit_booking_path(booking) %>
