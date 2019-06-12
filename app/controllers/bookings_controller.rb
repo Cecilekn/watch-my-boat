@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
       redirect_to dashboard_path
     elsif @package.kind == "offre"
       @boat = current_user.owned_boats.first
-      @booking = Booking.new(booking_params)
+      @booking = Booking.new
       @booking.title = "#{@package.title}"
       @booking.package = @package
       @booking.boat = @boat
@@ -43,9 +43,19 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    @booking.update(booking_params)
-    redirect_to manager_dashboard_path
-    BookingMailer.monthly_visit(@booking).deliver_now
+    package = @booking.package
+    if params[:booking][:test] == "Update date"
+      if @booking.update(booking_params)
+        respond_to do|format|
+          format.html {redirect_to new_package_booking_payment_path(package, @booking) }
+          format.js
+        end
+      end
+    else
+      @booking.update(booking_params)
+      redirect_to manager_dashboard_path
+      BookingMailer.monthly_visit(@booking).deliver_now
+    end
   end
 
 private

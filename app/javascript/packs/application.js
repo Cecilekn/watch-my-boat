@@ -6,6 +6,7 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 import "../plugins/flatpickr";
 import { mosaic } from '../components/mosaic';
 import { moveToSelected } from '../components/carroussel';
+import { newFunction } from "../plugins/flatpickr";
 
 initUpdateNavbarOnScroll();
 fetchWeather();
@@ -41,3 +42,5 @@ $('#next').click(function() {
   moveToSelected('next');
 });
 
+newFunction();
+window.newFunction = newFunction;
