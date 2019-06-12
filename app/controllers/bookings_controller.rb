@@ -1,5 +1,4 @@
 class BookingsController < ApplicationController
-
   def new
     @package = Package.find(params[:package_id])
     @booking = Booking.new
@@ -39,14 +38,17 @@ class BookingsController < ApplicationController
 
   def edit
     @booking = Booking.find(params[:id])
+    @picture = Picture.new
   end
 
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
-    redirect_to dashboard_path
+    redirect_to manager_dashboard_path
     BookingMailer.monthly_visit(@booking).deliver_now
   end
+
+private
 
   def booking_params
     params.require(:booking).permit(:title, :date, :comment, :comment2, :comment3, :check1, :check2, :check3, :check4, :check5, :check6, :check7, :check8)

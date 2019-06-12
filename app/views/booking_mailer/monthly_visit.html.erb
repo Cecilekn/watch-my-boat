@@ -1,3 +1,10 @@
-<h1>Booking#monthly_visit</h1>
-
-<p>Bonjour <%= @user.email %>, voici le compte rendu de votre dernière visite.</p>
+<div class="container">
+  <div class="email-banner">
+    <h1>Watch My Boat</h1>
+    <h2>Visite mensuelle de votre bateau</h2>
+  </div>
+  <div class="email-content">
+    <p>Bonjour <%#= @boat.owner.email %>, votre concierge vient d'effectuer la visite mensuelle de votre bateau.</p>
+    <%#= link_to "Voir le compte-rendu", dashboard_path %>
+  </div>
+</div>
