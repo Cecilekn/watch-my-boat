@@ -1,6 +1,6 @@
 class Manager::DashboardsController < ApplicationController
   def show
     @boat = current_user.managed_boats.first
-    @bookings = @boat.bookings
+    @bookings = @boat.bookings.where(completed: false).order(date: :asc)
   end
 end

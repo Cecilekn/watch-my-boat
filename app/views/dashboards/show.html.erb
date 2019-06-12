@@ -114,22 +114,24 @@
       </div>
     </div>
 
-    <div class="card-info manager-boat-info">
-      <%= cl_image_tag @boat.manager.photo, class: "avatar dropdown-toggle manager-avatar", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-      <h5>Votre manager</h5>
-        <br>
-        <% if @last_visit.comment %>
-          <p> <i>"<%= @last_visit.comment %>" </i></p>
-        <% end %>
+     <% if @last_visit.present? %>
+      <div class="card-info manager-boat-info">
+        <%= cl_image_tag @boat.manager.photo, class: "avatar dropdown-toggle manager-avatar", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <h5>Votre manager</h5>
+          <br>
+          <% if @last_visit.comment %>
+            <p> <i>"<%= @last_visit.comment %>" </i></p>
+          <% end %>
 
-        <% if @last_visit.comment2 %>
-          <p> <i>"<%= @last_visit.comment2 %>" </i></p>
-        <% end %>
+          <% if @last_visit.comment2 %>
+            <p> <i>"<%= @last_visit.comment2 %>" </i></p>
+          <% end %>
 
-        <% if @last_visit.comment3 %>
-          <p> <i>"<%= @last_visit.comment3 %>" </i></p>
-        <% end %>
-    </div>
+          <% if @last_visit.comment3 %>
+            <p> <i>"<%= @last_visit.comment3 %>" </i></p>
+          <% end %>
+      </div>
+    <% end %>
 
   </div>
 

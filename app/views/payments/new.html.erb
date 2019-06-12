@@ -1,18 +1,41 @@
-<h1>Paiement du Pack <%= @booking.title %></h1>
-<%= form_tag  package_booking_payments_path(@package, @booking) do %>
-  <article>
-    <label class="amount">
-      <span>Montant: <%= @booking.amount %>€</span>
-    </label>
-  </article>
+<div class="form-container">
+  <div class="row">
+    <div class="col-8 col-left">
+      <div class="content-left date">
+        <h1>Votre panier</h1>
+        <p>Choisissez votre date et réservez sans plus attendre !</p>
+        <div class="table-date">
+          <p>Offre : <%= @booking.title %></p>
+          <div class="update-booking-date">
+              <%= render 'bookings/update-date', booking: @booking %>
+          </div>
 
-  <!-- Commented for the lecture, remove comments. -->
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-    data-name="My Package"
-    data-email="<%= current_user.email %>"
-    data-description="Package <%= @booking.title %>"
-    data-amount="<%= @booking.amount_cents %>"
-    data-currency="<%= @booking.amount.currency %>"></script>
-
-<% end %>
+          <%= form_tag  package_booking_payments_path(@package, @booking), class: 'd-none', id: 'package-payment-form' do %>
+            <div class="stripe-info">
+              <article>
+                <label class="amount">
+                  <span>Prix TTC : <%= @booking.amount %>€</span>
+                </label>
+              </article>
+            </div>
+            <div class="stripe-button">
+              <!-- Commented for the lecture, remove comments. -->
+              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                data-name="My Package"
+                data-email="<%= current_user.email %>"
+                data-description="Package <%= @booking.title %>"
+                data-amount="<%= @booking.amount_cents %>"
+                data-currency="<%= @booking.amount.currency %>"></script>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-4 col-right-user">
+      <div class="form-text-image">
+        <p>Naviguer sans contrainte</p>
+      </div>
+    </div>
+  </div>
+</div>

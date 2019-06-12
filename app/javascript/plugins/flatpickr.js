@@ -19,20 +19,26 @@ if (datepickerDiv.length > 0) {
       maxDate: "23:00",
   })
 
+
 }
 
-const button = document.querySelector("#toto");
-if (button) {
-  button.disabled = true;
-  flatpickr(".datetimepicker", {
+const newFunction = () => {
+  const buttonDate = document.querySelector("#date-validation");
+  const dateTimePicker = document.querySelector(".datetimepicker");
+
+  if (buttonDate) {
+    buttonDate.disabled = true;
+    flatpickr(".datetimepicker", {
       enableTime: true,
-      // noCalendar: true,
       dateFormat: "Y-m-d H:i",
       minDate: "6:00",
       maxDate: "23:00",
       onChange: function(selectedDates, dateStr, instance){
-          button.disabled = (dateStr == '');
+          buttonDate.disabled = (dateStr == '');
       }
-  })
+    })
+  }
 }
+export { newFunction };
+
 

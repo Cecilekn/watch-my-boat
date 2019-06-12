@@ -6,6 +6,7 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 import "../plugins/flatpickr";
 import { mosaic } from '../components/mosaic';
 import { moveToSelected } from '../components/carroussel';
+import { newFunction } from "../plugins/flatpickr";
 
 initUpdateNavbarOnScroll();
 fetchWeather();
@@ -40,4 +41,10 @@ $('#prev').click(function() {
 $('#next').click(function() {
   moveToSelected('next');
 });
+
+const buttonDate = document.querySelector("#date-validation")
+if (buttonDate){
+  newFunction();
+  window.newFunction = newFunction;
+}
 

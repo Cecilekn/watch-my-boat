@@ -1,0 +1,7 @@
+<%= simple_form_for(booking, remote: true) do |f| %>
+  <div class="form-inline date">
+      <%= f.input :date, :label => "Date : ", as: :string, required: true, input_html: {class: "datetimepicker date"} %>
+      <%= f.hidden_field :test, value: "Update date" %>
+      <%= f.button :submit, "Valider", class: "call-button", id: "date-validation" %>
+  </div>
+<% end %>
