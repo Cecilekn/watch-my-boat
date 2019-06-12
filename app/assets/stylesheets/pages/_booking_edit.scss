@@ -18,11 +18,11 @@
   margin-bottom: 16px;
 }
 
-.form-check-inline .form-check-input {
-  display: none;
+.style-edit-booking .form-check-input {
+  opacity: 0;
 }
 
-.form-check {
+.style-edit-booking .form-check {
   color: lightgrey;
   cursor: pointer;
 }

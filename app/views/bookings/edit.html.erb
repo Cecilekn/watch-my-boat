@@ -29,7 +29,7 @@
       </div>
 
       <div class="visit-form">
-        <div class="form-inputs">
+        <div class="form-inputs style-edit-booking">
           <%= simple_form_for(@booking) do |f| %>
             <div class="visit-form-inside">
               <h2>Inspection extérieure</h2>
@@ -43,12 +43,12 @@
                     <i class="fas fa-check-circle"></i>
                   </label>
                 </div>
-                  <div class="form-check form-check-inline text-orange">
-                    <input class="form-check-input radio_buttons optional" readonly="readonly" type="radio" value="false" name="booking[check1]" id="booking_check1_false">
-                    <label class="collection_radio_buttons" for="booking_check1_false">
-                      <i class="fas fa-exclamation-triangle"></i>
-                    </label>
-                  </div>
+                <div class="form-check form-check-inline text-orange">
+                  <input class="form-check-input radio_buttons optional" readonly="readonly" type="radio" value="false" name="booking[check1]" id="booking_check1_false">
+                  <label class="collection_radio_buttons" for="booking_check1_false">
+                    <i class="fas fa-exclamation-triangle"></i>
+                  </label>
+                </div>
               </fieldset>
 
               <fieldset class="form-group radio_buttons optional booking_check2">
@@ -60,12 +60,12 @@
                     <i class="fas fa-check-circle"></i>
                   </label>
                 </div>
-                  <div class="form-check form-check-inline text-orange">
-                    <input class="form-check-input radio_buttons optional" readonly="readonly" type="radio" value="false" name="booking[check2]" id="booking_check2_false">
-                    <label class="collection_radio_buttons" for="booking_check2_false">
-                      <i class="fas fa-exclamation-triangle"></i>
-                    </label>
-                  </div>
+                <div class="form-check form-check-inline text-orange">
+                  <input class="form-check-input radio_buttons optional" readonly="readonly" type="radio" value="false" name="booking[check2]" id="booking_check2_false">
+                  <label class="collection_radio_buttons" for="booking_check2_false">
+                    <i class="fas fa-exclamation-triangle"></i>
+                  </label>
+                </div>
               </fieldset>
 
               <fieldset class="form-group radio_buttons optional booking_check3">
@@ -77,12 +77,12 @@
                     <i class="fas fa-check-circle"></i>
                   </label>
                 </div>
-                  <div class="form-check form-check-inline text-orange">
-                    <input class="form-check-input radio_buttons optional" readonly="readonly" type="radio" value="false" name="booking[check3]" id="booking_check3_false">
-                    <label class="collection_radio_buttons" for="booking_check3_false">
-                      <i class="fas fa-exclamation-triangle"></i>
-                    </label>
-                  </div>
+                <div class="form-check form-check-inline text-orange">
+                  <input class="form-check-input radio_buttons optional" readonly="readonly" type="radio" value="false" name="booking[check3]" id="booking_check3_false">
+                  <label class="collection_radio_buttons" for="booking_check3_false">
+                    <i class="fas fa-exclamation-triangle"></i>
+                  </label>
+                </div>
               </fieldset>
 
               <fieldset class="form-group radio_buttons optional booking_check4">
@@ -94,12 +94,12 @@
                     <i class="fas fa-check-circle"></i>
                   </label>
                 </div>
-                  <div class="form-check form-check-inline text-orange">
-                    <input class="form-check-input radio_buttons optional" readonly="readonly" type="radio" value="false" name="booking[check4]" id="booking_check4_false">
-                    <label class="collection_radio_buttons" for="booking_check4_false">
-                      <i class="fas fa-exclamation-triangle"></i>
-                    </label>
-                  </div>
+                <div class="form-check form-check-inline text-orange">
+                  <input class="form-check-input radio_buttons optional" readonly="readonly" type="radio" value="false" name="booking[check4]" id="booking_check4_false">
+                  <label class="collection_radio_buttons" for="booking_check4_false">
+                    <i class="fas fa-exclamation-triangle"></i>
+                  </label>
+                </div>
               </fieldset>
 
               <%= f.input :comment2, label: "Commentaire", placeholder: "Rédiger ici votre commentaire" %>
@@ -186,7 +186,6 @@
                 <%= f.button :submit, "Valider" %>
               </div>
             </div>
-
           <% end %>
         </div>
       </div>
