@@ -21,7 +21,7 @@ User.destroy_all
 sebastien = User.new(
   first_name: "Sebastien",
   last_name: "Bureau",
-  email: "seb@gmail.com",
+  email: "chevaliermac@gmail.com",
   password: "123456",
   phone_number: "0607080910",
   address: "Courbevoie",
