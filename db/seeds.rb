@@ -416,9 +416,9 @@ visite_decembre.boat = boat1
 visite_decembre.save!
 
 booking1 = Booking.new(
-  title: "Préparer mon arrivéé",
+  title: "Préparer mon arrivée",
   completed: false,
-  date: '2019-06-14',
+  date: '2019-06-18',
   comment: ""
   )
 booking1.package = offre2
