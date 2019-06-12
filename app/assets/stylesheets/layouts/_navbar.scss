@@ -16,9 +16,24 @@
   flex-grow: 0;
 }
 
+.navbar-brand {
+  padding-bottom: 0rem !important;
+}
+
 .navbar-lewagon .navbar-brand img {
   width: 40px;
-  border-radius: 50%;
+}
+
+.navbar-brand-title {
+  color: white;
+  margin-left: 14px;
+  font-weight: unset;
+  font-size: 1.25rem;
+}
+
+.nav-item {
+  font-weight: unset;
+  font-size: 1.25rem;
 }
 
 .navbar-blue {
@@ -26,8 +41,8 @@
 }
 
 .nav-link {
-  color: white !important;
-  margin-top: 4px;
+    color: white !important;
+    margin-top: 0.2rem;
 }
 
 .nav-link:hover {
