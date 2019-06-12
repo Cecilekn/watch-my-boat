@@ -15,6 +15,7 @@ gem 'rails', '5.2.3'
 gem 'rails-i18n'
 gem 'redis'
 gem 'stripe'
+gem 'postmark-rails'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
@@ -28,7 +29,6 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'letter_opener'
-  gem 'postmark-rails'
 end
 
 group :development, :test do
