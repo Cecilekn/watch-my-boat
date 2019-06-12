@@ -1,10 +1,66 @@
-<div class="container">
-  <div class="email-banner">
-    <h1>Watch My Boat</h1>
-    <h2>Visite mensuelle de votre bateau</h2>
-  </div>
-  <div class="email-content">
-    <p>Bonjour <%#= @boat.owner.email %>, votre concierge vient d'effectuer la visite mensuelle de votre bateau.</p>
-    <%#= link_to "Voir le compte-rendu", dashboard_path %>
-  </div>
-</div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .email-logo {
+        text-align: center;
+        margin-bottom: 12px;
+      }
+
+      .email-content {
+        text-align: center;
+        margin: 0 150px;
+        font-size: 24px;
+        font-family: arial;
+        color: #3D3D3D;
+        border-top: 0.5px solid lightgrey;
+        border-bottom: 0.5px solid lightgrey;
+        padding: 24px 0;
+      }
+
+      .email-content p {
+        text-align: left;
+        margin: 10px;
+      }
+
+      .email-button {
+        padding: 16px;
+        background-color: #FFD582;
+        color: #3D3D3D;
+        border-radius: 8px;
+        font-weight: bold;
+        box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+      }
+
+      .email-content a {
+        text-decoration: none;
+      }
+
+      .div-email-button {
+        padding: 24px;
+        margin-top: 36px;
+      }
+
+
+    </style>
+  </head>
+    <body>
+      <div class="container">
+        <div class="email-logo">
+            <%= image_tag("blue-logo-with-brandname.png") %>
+        </div>
+        <div class="email-content">
+          <p><strong>Bonjour <%= @booking.boat.owner.first_name %>,</strong></p><br>
+          <p><%= @booking.boat.manager.first_name %> vient de terminer la visite mensuelle de votre bateau <strong>"<%= @booking.boat.name %>"</strong>.
+            Retrouvez toutes les photos et le compte-rendu sur votre tableau de bord.</p><br>
+          <p>Merci pour votre confiance,</p>
+          <p>L’équipe Watch My Boat</p>
+
+          <div class="div-email-button">
+            <a href="" class="email-button">Voir le compte-rendu</a>
+          </div>
+
+        </div>
+      </div>
+    </body>
+</html>
