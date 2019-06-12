@@ -8,8 +8,13 @@ class PicturesController < ApplicationController
     @picture = Picture.new(picture_params)
     @booking = Booking.find(params[:booking_id])
     @picture.booking = @booking
-    @picture.save
-    redirect_to edit_booking_path(@booking)
+    if @picture.save
+      @picture.reload
+      respond_to do |format|
+        format.html { redirect_to edit_booking_path(@booking) }
+        format.js
+      end
+    end
   end
 
   def picture_params
