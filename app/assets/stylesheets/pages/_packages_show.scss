@@ -3,6 +3,7 @@
   background-size: cover;
   color: white;
   font-size: 34px;
+  background-position: center;
 }
 
 .booking-button {
@@ -17,7 +18,19 @@
   text-align: center;
 }
 
-.card-show-packages-image {
-  margin-left: 20px;
+.col-left-services {
+  height: 820px;
+  display: flex;
+  align-items: center;
+
 }
+
+.content-left-services {
+  color: #227799;
+  padding: 0 100px;
+}
+
+// .card-show-packages-image {
+//   margin-left: 20px;
+// }
 
