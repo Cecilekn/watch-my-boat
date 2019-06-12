@@ -1,0 +1,40 @@
+.content-left.date{
+  text-align: center;
+}
+
+.form-inline.date {
+  display: flex;
+  margin-top: 100px;
+  align-items: center;
+  justify-content: start;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.datetimepicker.date {
+  width: 400px;
+  margin-left: 5px;
+}
+
+#date-validation {
+  padding: 7px 12px;
+  margin-left: 5px;
+}
+
+.stripe-button{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+// .stripe-button-el{
+//   display: flex;
+//   justify-content: center;
+// }
+.table-date{
+  text-align: left;
+  width: 600px;
+  margin: 70px auto;
+  padding-left: 40px;
+}
+
