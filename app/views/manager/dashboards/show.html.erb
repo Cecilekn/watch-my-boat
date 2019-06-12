@@ -20,7 +20,7 @@
 
       <div class="booking-card">
         <div class="booking-card-img-container">
-          <%= cl_image_tag @boat.photo, class: "booking-card-img" %>
+          <%= cl_image_tag booking.boat.photo, class: "booking-card-img" %>
         </div>
         <div class="booking-card-info">
           <p><img src="https://image.flaticon.com/icons/svg/1096/1096713.svg" height="24px" width="24px" alt=""><strong> Mission : </strong><%=  booking.title %></p>
@@ -30,7 +30,7 @@
           <p><img src="https://image.flaticon.com/icons/svg/1142/1142792.svg" height="24px" width="24px" alt=""><strong> À effectuer pour le : </strong><%= booking.date.strftime("%d-%m-%Y") %></p>
         </div>
         <div class="booking-card-cta">
-          <%= link_to "Gérer", edit_booking_path(booking) %>
+          <%= link_to "Gérer", edit_booking_path(booking), class: "button" %>
         </div>
       </div>
     <% end %>
