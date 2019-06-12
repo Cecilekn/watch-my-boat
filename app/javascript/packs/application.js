@@ -42,5 +42,9 @@ $('#next').click(function() {
   moveToSelected('next');
 });
 
-newFunction();
-window.newFunction = newFunction;
+const buttonDate = document.querySelector("#date-validation")
+if (buttonDate){
+  newFunction();
+  window.newFunction = newFunction;
+}
+
