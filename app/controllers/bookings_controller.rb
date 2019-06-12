@@ -38,6 +38,7 @@ class BookingsController < ApplicationController
 
   def edit
     @booking = Booking.find(params[:id])
+    @picture = Picture.new
   end
 
   def update

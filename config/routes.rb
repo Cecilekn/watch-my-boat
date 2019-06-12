@@ -11,7 +11,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :bookings, only: [:show, :edit, :update]
+  resources :bookings, only: [:show, :edit, :update] do
+    resource :pictures, only: [:new, :create]
+  end
 
   namespace :manager do
     resource :dashboard, only: [:show]
@@ -19,7 +21,6 @@ Rails.application.routes.draw do
 
   resource :dashboard, only: [:show]
 
-  resource :subscriptions, only: [:new, :create]
 
   devise_for :users, :controllers => {:registrations => "registrations", :sessions => "sessions"}
 end
