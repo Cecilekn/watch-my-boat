@@ -1,5 +1,5 @@
 .col-right-show {
-  background-image: url('https://images.pexels.com/photos/1295036/pexels-photo-1295036.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=3&h=750&w=1260');
+  // background-image: url('https://images.pexels.com/photos/1295036/pexels-photo-1295036.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=3&h=750&w=1260');
   background-size: cover;
   color: white;
   font-size: 34px;
@@ -22,12 +22,14 @@
   height: 820px;
   display: flex;
   align-items: center;
+  padding-right: 0px;
+  padding-left: 0px;
 
 }
 
 .content-left-services {
   color: #227799;
-  padding: 0 100px;
+  padding: 0 168px;
 }
 
 // .card-show-packages-image {
