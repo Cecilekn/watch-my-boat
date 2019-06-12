@@ -30,7 +30,15 @@
       <h2>Télécharger des photos</h2>
       <p>Télécharger vos photos une par une ci-dessous afin que <%= @booking.boat.owner.first_name %> puisse avoir des nouvelles de son bateau !</p>
       <%= simple_form_for([@booking, @picture], remote: true) do |f| %>
-        <%= f.input :photo, label: false %>
+
+        <%#= f.input :photo, label: false %>
+        <div class="form-group file optional picture_photo">
+          <label for="picture_photo">
+            <!-- <span class="card">card</span> -->
+            <%= image_tag 'https://image.flaticon.com/icons/svg/1042/1042339.svg', width: 88 %>
+          </label>
+          <input class="form-control-file file optional" type="file" name="picture[photo]" id="picture_photo" hidden>
+        </div>
         <%= f.input :photo_cache, as: :hidden %>
         <%= f.submit "Télécharger", class: "button" %>
       <% end %>
