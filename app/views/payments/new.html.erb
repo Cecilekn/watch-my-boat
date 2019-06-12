@@ -10,7 +10,7 @@
               <%= render 'bookings/update-date', booking: @booking %>
           </div>
 
-          <%= form_tag  package_booking_payments_path(@package, @booking) do %>
+          <%= form_tag  package_booking_payments_path(@package, @booking), class: 'd-none', id: 'package-payment-form' do %>
             <div class="stripe-info">
               <article>
                 <label class="amount">
