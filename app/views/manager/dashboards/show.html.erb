@@ -16,7 +16,6 @@
     <p>Bonjour <%= current_user.first_name %>, bienvenue sur Watch my Boat !</p>
     <p>Vous avez <%= @bookings.count %> missions en cours.</p>
 
-<<<<<<< HEAD
     <% @bookings.each do |booking| %>
 
       <div class="booking-card">
@@ -32,6 +31,7 @@
         </div>
         <div class="booking-card-cta">
           <p class="button">Gérer</p>
+          <%= link_to "Editer", edit_booking_path(booking) %>
         </div>
       </div>
     <% end %>

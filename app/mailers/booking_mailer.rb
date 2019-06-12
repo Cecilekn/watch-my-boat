@@ -8,7 +8,7 @@ class BookingMailer < ApplicationMailer
     @booking = booking
 
     mail(
-      to:       @booking.boat.user.email,
+      to:       @booking.boat.owner.email,
       subject:  "Compte rendu de la visite de #{@booking.boat.name}"
     )
   end
