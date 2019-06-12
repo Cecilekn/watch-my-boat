@@ -22,26 +22,104 @@
 
   <div class="dashboard-info">
     <div class="card-info user-boat-info">
-        <p>État de votre bateau</p>
-          <% if @last_visit.present? %>
-            <p>Amares</p>
-            <% if @last_visit.check2 %>
-              <i class="fas fa-check-circle text-success"></i>
-            <% else %>
-              <i class="fas fa-exclamation-triangle text-warning"></i>
-            <% end %>
+      <h5>État de votre bateau</h5>
+      <br>
+      <div class="user-boat-info-checks">
 
-            <p>Bouts a bord</p>
-            <% if @last_visit.check2 %>
+        <div class="checks-categories">
+          <p>Amares</p>
+          <p>Bouts à bord</p>
+          <p>Pare battages</p>
+          <p>Taud de voile</p>
+        </div>
+
+        <div class="checks-icons1">
+          <% if @last_visit.present? %>
+
+            <p><% if @last_visit.check1 %>
               <i class="fas fa-check-circle text-success"></i>
             <% else %>
               <i class="fas fa-exclamation-triangle text-warning"></i>
-            <% end %>
+            <% end %></p>
+
+            <p><% if @last_visit.check2 %>
+              <i class="fas fa-check-circle text-success"></i>
+            <% else %>
+              <i class="fas fa-exclamation-triangle text-warning"></i>
+            <% end %></p>
+
+            <p><% if @last_visit.check3 %>
+              <i class="fas fa-check-circle text-success"></i>
+            <% else %>
+              <i class="fas fa-exclamation-triangle text-warning"></i>
+            <% end %></p>
+
+            <p><% if @last_visit.check4 %>
+              <i class="fas fa-check-circle text-success"></i>
+            <% else %>
+              <i class="fas fa-exclamation-triangle text-warning"></i>
+            <% end %></p>
+
           <% end %>
+        </div>
+
+        <div class="checks-categories">
+          <p>Vannes d'arrivée d'eau</p>
+          <p>Vannes d'arrivée de gaz</p>
+          <p>Batteries</p>
+          <p>Humidité</p>
+        </div>
+
+        <div class="checks-icons2">
+          <% if @last_visit.present? %>
+
+            <p><% if @last_visit.check5 %>
+              <i class="fas fa-check-circle text-success"></i>
+            <% else %>
+              <i class="fas fa-exclamation-triangle text-warning"></i>
+            <% end %></p>
+
+            <p><% if @last_visit.check6 %>
+              <i class="fas fa-check-circle text-success"></i>
+            <% else %>
+              <i class="fas fa-exclamation-triangle text-warning"></i>
+            <% end %></p>
+
+            <p><% if @last_visit.check7 %>
+              <i class="fas fa-check-circle text-success"></i>
+            <% else %>
+              <i class="fas fa-exclamation-triangle text-warning"></i>
+            <% end %></p>
+
+            <p><% if @last_visit.check8 %>
+              <i class="fas fa-check-circle text-success"></i>
+            <% else %>
+              <i class="fas fa-exclamation-triangle text-warning"></i>
+            <% end %></p>
+
+          <% end %>
+        </div>
+
+      </div>
     </div>
+
     <div class="card-info manager-boat-info">
-      <p>Messages de votre manager</p>
+      <%= cl_image_tag @boat.manager.photo, class: "avatar dropdown-toggle manager-avatar", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <h5>Votre manager</h5>
+        <br>
+        <% if @last_visit.comment %>
+          <p> <i>"<%= @last_visit.comment %>" </i></p>
+        <% end %>
+
+        <% if @last_visit.comment2 %>
+          <p> <i>"<%= @last_visit.comment2 %>" </i></p>
+        <% end %>
+
+        <% if @last_visit.comment3 %>
+          <p> <i>"<%= @last_visit.comment3 %>" </i></p>
+        <% end %>
     </div>
+
   </div>
 
   <div class="dashboard-news">
@@ -115,117 +193,3 @@
   </div>
 
 </div>
-
-  <!-- <div class="your-boat">
-
-    <h1> Mon bateau</h1>
-    <br>
-    <div class="flexbox">
-      <div id="left-item">
-        <p><strong>Extérieur</strong></p>
-        <div class="raw raw-task flexbox">
-          <p>Amares</p>
-          <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
-        </div>
-        <div class="raw raw-task flexbox">
-          <p>Bouts à bord</p>
-          <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
-        </div>
-        <div class="raw raw-task flexbox">
-          <p>Pare-battages</p>
-          <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
-        </div>
-        <div class="raw raw-task flexbox">
-          <p>Taud de voile</p>
-          <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
-        </div>
-        <div class="raw raw-task flexbox">
-          <p>Propreté</p>
-          <p>★★★☆</p>
-        </div>
-      </div>
-
-      <div id="right-item">
-        <p><strong>Intérieur</strong></p>
-        <div class="raw raw-task flexbox">
-          <p>Vannes d'arrivée d'eau</p>
-          <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
-        </div>
-        <div class="raw raw-task flexbox">
-          <p>Vannes d'arrivée de gaz</p>
-          <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
-        </div>
-        <div class="raw raw-task flexbox">
-          <p>État des batteries</p>
-          <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
-        </div>
-        <div class="raw raw-task flexbox">
-          <p>Humidité</p>
-          <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
-        </div>
-        <div class="raw raw-task flexbox">
-          <p>Propreté</p>
-          <p>★★★★</p>
-        </div>
-      </div>
-
-      <div id="comments">
-        <p><strong>Commentaires de <%= @boat.manager.first_name  %></strong></p>
-        <br>
-        <br>
-        <p><i>Tout va bien sur votre bateau. Je préconise toutefois un nettoyage des coffres et du pont qui ont souffert du passage des mouettes cet hiver. Voulez-vous que j'organise un nettoyage ? </i></p>
-        <br>
-        <a class="button-comments", href="">Oui</a>
-        <a class="button-comments", href="">Non, merci</a>
-      </div>
-
-    </div>
-
-  </div>
-
-  <div class="mosaic-container">
-    <div class="mosaic-left">
-      <img src="https://www.burgessyachts.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00004680_2.jpg" alt="">
-      <img src="https://www.burgessyachts.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00004680_20.jpg" alt="">
-      <img src="https://www.burgessyachts.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00004680_17.jpg" alt="">
-      <img src="https://www.burgessyachts.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00004680_14.jpg" alt="">
-      <img src="https://www.burgessyachts.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00004680_12.jpg" alt="">
-    </div>
-    <div class="mosaic-right">
-      <img src="https://www.burgessyachts.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00004680_main.jpg" alt="">
-    </div>
-  </div>
-
-  <div class="dashboard-packages">
-      <h1>Sélectionner l'une de nos offres</h1>
-      <div id="caroussel-container">
-        <div id="carousel">
-          <div class="prev caroussel-card" style="background-image: url(<%= asset_path @offre1.photo %>)">
-            <h2><%= @offre1.title %></h2>
-            <#%= link_to "Voir", package_path(@offre1), class: "button-none caroussel-card-button" %>
-          </div>
-
-          <div class="selected caroussel-card" style="background-image: url(<%= asset_path @offre2.photo %>)">
-            <h2><%= @offre2.title %></h2>
-            <#%= link_to "Voir", package_path(@offre2), class: "caroussel-card-button" %>
-          </div>
-
-          <div class="next caroussel-card" style="background-image: url(<%= asset_path @offre3.photo %>)">
-            <h2><%= @offre3.title %></h2>
-            <#%= link_to "Voir", package_path(@offre3), class: "button-none caroussel-card-button" %>
-          </div>
-
-          <div class="hideNextSecond caroussel-card" style="background-image: url(<%= asset_path @offre4.photo %>)">
-            <h2><%= @offre4.title %></h2>
-            <#%= link_to "Voir", package_path(@offre4), class: "button-none caroussel-card-button" %>
-          </div>
-        </div>
-
-        <div class="caroussel-buttons">
-          <button id="prev", class="button">Prev</button>
-          <button id="next" class = "button">Next</button>
-        </div>
-      </div>
-  </div>
-
-</div> -->
