@@ -53,6 +53,7 @@ class BookingsController < ApplicationController
       end
     else
       @booking.update(booking_params)
+      @booking.update(completed: true)
       redirect_to manager_dashboard_path
       BookingMailer.monthly_visit(@booking).deliver_now
     end

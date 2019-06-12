@@ -1,16 +1,14 @@
 class DashboardsController < ApplicationController
   def show
     @boat = current_user.owned_boats.first
-    @bookings = @boat.bookings
+    @next_visit = Booking.joins('LEFT JOIN packages ON packages.id = bookings.package_id').joins('LEFT JOIN boats ON bookings.boat_id = boats.id').where("bookings.date >= ? AND packages.kind LIKE ? AND bookings.completed = ? AND boats.id = ?", Date.today, "abonnement", false, @boat.id).order("bookings.date ASC").limit(1).first
+    @last_visit = Booking.joins('LEFT JOIN packages ON packages.id = bookings.package_id').joins('LEFT JOIN boats ON bookings.boat_id = boats.id').where("bookings.date <= ? AND packages.kind LIKE ? AND bookings.completed = ? AND boats.id = ?", Date.today, "abonnement", true, @boat.id).order("bookings.date DESC").limit(1).first
+    @next_booked_offers = Booking.joins('LEFT JOIN packages ON packages.id = bookings.package_id').joins('LEFT JOIN boats ON bookings.boat_id = boats.id').where("bookings.date >= ? AND packages.kind LIKE ? AND bookings.completed = ? AND boats.id = ?", Date.today, "offre", false, @boat.id).order("bookings.date ASC").limit(5)
     @offre1 = Package.where(kind: "offre", title: "Convoyage").first
     @offre2 = Package.where(kind: "offre", title: "Hivernage").first
     @offre3 = Package.where(kind: "offre", title: "Maintenance").first
     @offre4 = Package.where(kind: "offre", title: "Sortie").first
-    @next_booked_offers = []
-    @bookings.each do |booking|
-      @next_booked_offers << booking if booking.package.kind == "offre" && booking.date > Date.today
-      @last_visit = booking if booking.package.kind == "abonnement" && booking.completed == true && (Date.today - booking.date.to_date) < 31
-      @next_visit = booking if booking.package.kind == "abonnement" && booking.completed == false && (booking.date.to_date - Date.today) < 31
-    end
   end
 end
+
+

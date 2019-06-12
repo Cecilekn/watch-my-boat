@@ -298,7 +298,7 @@ puts "All items created"
 visite_janvier = Booking.new(
   title: "Visite de janvier",
   completed: true,
-  date: '2019-01-15',
+  date: '2019-01-13',
   comment: "Votre parre-battage arrière-gauche est détaché."
   )
 visite_janvier.package = abo1
@@ -308,7 +308,7 @@ visite_janvier.save!
 visite_fevrier = Booking.new(
   title: "Visite de février",
   completed: true,
-  date: '2019-02-15',
+  date: '2019-02-13',
   comment: "J'ai resserré toutes les amarres."
   )
 visite_fevrier.package = abo1
@@ -318,7 +318,7 @@ visite_fevrier.save!
 visite_mars = Booking.new(
   title: "Visite de mars",
   completed: true,
-  date: '2019-03-15',
+  date: '2019-03-13',
   comment: "Rien à signaler, tout va bien."
   )
 visite_mars.package = abo1
@@ -328,7 +328,7 @@ visite_mars.save!
 visite_avril = Booking.new(
   title: "Visite de avril",
   completed: true,
-  date: '2019-04-15',
+  date: '2019-04-13',
   comment: "A votre demande, j'ai remplacé la capote."
   )
 visite_avril.package = abo1
@@ -338,8 +338,16 @@ visite_avril.save!
 visite_mai = Booking.new(
   title: "Visite de mai",
   completed: true,
-  date: '2019-05-15',
-  comment: "Un nettoyage des coffres extérieurs serait le bienvenu"
+  date: '2019-05-13',
+  comment: "Un nettoyage des coffres extérieurs serait le bienvenu",
+  check1: true,
+  check2: true,
+  check3: false,
+  check4: true,
+  check5: false,
+  check6: true,
+  check7: true,
+  check8: true
   )
 visite_mai.package = abo1
 visite_mai.boat = boat1
@@ -348,7 +356,7 @@ visite_mai.save!
 visite_juin = Booking.new(
   title: "Visite de juin",
   completed: false,
-  date: '2019-06-18',
+  date: '2019-06-12',
   comment: ""
   )
 visite_juin.package = abo1
@@ -358,7 +366,7 @@ visite_juin.save!
 visite_juillet = Booking.new(
   title: "Visite de juillet",
   completed: false,
-  date: '2019-07-15',
+  date: '2019-07-13',
   comment: ""
   )
 visite_juillet.package = abo1
@@ -368,7 +376,7 @@ visite_juillet.save!
 visite_aout = Booking.new(
   title: "Visite de aout",
   completed: false,
-  date: '2019-08-15',
+  date: '2019-08-13',
   comment: ""
   )
 visite_aout.package = abo1
@@ -378,7 +386,7 @@ visite_aout.save!
 visite_septembre = Booking.new(
   title: "Visite de septembre",
   completed: false,
-  date: '2019-09-15',
+  date: '2019-09-13',
   comment: ""
   )
 visite_septembre.package = abo1
@@ -388,7 +396,7 @@ visite_septembre.save!
 visite_octobre = Booking.new(
   title: "Visite de octobre",
   completed: false,
-  date: '2019-10-15',
+  date: '2019-10-13',
   comment: ""
   )
 visite_octobre.package = abo1
@@ -398,7 +406,7 @@ visite_octobre.save!
 visite_novembre = Booking.new(
   title: "Visite de novembre",
   completed: false,
-  date: '2019-11-15',
+  date: '2019-11-13',
   comment: ""
   )
 visite_novembre.package = abo1
@@ -408,7 +416,7 @@ visite_novembre.save!
 visite_decembre = Booking.new(
   title: "Visite de decembre",
   completed: false,
-  date: '2019-12-15',
+  date: '2019-12-13',
   comment: ""
   )
 visite_decembre.package = abo1
@@ -416,9 +424,9 @@ visite_decembre.boat = boat1
 visite_decembre.save!
 
 booking1 = Booking.new(
-  title: "Préparer mon arrivéé",
+  title: "Préparer mon arrivée",
   completed: false,
-  date: '2019-06-14',
+  date: '2019-06-18',
   comment: ""
   )
 booking1.package = offre2
