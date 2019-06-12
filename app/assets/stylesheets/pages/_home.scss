@@ -12,7 +12,7 @@
 }
 
 .banner {
-  background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url("background-image-home");
+  background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), image-url("background-image-home");
   background-size: cover;
   background-position: center;
   padding-top: 132px;
@@ -48,10 +48,11 @@
 .btn-cent {
   width: 100%;
   margin-top: 16px;
-  background: #0092BC;
-  // background: #3D4F66;
-  border: 1px solid #0092BC;
+  background: #FFD582;
+  border: none;
   font-size: 24px;
+  color: #3D3D3D;
+  font-weight: 700;
 }
 
 .home-price-card {
@@ -63,7 +64,7 @@
 }
 
 .home-price {
-  font-size: 24px;
-  font-weight: 400;
+  font-size: 20px;
+  font-weight: bolder;
   margin-right: 10px;
 }
