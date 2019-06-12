@@ -1,11 +1,98 @@
-<div class="dashboard">
+<div class="dashboard-user">
 
   <div class="dashboard-header">
+    <h1>Mon tableau de bord</h1>
+    <p> Bienvenue <%= current_user.first_name %> !</p>
+  </div>
+
+  <div class="mosaic-boat-user">
+    <div class="mosaic-container">
+      <div class="mosaic-left">
+        <img src="https://www.burgessyachts.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00004680_2.jpg" alt="">
+        <img src="https://www.burgessyachts.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00004680_20.jpg" alt="">
+        <img src="https://www.burgessyachts.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00004680_17.jpg" alt="">
+        <img src="https://www.burgessyachts.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00004680_14.jpg" alt="">
+        <img src="https://www.burgessyachts.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00004680_12.jpg" alt="">
+      </div>
+      <div class="mosaic-right">
+        <img src="https://www.burgessyachts.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00004680_main.jpg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard-info">
+    <div class="card-info user-boat-info">
+        <p>État de votre bateau</p>
+          <% if @last_visit.present? %>
+            <p>Amares</p>
+            <% if @last_visit.check2 %>
+              <i class="fas fa-check-circle text-success"></i>
+            <% else %>
+              <i class="fas fa-exclamation-triangle text-warning"></i>
+            <% end %>
+
+            <p>Bouts a bord</p>
+            <% if @last_visit.check2 %>
+              <i class="fas fa-check-circle text-success"></i>
+            <% else %>
+              <i class="fas fa-exclamation-triangle text-warning"></i>
+            <% end %>
+          <% end %>
+    </div>
+    <div class="card-info manager-boat-info">
+      <p>Messages de votre manager</p>
+    </div>
+  </div>
+
+  <div class="dashboard-news">
+    <h1>Dernières actualités</h1>
+    <ul>
+      <% if @last_visit.present? %>
+        <li class="card-info"><%= @last_visit.date.strftime("%d-%m-%y") %> : Dernière visite de votre concierge.</li>
+        <% end %>
+        <li class="card-info"> <%= @next_visit.date.strftime("%d-%m-%y") %> : Prochaine visite de votre concierge.</li>
+        <% if !@next_booked_offers.nil? %>
+        <% @next_booked_offers.each do |offer| %>
+        <li class="card-info"> <%= offer.date.strftime("%d-%m-%y") %>: Pack "<%= offer.title %>" réservé pour <%= offer.date.strftime("%H:%M") %>.</li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="dashboard-packages">
+      <h1>Sélectionner l'une de nos offres</h1>
+      <div id="caroussel-container">
+        <div id="carousel">
+          <div class="prev caroussel-card" style="background-image: url(<%= asset_path @offre1.photo %>)">
+            <h2><%= @offre1.title %></h2>
+            <%= link_to "Voir", package_path(@offre1), class: "button-none caroussel-card-button" %>
+          </div>
+
+          <div class="selected caroussel-card" style="background-image: url(<%= asset_path @offre2.photo %>)">
+            <h2><%= @offre2.title %></h2>
+            <%= link_to "Voir", package_path(@offre2), class: "caroussel-card-button" %>
+          </div>
+
+          <div class="next caroussel-card" style="background-image: url(<%= asset_path @offre3.photo %>)">
+            <h2><%= @offre3.title %></h2>
+            <%= link_to "Voir", package_path(@offre3), class: "button-none caroussel-card-button" %>
+          </div>
+
+          <div class="hideNextSecond caroussel-card" style="background-image: url(<%= asset_path @offre4.photo %>)">
+            <h2><%= @offre4.title %></h2>
+            <%= link_to "Voir", package_path(@offre4), class: "button-none caroussel-card-button" %>
+          </div>
+        </div>
+        <div class="caroussel-buttons">
+          <button id="prev", class="button">Prev</button>
+          <button id="next" class = "button">Next</button>
+        </div>
+      </div>
   </div>
 
   <div class="meteo">
     <div class="meteo-location">
-      <img src="https://image.flaticon.com/icons/svg/252/252025.svg" alt="" height="50px">
+      <img src="https://image.flaticon.com/icons/svg/252/252025.svg" alt="" height="40px">
       <h2 id="meteo-location-city"><%= @boat.address %></h2>
     </div>
     <div class="meteo-weather">
@@ -21,32 +108,15 @@
       </div>
     </div>
     <div class="meteo-wind">
-      <img src="https://image.flaticon.com/icons/svg/1336/1336219.svg" alt="" height="50px">
+      <img src="https://image.flaticon.com/icons/svg/1336/1336219.svg" alt="" height="40px">
       <br>
       <h2 id="weather-wind"></h2><h2>m/s</h2>
     </div>
   </div>
 
-  <div class="dashboard-activity-packages">
-    <div class="dashboard-activity">
-      <h1>Dernières actualités</h1>
-      <br>
-      <ul>
-        <% if @last_visit.present? %>
-          <li><%= @last_visit.date.strftime("%d-%m-%y") %> : Dernière visite de votre concierge.</li>
-        <% end %>
-        <li> <%= @next_visit.date.strftime("%d-%m-%y") %> : Prochaine visite de votre concierge.</li>
-        <% if !@next_booked_offers.nil? %>
-          <% @next_booked_offers.each do |offer| %>
-            <li> <%= offer.date.strftime("%d-%m-%y") %>: Pack "<%= offer.title %>" réservé pour <%= offer.date.strftime("%H:%M") %>.</li>
-          <% end %>
-        <% end %>
-      </ul>
-    </div>
-  </div>
+</div>
 
-
-  <div class="your-boat">
+  <!-- <div class="your-boat">
 
     <h1> Mon bateau</h1>
     <br>
@@ -132,22 +202,22 @@
         <div id="carousel">
           <div class="prev caroussel-card" style="background-image: url(<%= asset_path @offre1.photo %>)">
             <h2><%= @offre1.title %></h2>
-            <%= link_to "Voir", package_path(@offre1), class: "button-none caroussel-card-button" %>
+            <#%= link_to "Voir", package_path(@offre1), class: "button-none caroussel-card-button" %>
           </div>
 
           <div class="selected caroussel-card" style="background-image: url(<%= asset_path @offre2.photo %>)">
             <h2><%= @offre2.title %></h2>
-            <%= link_to "Voir", package_path(@offre2), class: "caroussel-card-button" %>
+            <#%= link_to "Voir", package_path(@offre2), class: "caroussel-card-button" %>
           </div>
 
           <div class="next caroussel-card" style="background-image: url(<%= asset_path @offre3.photo %>)">
             <h2><%= @offre3.title %></h2>
-            <%= link_to "Voir", package_path(@offre3), class: "button-none caroussel-card-button" %>
+            <#%= link_to "Voir", package_path(@offre3), class: "button-none caroussel-card-button" %>
           </div>
 
           <div class="hideNextSecond caroussel-card" style="background-image: url(<%= asset_path @offre4.photo %>)">
             <h2><%= @offre4.title %></h2>
-            <%= link_to "Voir", package_path(@offre4), class: "button-none caroussel-card-button" %>
+            <#%= link_to "Voir", package_path(@offre4), class: "button-none caroussel-card-button" %>
           </div>
         </div>
 
@@ -156,6 +226,6 @@
           <button id="next" class = "button">Next</button>
         </div>
       </div>
-    </div>
+  </div>
 
-</div>
+</div> -->
