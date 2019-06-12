@@ -1,3 +1,4 @@
+
 <div class="dashboard-user">
 
   <div class="dashboard-header">
@@ -122,6 +123,30 @@
 
   </div>
 
+  <div class="meteo">
+    <div class="meteo-location">
+      <img src="https://image.flaticon.com/icons/svg/252/252025.svg" alt="" height="40px">
+      <h2 id="meteo-location-city"><%= @boat.address %></h2>
+    </div>
+    <div class="meteo-weather">
+      <div id="weather" data-lat="<%= @boat.latitude %>" data-lon="<%= @boat.longitude %>">
+        <div id="meteo-weather-info">
+          <h4 id="date"><%= l(Time.now, format: "%A %Hh%M") %></h4>
+          <div class="flexbox icon-temp">
+            <img id="weather-img" src="" alt="image à afficher" height="70px">
+            <h2 id="weather-temp"> temperature</h2>
+          </div>
+          <p id="weather-sky">ciel</p>
+        </div>
+      </div>
+    </div>
+    <div class="meteo-wind">
+      <img src="https://image.flaticon.com/icons/svg/1336/1336219.svg" alt="" height="40px">
+      <br>
+      <h2 id="weather-wind"></h2><h2>m/s</h2>
+    </div>
+  </div>
+
   <div class="dashboard-news">
     <h1>Dernières actualités</h1>
     <ul>
@@ -168,28 +193,5 @@
       </div>
   </div>
 
-  <div class="meteo">
-    <div class="meteo-location">
-      <img src="https://image.flaticon.com/icons/svg/252/252025.svg" alt="" height="40px">
-      <h2 id="meteo-location-city"><%= @boat.address %></h2>
-    </div>
-    <div class="meteo-weather">
-      <div id="weather" data-lat="<%= @boat.latitude %>" data-lon="<%= @boat.longitude %>">
-        <div id="meteo-weather-info">
-          <h4 id="date"><%= l(Time.now, format: "%A %Hh%M") %></h4>
-          <div class="flexbox icon-temp">
-            <img id="weather-img" src="" alt="image à afficher" height="70px">
-            <h2 id="weather-temp"> temperature</h2>
-          </div>
-          <p id="weather-sky">ciel</p>
-        </div>
-      </div>
-    </div>
-    <div class="meteo-wind">
-      <img src="https://image.flaticon.com/icons/svg/1336/1336219.svg" alt="" height="40px">
-      <br>
-      <h2 id="weather-wind"></h2><h2>m/s</h2>
-    </div>
-  </div>
-
 </div>
+
