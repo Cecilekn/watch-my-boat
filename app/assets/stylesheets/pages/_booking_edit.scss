@@ -1,22 +1,62 @@
-.title-page {
-  background: white;
-  padding: 16px;
-  margin-bottom: 16px;
-}
-
-.infos-page {
-  background: white;
-  padding: 16px;
+.boat-info {
   display: flex;
-  flex-direction: column;
-  margin-bottom: 16px;
+  justify-content: space-between;
+  align-item: center;
 }
 
-.visit-form-inside, .visit-form-outside, .visit-form-conlusion, .photo-upload-form {
-  background: white;
-  padding: 16px;
+
+.booking-info-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-radius: 10px;
   margin-bottom: 16px;
+  padding: 24px 24px 16px 24px
 }
+
+.booking-info-card img {
+  margin-right: 8px;
+}
+
+.photo-upload-form {
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  margin-bottom: 16px;
+  padding: 24px 24px 16px 24px
+}
+
+.visit-form {
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  margin-bottom: 16px;
+  padding: 24px 24px 16px 24px
+}
+
+.visit-form h2 {
+  margin-bottom: 32px;
+}
+
+.form-group-booking {
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr 2fr;
+}
+
+.form-group legend {
+  font-size: 24px;
+}
+
+.style-edit-booking .form-control-label {
+  opacity: 0;
+}
+
+// .visit-form-inside, .visit-form-outside, .visit-form-conlusion, .photo-upload-form {
+//   background: white;
+//   padding: 16px;
+//   margin-bottom: 16px;
+// }
 
 .style-edit-booking .form-check-input {
   opacity: 0;
@@ -28,7 +68,7 @@
 }
 
 .form-check i {
-  font-size: 24px;
+  font-size: 48px;
 }
 
 .form-check.text-green label:hover, .form-check.text-green input:checked + label {
@@ -53,4 +93,8 @@
     object-fit: cover;
     object-position: center;
   }
+}
+
+.booking-validation {
+  justify-content: flex-end
 }
