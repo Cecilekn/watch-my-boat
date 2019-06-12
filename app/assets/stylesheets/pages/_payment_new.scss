@@ -1,5 +1,8 @@
 .content-left.date{
   text-align: center;
+  margin-top: 200px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .form-inline.date {
@@ -21,16 +24,12 @@
   margin-left: 5px;
 }
 
-.stripe-button{
+#package-payment-form{
   display: flex;
   justify-content: center;
   margin-top: 30px;
 }
 
-// .stripe-button-el{
-//   display: flex;
-//   justify-content: center;
-// }
 .table-date{
   text-align: left;
   width: 600px;
