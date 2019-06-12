@@ -1,11 +1,131 @@
-<div class="dashboard">
+
+<div class="dashboard-user">
 
   <div class="dashboard-header">
+    <h1>Mon tableau de bord</h1>
+    <p> Bienvenue <%= current_user.first_name %> !</p>
+  </div>
+
+  <div class="mosaic-boat-user">
+    <div class="mosaic-container">
+      <div class="mosaic-left">
+        <img src="https://www.burgessyachts.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00004680_2.jpg" alt="">
+        <img src="https://www.burgessyachts.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00004680_20.jpg" alt="">
+        <img src="https://www.burgessyachts.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00004680_17.jpg" alt="">
+        <img src="https://www.burgessyachts.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00004680_14.jpg" alt="">
+        <img src="https://www.burgessyachts.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00004680_12.jpg" alt="">
+      </div>
+      <div class="mosaic-right">
+        <img src="https://www.burgessyachts.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00004680_main.jpg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard-info">
+    <div class="card-info user-boat-info">
+      <h5>État de votre bateau</h5>
+      <br>
+      <div class="user-boat-info-checks">
+
+        <div class="checks-categories">
+          <p>Amares</p>
+          <p>Bouts à bord</p>
+          <p>Pare battages</p>
+          <p>Taud de voile</p>
+        </div>
+
+        <div class="checks-icons1">
+          <% if @last_visit.present? %>
+
+            <p><% if @last_visit.check1 %>
+              <i class="fas fa-check-circle text-success"></i>
+            <% else %>
+              <i class="fas fa-exclamation-triangle text-warning"></i>
+            <% end %></p>
+
+            <p><% if @last_visit.check2 %>
+              <i class="fas fa-check-circle text-success"></i>
+            <% else %>
+              <i class="fas fa-exclamation-triangle text-warning"></i>
+            <% end %></p>
+
+            <p><% if @last_visit.check3 %>
+              <i class="fas fa-check-circle text-success"></i>
+            <% else %>
+              <i class="fas fa-exclamation-triangle text-warning"></i>
+            <% end %></p>
+
+            <p><% if @last_visit.check4 %>
+              <i class="fas fa-check-circle text-success"></i>
+            <% else %>
+              <i class="fas fa-exclamation-triangle text-warning"></i>
+            <% end %></p>
+
+          <% end %>
+        </div>
+
+        <div class="checks-categories">
+          <p>Vannes d'arrivée d'eau</p>
+          <p>Vannes d'arrivée de gaz</p>
+          <p>Batteries</p>
+          <p>Humidité</p>
+        </div>
+
+        <div class="checks-icons2">
+          <% if @last_visit.present? %>
+
+            <p><% if @last_visit.check5 %>
+              <i class="fas fa-check-circle text-success"></i>
+            <% else %>
+              <i class="fas fa-exclamation-triangle text-warning"></i>
+            <% end %></p>
+
+            <p><% if @last_visit.check6 %>
+              <i class="fas fa-check-circle text-success"></i>
+            <% else %>
+              <i class="fas fa-exclamation-triangle text-warning"></i>
+            <% end %></p>
+
+            <p><% if @last_visit.check7 %>
+              <i class="fas fa-check-circle text-success"></i>
+            <% else %>
+              <i class="fas fa-exclamation-triangle text-warning"></i>
+            <% end %></p>
+
+            <p><% if @last_visit.check8 %>
+              <i class="fas fa-check-circle text-success"></i>
+            <% else %>
+              <i class="fas fa-exclamation-triangle text-warning"></i>
+            <% end %></p>
+
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="card-info manager-boat-info">
+      <%= cl_image_tag @boat.manager.photo, class: "avatar dropdown-toggle manager-avatar", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <h5>Votre manager</h5>
+        <br>
+        <% if @last_visit.comment %>
+          <p> <i>"<%= @last_visit.comment %>" </i></p>
+        <% end %>
+
+        <% if @last_visit.comment2 %>
+          <p> <i>"<%= @last_visit.comment2 %>" </i></p>
+        <% end %>
+
+        <% if @last_visit.comment3 %>
+          <p> <i>"<%= @last_visit.comment3 %>" </i></p>
+        <% end %>
+    </div>
+
   </div>
 
   <div class="meteo">
     <div class="meteo-location">
-      <img src="https://image.flaticon.com/icons/svg/252/252025.svg" alt="" height="50px">
+      <img src="https://image.flaticon.com/icons/svg/252/252025.svg" alt="" height="40px">
       <h2 id="meteo-location-city"><%= @boat.address %></h2>
     </div>
     <div class="meteo-weather">
@@ -21,109 +141,25 @@
       </div>
     </div>
     <div class="meteo-wind">
-      <img src="https://image.flaticon.com/icons/svg/1336/1336219.svg" alt="" height="50px">
+      <img src="https://image.flaticon.com/icons/svg/1336/1336219.svg" alt="" height="40px">
       <br>
       <h2 id="weather-wind"></h2><h2>m/s</h2>
     </div>
   </div>
 
-  <div class="dashboard-activity-packages">
-    <div class="dashboard-activity">
-      <h1>Dernières actualités</h1>
-      <br>
-      <ul>
-        <% if @last_visit.present? %>
-          <li><%= @last_visit.date.strftime("%d-%m-%y") %> : Dernière visite de votre concierge.</li>
+  <div class="dashboard-news">
+    <h1>Dernières actualités</h1>
+    <ul>
+      <% if @last_visit.present? %>
+        <li class="card-info"><%= @last_visit.date.strftime("%d-%m-%y") %> : Dernière visite de votre concierge.</li>
         <% end %>
-        <li> <%= @next_visit.date.strftime("%d-%m-%y") %> : Prochaine visite de votre concierge.</li>
+        <li class="card-info"> <%= @next_visit.date.strftime("%d-%m-%y") %> : Prochaine visite de votre concierge.</li>
         <% if !@next_booked_offers.nil? %>
-          <% @next_booked_offers.each do |offer| %>
-            <li> <%= offer.date.strftime("%d-%m-%y") %>: Pack "<%= offer.title %>" réservé pour <%= offer.date.strftime("%H:%M") %>.</li>
-          <% end %>
+        <% @next_booked_offers.each do |offer| %>
+        <li class="card-info"> <%= offer.date.strftime("%d-%m-%y") %>: Pack "<%= offer.title %>" réservé pour <%= offer.date.strftime("%H:%M") %>.</li>
         <% end %>
-      </ul>
-    </div>
-  </div>
-
-
-  <div class="your-boat">
-
-    <h1> Mon bateau</h1>
-    <br>
-    <div class="flexbox">
-      <div id="left-item">
-        <p><strong>Extérieur</strong></p>
-        <div class="raw raw-task flexbox">
-          <p>Amares</p>
-          <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
-        </div>
-        <div class="raw raw-task flexbox">
-          <p>Bouts à bord</p>
-          <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
-        </div>
-        <div class="raw raw-task flexbox">
-          <p>Pare-battages</p>
-          <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
-        </div>
-        <div class="raw raw-task flexbox">
-          <p>Taud de voile</p>
-          <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
-        </div>
-        <div class="raw raw-task flexbox">
-          <p>Propreté</p>
-          <p>★★★☆</p>
-        </div>
-      </div>
-
-      <div id="right-item">
-        <p><strong>Intérieur</strong></p>
-        <div class="raw raw-task flexbox">
-          <p>Vannes d'arrivée d'eau</p>
-          <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
-        </div>
-        <div class="raw raw-task flexbox">
-          <p>Vannes d'arrivée de gaz</p>
-          <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
-        </div>
-        <div class="raw raw-task flexbox">
-          <p>État des batteries</p>
-          <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
-        </div>
-        <div class="raw raw-task flexbox">
-          <p>Humidité</p>
-          <p><img src="https://image.flaticon.com/icons/svg/190/190411.svg" alt="" height="25px"></p>
-        </div>
-        <div class="raw raw-task flexbox">
-          <p>Propreté</p>
-          <p>★★★★</p>
-        </div>
-      </div>
-
-      <div id="comments">
-        <p><strong>Commentaires de <%= @boat.manager.first_name  %></strong></p>
-        <br>
-        <br>
-        <p><i>Tout va bien sur votre bateau. Je préconise toutefois un nettoyage des coffres et du pont qui ont souffert du passage des mouettes cet hiver. Voulez-vous que j'organise un nettoyage ? </i></p>
-        <br>
-        <a class="button-comments", href="">Oui</a>
-        <a class="button-comments", href="">Non, merci</a>
-      </div>
-
-    </div>
-
-  </div>
-
-  <div class="mosaic-container">
-    <div class="mosaic-left">
-      <img src="https://www.burgessyachts.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00004680_2.jpg" alt="">
-      <img src="https://www.burgessyachts.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00004680_20.jpg" alt="">
-      <img src="https://www.burgessyachts.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00004680_17.jpg" alt="">
-      <img src="https://www.burgessyachts.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00004680_14.jpg" alt="">
-      <img src="https://www.burgessyachts.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00004680_12.jpg" alt="">
-    </div>
-    <div class="mosaic-right">
-      <img src="https://www.burgessyachts.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00004680_main.jpg" alt="">
-    </div>
+      <% end %>
+    </ul>
   </div>
 
   <div class="dashboard-packages">
@@ -150,12 +186,12 @@
             <%= link_to "Voir", package_path(@offre4), class: "button-none caroussel-card-button" %>
           </div>
         </div>
-
         <div class="caroussel-buttons">
           <button id="prev", class="button">Prev</button>
           <button id="next" class = "button">Next</button>
         </div>
       </div>
-    </div>
+  </div>
 
 </div>
+
