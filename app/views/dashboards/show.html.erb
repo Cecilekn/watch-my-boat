@@ -136,12 +136,12 @@
     <div class="meteo-weather">
       <div id="weather" data-lat="<%= @boat.latitude %>" data-lon="<%= @boat.longitude %>">
         <div id="meteo-weather-info">
-          <h4 id="date"><%= l(Time.now, format: "%A %Hh%M") %></h4>
+          <h4 id="date"><%= l(Time.now.capitalize, format: "%A %Hh%M") %></h4>
           <div class="flexbox icon-temp">
             <img id="weather-img" src="" alt="image à afficher" height="70px">
             <h2 id="weather-temp"> temperature</h2>
           </div>
-          <p id="weather-sky">ciel</p>
+          <p id="weather-sky">Ciel</p>
         </div>
       </div>
     </div>

@@ -28,6 +28,10 @@
   margin-top: -126px;
 }
 
+.dashboard-info .fas {
+  font-size: 24px;
+}
+
 .card-info {
   background-color: white;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -107,7 +111,7 @@
 
 .meteo-weather {
   display: flex;
-  margin-top: 4px;
+  margin-top: 12px;
   height: 10%;
   position: relative;
   justify-content: center;
