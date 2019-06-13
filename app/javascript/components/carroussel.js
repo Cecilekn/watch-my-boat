@@ -26,12 +26,22 @@ function moveToSelected(element) {
   // $(prevSecond).prevAll().removeClass().addClass('hideNextSecond');
 
   const buttons = document.querySelectorAll(".caroussel-card-button");
+  const darkFilters = document.querySelectorAll(".darken");
+
   buttons.forEach((button) => {
     if (button.parentNode.classList.contains("selected")){
       button.classList.remove("button-none");
     }
     else {
       button.classList.add("button-none");
+    }
+  })
+
+  darkFilters.forEach((filter) => {
+    if (filter.parentNode.classList.contains("selected")){
+      filter.classList.add("darken-carousel-card");
+    } else {
+      filter.classList.remove("darken-carousel-card");
     }
   })
 }

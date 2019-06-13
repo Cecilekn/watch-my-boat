@@ -232,21 +232,25 @@
           <div class="prev caroussel-card" style="background-image: url(<%= asset_path @offre1.photo %>)">
             <h2><%= @offre1.title %></h2>
             <%= link_to "Voir", package_path(@offre1), class: "button-none caroussel-card-button" %>
+            <div class="darken darken-carousel-card"></div>
           </div>
 
           <div class="selected caroussel-card" style="background-image: url(<%= asset_path @offre2.photo %>)">
             <h2><%= @offre2.title %></h2>
             <%= link_to "Voir", package_path(@offre2), class: "caroussel-card-button" %>
+            <div class="darken darken-carousel-card"></div>
           </div>
 
           <div class="next caroussel-card" style="background-image: url(<%= asset_path @offre3.photo %>)">
             <h2><%= @offre3.title %></h2>
             <%= link_to "Voir", package_path(@offre3), class: "button-none caroussel-card-button" %>
+            <div class="darken darken-carousel-card"></div>
           </div>
 
           <div class="hideNextSecond caroussel-card" style="background-image: url(<%= asset_path @offre4.photo %>)">
             <h2><%= @offre4.title %></h2>
             <%= link_to "Voir", package_path(@offre4), class: "button-none caroussel-card-button" %>
+            <div class="darken darken-carousel-card"></div>
           </div>
         </div>
         <div class="caroussel-buttons">

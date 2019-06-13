@@ -50,7 +50,7 @@
       transform: translateY(50px) translateX(-50%);
       width: 250px;
       height: 400px;
-      opacity: 0.8;
+      // opacity: 0.8;
       background-size: cover;
       background-position: center;
     }
@@ -71,7 +71,7 @@
       transform: translateY(50px) translateX(-50%);
       width: 250px;
       height: 400px;
-      opacity: 0.8;
+      // opacity: 0.8;
       background-size: cover;
       background-position: center;
     }
@@ -99,6 +99,7 @@
   }
   h2 {
     color: white;
+    z-index: 1000;
   }
 }
 
@@ -111,10 +112,12 @@
   transition: background-color .3s ease-in-out;
   -moz-transition: background-color .3s ease-in-out;
   -webkit-transition: background-color .3s ease-in-out;
+  z-index: 1000;
   &:hover {
   background-color: white;
   color: #FFD582;
   border: 1px solid #FFD582;
+  text-decoration: none;
   }
 }
 
@@ -128,6 +131,7 @@
   transform: translateX(-50%);
   bottom: -50px;
 }
+
 .caroussel-bottom-buttons{
   background: white;
   color: #2B7799;
@@ -143,4 +147,16 @@
     color: white;
     border: 1px solid #2B7799;
   }
+}
+
+.darken-carousel-card{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.4);
+  transition: opacity .5s ease-in-out;
+  -moz-transition: opacity .5s ease-in-out;
+  -webkit-transition: opacity .5s ease-in-out;
 }

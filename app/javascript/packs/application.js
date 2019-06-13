@@ -12,6 +12,7 @@ initUpdateNavbarOnScroll();
 fetchWeather();
 initAutocomplete();
 mosaic();
+moveToSelected();
 
 
 // Eventos teclado
