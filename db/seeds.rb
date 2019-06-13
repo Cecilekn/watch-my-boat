@@ -356,7 +356,7 @@ visite_mai.save!
 visite_juin = Booking.new(
   title: "Visite de juin",
   completed: false,
-  date: '2019-06-12',
+  date: '2019-06-13',
   comment: ""
   )
 visite_juin.package = abo1
@@ -434,6 +434,18 @@ booking1.boat = boat1
 booking1.save!
 
 puts "All bookings created"
+
+picture1_mai = Picture.new
+picture1_mai.booking = visite_mai
+picture1_mai. remote_photo_url = "https://images.unsplash.com/photo-1542512766-5de0463dc1cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+picture1_mai.save!
+
+picture2_mai = Picture.new
+picture2_mai.booking = visite_mai
+picture2_mai. remote_photo_url = "https://images.unsplash.com/photo-1500917832468-298fa6292e2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+picture2_mai.save!
+
+puts "All pictures created"
 
 provider1 = Provider.new(name: "Riviera Nautique")
 provider1.manager = concierge1
