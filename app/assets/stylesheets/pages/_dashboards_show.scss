@@ -63,7 +63,7 @@
 }
 
 .checks-icons2 {
-  padding-left: 24px;
+  padding-left: 20px;
 }
 
 .manager-avatar {
@@ -215,4 +215,16 @@
   background-color: white;
   color: #1B5456;
   border: 1px solid #1B5456;
+}
+
+.fa-check-circle.no-visit-yet{
+  color: rgb(200,200,200);
+}
+
+.fa-exclamation-triangle.no-visit-yet{
+  color: rgb(200,200,200);
+}
+
+.mosaic-boat-user > p {
+  text-align: center;
 }

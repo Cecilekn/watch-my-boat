@@ -37,18 +37,13 @@
         <%= simple_form_for([@booking, @picture], remote: true) do |f| %>
 
           <%#= f.input :photo, label: false %>
-          <div class="photo-buttons">
-            <div class="form-group file optional picture_photo">
-              <label for="picture_photo">
-                <!-- <span class="card">card</span> -->
-                <%= image_tag 'https://image.flaticon.com/icons/svg/1042/1042339.svg', width: 88 %>
-              </label>
-              <input class="form-control-file file optional" type="file" name="picture[photo]" id="picture_photo" hidden>
-            </div>
-            <div class="download-button">
-              <%= f.input :photo_cache, as: :hidden %>
-              <%= f.submit "Télécharger", class: "button" %>
-            </div>
+        <div class="photo-buttons">
+          <div class="form-group file optional picture_photo">
+            <%= f.input :photo, label: "&nbsp;".html_safe, input_html: { class: 'd-none' }, label_html: {class: "fas fa-camera camera-booking"}  %>
+          </div>
+          <div class="download-button">
+            <%= f.input :photo_cache, as: :hidden %>
+            <%= f.submit "Envoyer", class: "button" %>
           </div>
         <% end %>
         <div class="pictures-container">
