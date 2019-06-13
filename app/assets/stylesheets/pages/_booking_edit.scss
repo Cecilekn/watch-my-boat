@@ -2,29 +2,42 @@
   display: flex;
   justify-content: space-between;
   align-item: center;
+  margin-left: 20px;
+  margin-bottom: -76px;
 }
 
 
 .booking-info-card {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
   background-color: white;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   border-radius: 10px;
   margin-bottom: 16px;
-  padding: 24px 24px 16px 24px
+  margin-right: 20px;
+  padding: 24px 24px 16px 24px;
 }
 
 .booking-info-card img {
   margin-right: 8px;
 }
 
+.feedback-form {
+  background-color: #FFE6CE;
+  padding-top: 10px;
+  margin-top: -3px;
+  padding-bottom: 4px
+}
+
 .photo-upload-form {
   background-color: white;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   border-radius: 10px;
+  margin-left: 20px;
   margin-bottom: 16px;
-  padding: 24px 24px 16px 24px
+  margin-right: 20px;
+  padding: 24px 24px 16px 24px;
 }
 
 .photo-buttons {
@@ -41,7 +54,13 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   border-radius: 10px;
   margin-bottom: 16px;
-  padding: 24px 24px 16px 24px
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 24px 24px 16px 24px;
+}
+
+.final-comment {
+  padding: 18px 0px 40px 10px;
 }
 
 .visit-form h2 {

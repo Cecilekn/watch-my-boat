@@ -26,239 +26,244 @@
       </div>
     </div>
 
-    <div class="photo-upload-form">
-      <h2>Télécharger des photos</h2>
-      <p>Télécharger vos photos une par une ci-dessous afin que <%= @booking.boat.owner.first_name %> puisse avoir des nouvelles de son bateau !</p>
-      <%= simple_form_for([@booking, @picture], remote: true) do |f| %>
+    <svg width="778" height="111" viewBox="0 0 817 111" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 39.3935V111H817C817 111 584 84 491.5 74C399 64 224.783 2.98907 156.5 1C88.217 -0.98907 0 39.3935 0 39.3935Z" fill="#FFE6CE"/>
+    </svg>
 
-        <%#= f.input :photo, label: false %>
-        <div class="photo-buttons">
-          <div class="form-group file optional picture_photo">
-            <label for="picture_photo">
-              <!-- <span class="card">card</span> -->
-              <%= image_tag 'https://image.flaticon.com/icons/svg/1042/1042339.svg', width: 88 %>
-            </label>
-            <input class="form-control-file file optional" type="file" name="picture[photo]" id="picture_photo" hidden>
+    <div class="feedback-form">
+      <div class="photo-upload-form">
+        <h2>Télécharger des photos</h2>
+        <p>Télécharger vos photos une par une ci-dessous afin que <%= @booking.boat.owner.first_name %> puisse avoir des nouvelles de son bateau !</p>
+        <%= simple_form_for([@booking, @picture], remote: true) do |f| %>
+
+          <%#= f.input :photo, label: false %>
+          <div class="photo-buttons">
+            <div class="form-group file optional picture_photo">
+              <label for="picture_photo">
+                <!-- <span class="card">card</span> -->
+                <%= image_tag 'https://image.flaticon.com/icons/svg/1042/1042339.svg', width: 88 %>
+              </label>
+              <input class="form-control-file file optional" type="file" name="picture[photo]" id="picture_photo" hidden>
+            </div>
+            <div class="download-button">
+              <%= f.input :photo_cache, as: :hidden %>
+              <%= f.submit "Télécharger", class: "button" %>
+            </div>
           </div>
-          <div class="download-button">
-            <%= f.input :photo_cache, as: :hidden %>
-            <%= f.submit "Télécharger", class: "button" %>
-          </div>
+        <% end %>
+        <div class="pictures-container">
+          <% @booking.pictures.each do |picture| %>
+            <%= render 'picture-card', picture: picture %>
+          <% end %>
         </div>
-      <% end %>
-      <div class="pictures-container">
-        <% @booking.pictures.each do |picture| %>
-          <%= render 'picture-card', picture: picture %>
-        <% end %>
+      </div>
+
+      <div class="feedback-form">
+        <div class="form-inputs style-edit-booking">
+          <% if @booking.package.kind =="abonnement" %>
+            <%= simple_form_for(@booking) do |f| %>
+              <div class="visit-form-inside visit-form">
+                <h2>Inspection extérieure</h2>
+
+                <fieldset class="form-group radio_buttons optional booking_check1">
+                  <div class="form-group-booking">
+                    <div class>
+                      <legend class="col-form-label pt-0">Amares</legend>
+                      <input type="hidden" name="booking[check1]" value="">
+                    </div>
+                    <div class="form-check form-check-inline text-green">
+                      <input class="form-check-input radio_buttons optional" type="radio" value="true" name="booking[check1]" id="booking_check1_true">
+                      <label class="collection_radio_buttons" for="booking_check1_true">
+                        <i class="fas fa-check-circle"></i>
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline text-orange">
+                      <input class="form-check-input radio_buttons optional" readonly="readonly" type="radio" value="false" name="booking[check1]" id="booking_check1_false">
+                      <label class="collection_radio_buttons" for="booking_check1_false">
+                        <i class="fas fa-exclamation-triangle"></i>
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <fieldset class="form-group radio_buttons optional booking_check2 form-group-booking">
+                  <div class="form-group-booking">
+                    <div class>
+                      <legend class="col-form-label pt-0">Bouts à bord</legend>
+                      <input type="hidden" name="booking[check2]" value="">
+                    </div>
+                    <div class="form-check form-check-inline text-green">
+                      <input class="form-check-input radio_buttons optional" type="radio" value="true" name="booking[check2]" id="booking_check2_true">
+                      <label class="collection_radio_buttons" for="booking_check2_true">
+                        <i class="fas fa-check-circle"></i>
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline text-orange">
+                      <input class="form-check-input radio_buttons optional" readonly="readonly" type="radio" value="false" name="booking[check2]" id="booking_check2_false">
+                      <label class="collection_radio_buttons" for="booking_check2_false">
+                        <i class="fas fa-exclamation-triangle"></i>
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <fieldset class="form-group radio_buttons optional booking_check3 form-group-booking">
+                  <div class="form-group-booking">
+                    <div class>
+                      <legend class="col-form-label pt-0">Pare battages</legend>
+                      <input type="hidden" name="booking[check3]" value="">
+                    </div>
+                    <div class="form-check form-check-inline text-green">
+                      <input class="form-check-input radio_buttons optional" type="radio" value="true" name="booking[check3]" id="booking_check3_true">
+                      <label class="collection_radio_buttons" for="booking_check3_true">
+                        <i class="fas fa-check-circle"></i>
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline text-orange">
+                      <input class="form-check-input radio_buttons optional" readonly="readonly" type="radio" value="false" name="booking[check3]" id="booking_check3_false">
+                      <label class="collection_radio_buttons" for="booking_check3_false">
+                        <i class="fas fa-exclamation-triangle"></i>
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <fieldset class="form-group radio_buttons optional booking_check4 form-group-booking">
+                  <div class="form-group-booking">
+                    <div class>
+                      <legend class="col-form-label pt-0">Taud de voile</legend>
+                      <input type="hidden" name="booking[check4]" value="">
+                    </div>
+                    <div class="form-check form-check-inline text-green">
+                      <input class="form-check-input radio_buttons optional" type="radio" value="true" name="booking[check4]" id="booking_check4_true">
+                      <label class="collection_radio_buttons" for="booking_check4_true">
+                        <i class="fas fa-check-circle"></i>
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline text-orange">
+                      <input class="form-check-input radio_buttons optional" readonly="readonly" type="radio" value="false" name="booking[check4]" id="booking_check4_false">
+                      <label class="collection_radio_buttons" for="booking_check4_false">
+                        <i class="fas fa-exclamation-triangle"></i>
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <%= f.input :comment2, placeholder: "Rédiger ici votre commentaire" %>
+              </div>
+
+              <div class="visit-form-outside visit-form">
+                <h2>Inspection intérieure</h2>
+
+                <fieldset class="form-group radio_buttons optional booking_check5 form-group-booking">
+                  <div class="form-group-booking">
+                    <div class>
+                      <legend class="col-form-label pt-0">Vannes d'arrivée d'eau</legend>
+                      <input type="hidden" name="booking[check5]" value="">
+                    </div>
+                    <div class="form-check form-check-inline text-green">
+                      <input class="form-check-input radio_buttons optional" type="radio" value="true" name="booking[check5]" id="booking_check5_true">
+                      <label class="collection_radio_buttons" for="booking_check5_true">
+                        <i class="fas fa-check-circle"></i>
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline text-orange">
+                      <input class="form-check-input radio_buttons optional" readonly="readonly" type="radio" value="false" name="booking[check5]" id="booking_check5_false">
+                      <label class="collection_radio_buttons" for="booking_check5_false">
+                        <i class="fas fa-exclamation-triangle"></i>
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <fieldset class="form-group radio_buttons optional booking_check6 form-group-booking">
+                  <div class="form-group-booking">
+                    <div class>
+                      <legend class="col-form-label pt-0">Vannes d'arrivée de gaz</legend>
+                      <input type="hidden" name="booking[check6]" value="">
+                    </div>
+                    <div class="form-check form-check-inline text-green">
+                      <input class="form-check-input radio_buttons optional" type="radio" value="true" name="booking[check6]" id="booking_check6_true">
+                      <label class="collection_radio_buttons" for="booking_check6_true">
+                        <i class="fas fa-check-circle"></i>
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline text-orange">
+                      <input class="form-check-input radio_buttons optional" readonly="readonly" type="radio" value="false" name="booking[check6]" id="booking_check6_false">
+                      <label class="collection_radio_buttons" for="booking_check6_false">
+                        <i class="fas fa-exclamation-triangle"></i>
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <fieldset class="form-group radio_buttons optional booking_check7 form-group-booking">
+                  <div class="form-group-booking">
+                    <div class>
+                      <legend class="col-form-label pt-0">Batteries</legend>
+                      <input type="hidden" name="booking[check7]" value="">
+                    </div>
+                    <div class="form-check form-check-inline text-green">
+                      <input class="form-check-input radio_buttons optional" type="radio" value="true" name="booking[check7]" id="booking_check7_true">
+                      <label class="collection_radio_buttons" for="booking_check7_true">
+                        <i class="fas fa-check-circle"></i>
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline text-orange">
+                      <input class="form-check-input radio_buttons optional" readonly="readonly" type="radio" value="false" name="booking[check7]" id="booking_check7_false">
+                      <label class="collection_radio_buttons" for="booking_check7_false">
+                        <i class="fas fa-exclamation-triangle"></i>
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <fieldset class="form-group radio_buttons optional booking_check8 form-group-booking">
+                  <div class="form-group-booking">
+                    <div class>
+                      <legend class="col-form-label pt-0">Humidité</legend>
+                      <input type="hidden" name="booking[check8]" value="">
+                    </div>
+                    <div class="form-check form-check-inline text-green">
+                      <input class="form-check-input radio_buttons optional" type="radio" value="true" name="booking[check8]" id="booking_check8_true">
+                      <label class="collection_radio_buttons" for="booking_check8_true">
+                        <i class="fas fa-check-circle"></i>
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline text-orange">
+                      <input class="form-check-input radio_buttons optional" readonly="readonly" type="radio" value="false" name="booking[check8]" id="booking_check8_false">
+                      <label class="collection_radio_buttons" for="booking_check8_false">
+                        <i class="fas fa-exclamation-triangle"></i>
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <%= f.input :comment3, placeholder: "Rédiger ici votre commentaire" %>
+              </div>
+
+              <div class="visit-form-conlusion visit-form">
+                <h2>Commentaire général</h2>
+                <%= f.input :comment, placeholder: "Rédiger ici votre commentaire",input_html: {class: "final-comment"}  %>
+                <div class="form-actions booking-validation">
+                  <%= f.button :submit, "Valider" %>
+                </div>
+              </div>
+            <% end %>
+          <% else %>
+            <%= simple_form_for(@booking) do |f| %>
+              <div class="visit-form-conlusion visit-form">
+                <h2>Commentaire général</h2>
+                <%= f.input :comment, placeholder: "Rédiger ici votre commentaire",input_html: {class: "final-comment"} %>
+                <div class="form-actions booking-validation">
+                  <%= f.button :submit, "Valider" %>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
-
-    <div class="">
-      <div class="form-inputs style-edit-booking">
-        <% if @booking.package.kind =="abonnement" %>
-          <%= simple_form_for(@booking) do |f| %>
-            <div class="visit-form-inside visit-form">
-              <h2>Inspection extérieure</h2>
-
-              <fieldset class="form-group radio_buttons optional booking_check1">
-                <div class="form-group-booking">
-                  <div class>
-                    <legend class="col-form-label pt-0">Amares</legend>
-                    <input type="hidden" name="booking[check1]" value="">
-                  </div>
-                  <div class="form-check form-check-inline text-green">
-                    <input class="form-check-input radio_buttons optional" type="radio" value="true" name="booking[check1]" id="booking_check1_true">
-                    <label class="collection_radio_buttons" for="booking_check1_true">
-                      <i class="fas fa-check-circle"></i>
-                    </label>
-                  </div>
-                  <div class="form-check form-check-inline text-orange">
-                    <input class="form-check-input radio_buttons optional" readonly="readonly" type="radio" value="false" name="booking[check1]" id="booking_check1_false">
-                    <label class="collection_radio_buttons" for="booking_check1_false">
-                      <i class="fas fa-exclamation-triangle"></i>
-                    </label>
-                  </div>
-                </div>
-              </fieldset>
-
-              <fieldset class="form-group radio_buttons optional booking_check2 form-group-booking">
-                <div class="form-group-booking">
-                  <div class>
-                    <legend class="col-form-label pt-0">Bouts à bord</legend>
-                    <input type="hidden" name="booking[check2]" value="">
-                  </div>
-                  <div class="form-check form-check-inline text-green">
-                    <input class="form-check-input radio_buttons optional" type="radio" value="true" name="booking[check2]" id="booking_check2_true">
-                    <label class="collection_radio_buttons" for="booking_check2_true">
-                      <i class="fas fa-check-circle"></i>
-                    </label>
-                  </div>
-                  <div class="form-check form-check-inline text-orange">
-                    <input class="form-check-input radio_buttons optional" readonly="readonly" type="radio" value="false" name="booking[check2]" id="booking_check2_false">
-                    <label class="collection_radio_buttons" for="booking_check2_false">
-                      <i class="fas fa-exclamation-triangle"></i>
-                    </label>
-                  </div>
-                </div>
-              </fieldset>
-
-              <fieldset class="form-group radio_buttons optional booking_check3 form-group-booking">
-                <div class="form-group-booking">
-                  <div class>
-                    <legend class="col-form-label pt-0">Pare battages</legend>
-                    <input type="hidden" name="booking[check3]" value="">
-                  </div>
-                  <div class="form-check form-check-inline text-green">
-                    <input class="form-check-input radio_buttons optional" type="radio" value="true" name="booking[check3]" id="booking_check3_true">
-                    <label class="collection_radio_buttons" for="booking_check3_true">
-                      <i class="fas fa-check-circle"></i>
-                    </label>
-                  </div>
-                  <div class="form-check form-check-inline text-orange">
-                    <input class="form-check-input radio_buttons optional" readonly="readonly" type="radio" value="false" name="booking[check3]" id="booking_check3_false">
-                    <label class="collection_radio_buttons" for="booking_check3_false">
-                      <i class="fas fa-exclamation-triangle"></i>
-                    </label>
-                  </div>
-                </div>
-              </fieldset>
-
-              <fieldset class="form-group radio_buttons optional booking_check4 form-group-booking">
-                <div class="form-group-booking">
-                  <div class>
-                    <legend class="col-form-label pt-0">Taud de voile</legend>
-                    <input type="hidden" name="booking[check4]" value="">
-                  </div>
-                  <div class="form-check form-check-inline text-green">
-                    <input class="form-check-input radio_buttons optional" type="radio" value="true" name="booking[check4]" id="booking_check4_true">
-                    <label class="collection_radio_buttons" for="booking_check4_true">
-                      <i class="fas fa-check-circle"></i>
-                    </label>
-                  </div>
-                  <div class="form-check form-check-inline text-orange">
-                    <input class="form-check-input radio_buttons optional" readonly="readonly" type="radio" value="false" name="booking[check4]" id="booking_check4_false">
-                    <label class="collection_radio_buttons" for="booking_check4_false">
-                      <i class="fas fa-exclamation-triangle"></i>
-                    </label>
-                  </div>
-                </div>
-              </fieldset>
-
-              <%= f.input :comment2, placeholder: "Rédiger ici votre commentaire" %>
-            </div>
-
-            <div class="visit-form-outside visit-form">
-              <h2>Inspection intérieure</h2>
-
-              <fieldset class="form-group radio_buttons optional booking_check5 form-group-booking">
-                <div class="form-group-booking">
-                  <div class>
-                    <legend class="col-form-label pt-0">Vannes d'arrivée d'eau</legend>
-                    <input type="hidden" name="booking[check5]" value="">
-                  </div>
-                  <div class="form-check form-check-inline text-green">
-                    <input class="form-check-input radio_buttons optional" type="radio" value="true" name="booking[check5]" id="booking_check5_true">
-                    <label class="collection_radio_buttons" for="booking_check5_true">
-                      <i class="fas fa-check-circle"></i>
-                    </label>
-                  </div>
-                  <div class="form-check form-check-inline text-orange">
-                    <input class="form-check-input radio_buttons optional" readonly="readonly" type="radio" value="false" name="booking[check5]" id="booking_check5_false">
-                    <label class="collection_radio_buttons" for="booking_check5_false">
-                      <i class="fas fa-exclamation-triangle"></i>
-                    </label>
-                  </div>
-                </div>
-              </fieldset>
-
-              <fieldset class="form-group radio_buttons optional booking_check6 form-group-booking">
-                <div class="form-group-booking">
-                  <div class>
-                    <legend class="col-form-label pt-0">Vannes d'arrivée de gaz</legend>
-                    <input type="hidden" name="booking[check6]" value="">
-                  </div>
-                  <div class="form-check form-check-inline text-green">
-                    <input class="form-check-input radio_buttons optional" type="radio" value="true" name="booking[check6]" id="booking_check6_true">
-                    <label class="collection_radio_buttons" for="booking_check6_true">
-                      <i class="fas fa-check-circle"></i>
-                    </label>
-                  </div>
-                  <div class="form-check form-check-inline text-orange">
-                    <input class="form-check-input radio_buttons optional" readonly="readonly" type="radio" value="false" name="booking[check6]" id="booking_check6_false">
-                    <label class="collection_radio_buttons" for="booking_check6_false">
-                      <i class="fas fa-exclamation-triangle"></i>
-                    </label>
-                  </div>
-                </div>
-              </fieldset>
-
-              <fieldset class="form-group radio_buttons optional booking_check7 form-group-booking">
-                <div class="form-group-booking">
-                  <div class>
-                    <legend class="col-form-label pt-0">Batteries</legend>
-                    <input type="hidden" name="booking[check7]" value="">
-                  </div>
-                  <div class="form-check form-check-inline text-green">
-                    <input class="form-check-input radio_buttons optional" type="radio" value="true" name="booking[check7]" id="booking_check7_true">
-                    <label class="collection_radio_buttons" for="booking_check7_true">
-                      <i class="fas fa-check-circle"></i>
-                    </label>
-                  </div>
-                  <div class="form-check form-check-inline text-orange">
-                    <input class="form-check-input radio_buttons optional" readonly="readonly" type="radio" value="false" name="booking[check7]" id="booking_check7_false">
-                    <label class="collection_radio_buttons" for="booking_check7_false">
-                      <i class="fas fa-exclamation-triangle"></i>
-                    </label>
-                  </div>
-                </div>
-              </fieldset>
-
-              <fieldset class="form-group radio_buttons optional booking_check8 form-group-booking">
-                <div class="form-group-booking">
-                  <div class>
-                    <legend class="col-form-label pt-0">Humidité</legend>
-                    <input type="hidden" name="booking[check8]" value="">
-                  </div>
-                  <div class="form-check form-check-inline text-green">
-                    <input class="form-check-input radio_buttons optional" type="radio" value="true" name="booking[check8]" id="booking_check8_true">
-                    <label class="collection_radio_buttons" for="booking_check8_true">
-                      <i class="fas fa-check-circle"></i>
-                    </label>
-                  </div>
-                  <div class="form-check form-check-inline text-orange">
-                    <input class="form-check-input radio_buttons optional" readonly="readonly" type="radio" value="false" name="booking[check8]" id="booking_check8_false">
-                    <label class="collection_radio_buttons" for="booking_check8_false">
-                      <i class="fas fa-exclamation-triangle"></i>
-                    </label>
-                  </div>
-                </div>
-              </fieldset>
-
-              <%= f.input :comment3, placeholder: "Rédiger ici votre commentaire" %>
-            </div>
-
-            <div class="visit-form-conlusion visit-form">
-              <h2>Commentaire général</h2>
-              <%= f.input :comment, placeholder: "Rédiger ici votre commentaire" %>
-              <div class="form-actions booking-validation">
-                <%= f.button :submit, "Valider" %>
-              </div>
-            </div>
-          <% end %>
-        <% else %>
-          <%= simple_form_for(@booking) do |f| %>
-            <div class="visit-form-conlusion visit-form">
-              <h2>Commentaire général</h2>
-              <%= f.input :comment, placeholder: "Rédiger ici votre commentaire" %>
-              <div class="form-actions booking-validation">
-                <%= f.button :submit, "Valider" %>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-
   </div>
 </div>
 
