@@ -18,7 +18,7 @@ class PaymentsController < ApplicationController
     )
 
     @booking.update(payment: charge.to_json, paid: true)
-    redirect_to dashboard_path
+    redirect_to dashboard_path(:anchor => "weather-sky")
 
   rescue Stripe::CardError => e
     flash[:alert] = e.message
