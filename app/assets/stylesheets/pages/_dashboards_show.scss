@@ -41,6 +41,22 @@
   margin-bottom: 16px;
 }
 
+.card-info-news {
+  display: grid;
+  grid-template-columns: 1fr 10fr;
+}
+
+.card-info-news-date {
+  font-weight: bold;
+  border-right: solid;
+  border-right-width: 1px;
+  padding-right: 8px;
+}
+
+.card-info-news-text {
+  padding-left: 8px;
+}
+
 .user-boat-info-checks {
   display: grid;
   grid-template-columns: 3fr 1fr 3fr 1fr;
