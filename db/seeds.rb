@@ -18,29 +18,53 @@ Dimension.destroy_all
 Category.destroy_all
 User.destroy_all
 
-sebastien = User.new(
-  first_name: "Sebastien",
-  last_name: "Bureau",
-  email: "chevaliermac@gmail.com",
+guillaume = User.new(
+  first_name: "Guillaume",
+  last_name: "Peterschmitt",
+  email: "guillaume.peterschmitt@gmail.com",
   password: "123456",
-  phone_number: "0607080910",
-  address: "Courbevoie",
+  phone_number: "0782580253",
+  address: "Paris",
   manager: false
   )
-sebastien.remote_photo_url = "https://www.vendeeglobe.org/medias/02/03/20346/portrait-du-skipper-suisse-alan-roura-r-1680-1200.jpg"
-sebastien.save!
+guillaume.remote_photo_url = "https://res.cloudinary.com/di4pxxpr8/image/upload/v1560440976/_JBU5653-3_Guillaume_PETERSCHMITT_ki3ufr.jpg"
+guillaume.save!
+
+celia = User.new(
+  first_name: "Célia",
+  last_name: "Heidsieck",
+  email: "celia@gmail.com",
+  password: "123456",
+  phone_number: "0612130043",
+  address: "Paris",
+  manager: false
+  )
+celia.remote_photo_url = "https://res.cloudinary.com/di4pxxpr8/image/upload/v1560444098/_JBU5815-3_Celia_Heidsieck_daitae.jpg"
+celia.save!
+
+cecile = User.new(
+  first_name: "Cécile",
+  last_name: "Kwan Ning",
+  email: "cecile@gmail.com",
+  password: "123456",
+  phone_number: "0670830910",
+  address: "Paris",
+  manager: false
+  )
+cecile.remote_photo_url = "https://res.cloudinary.com/di4pxxpr8/image/upload/v1560444106/_JBU5945-3_Cecile_Kwan_Ning_nmdavj.jpg"
+cecile.save!
 
 concierge1 = User.new(
-  first_name: "Thierry",
-  last_name: "Dubateau",
-  email: "thierry@gmail.com",
+  first_name: "Marie-Amandine",
+  last_name: "Chevalier",
+  email: "marie@gmail.com",
   password: "123456",
-  phone_number: "0607080910",
+  phone_number: "0681069061",
   address: "Saint-Tropez",
-  description: "Diplomé de l'Ecole navale en 1998 et formateur maritime dans la marine marchande pendant plus de 20 ans, Thierry met aujourd'hui son expertise et son carnet d'adresses au service des plaisanciers dans le Var.",
+  description: "Marie-Amandine s’est forgée une expérience professionnelle dans le tourisme nautique tout autour du monde (organisation de croisières). De retour dans sa provence natale, elle met aujourd'hui son expertise au service des plaisanciers varois.",
   manager: true
   )
-concierge1.remote_photo_url = "https://cdn.radiofrance.fr/s3/cruiser-production/2016/11/8be75fd1-bcc5-4792-880f-af90ccd4a9d9/640_000_hq55j.jpg"
+concierge1.remote_photo_url = "https://res.cloudinary.com/di4pxxpr8/image/upload/v1560441455/MarieAmandineChevalier_gais33.jpg"
 concierge1.save!
 
 puts "All users created"
@@ -67,12 +91,35 @@ boat1 = Boat.new(
   name: "Lili",
   address: "Saint-Tropez"
   )
-boat1.owner = sebastien
+boat1.owner = guillaume
 boat1.manager = concierge1
 boat1.category = voilier
 boat1.dimension = small
-boat1.remote_photo_url = "https://cdn.pixabay.com/photo/2016/08/14/18/27/sailing-boat-1593613_1280.jpg"
+boat1.remote_photo_url = "https://res.cloudinary.com/di4pxxpr8/image/upload/v1560441602/Lili_mkun4g.jpg"
 boat1.save!
+
+boat2 = Boat.new(
+  name: "Will Be Fine",
+  address: "Saint-Tropez"
+  )
+boat2.owner = celia
+boat2.manager = concierge1
+boat2.category = voilier
+boat2.dimension = small
+boat2.remote_photo_url = "https://cdn.pixabay.com/photo/2016/08/14/18/27/sailing-boat-1593613_1280.jpg"
+boat2.save!
+
+boat3 = Boat.new(
+  name: "Marcaro",
+  address: "Saint-Maxime"
+  )
+boat3.owner = cecile
+boat3.manager = concierge1
+boat3.category = voilier
+boat3.dimension = small
+boat3.remote_photo_url = "https://res.cloudinary.com/di4pxxpr8/image/upload/v1559142909/bmsvjoc78fvgn0cxjcyu.jpg"
+boat3.save!
+
 
 puts "All boats created"
 
@@ -100,7 +147,7 @@ rangement.save!
 fermeture = Service.new(title: "Fermeture du bateau (eau, gaz, électricité).")
 fermeture.save!
 
-vidange = Service.new(title: "Vidange de la cuve.")
+vidange = Service.new(title: "Vidange de la cuve à l'eau douce et vidange du circuit")
 vidange.save!
 
 reparation = Service.new(title: "Réparation de la coque")
@@ -183,8 +230,8 @@ offre1.photo = 'convoyage.jpg'
 offre1.save!
 
 offre2 = Package.new(
-  title: "Sortie",
-  description: "Partez l'esprit serein, nous nous occupons de préparer votre bateau avant votre arrivée!",
+  title: "Départ",
+  description: "Naviguez sereinement, nous nous occupons de préparer votre bateau avant votre arrivée!",
   price: 150.00,
   kind: "offre"
   )
@@ -193,7 +240,7 @@ offre2.save!
 
 offre3 = Package.new(
   title: "Maintenance",
-  description: "Un pépin sur votre bateau. Votre concierge intervient pour divers travaux de bricolage.",
+  description: "Un pépin sur votre bateau. Votre concierge intervient pour divers travaux de maintenance.",
   price: 205.00,
   kind: "offre"
   )
@@ -433,16 +480,72 @@ booking1.package = offre2
 booking1.boat = boat1
 booking1.save!
 
+visite_mai_celia = Booking.new(
+  title: "Visite de mai",
+  completed: true,
+  date: '2019-05-13',
+  comment: "Un nettoyage des coffres extérieurs serait le bienvenu",
+  check1: true,
+  check2: true,
+  check3: false,
+  check4: true,
+  check5: false,
+  check6: true,
+  check7: true,
+  check8: true
+  )
+visite_mai_celia.package = abo1
+visite_mai_celia.boat = boat2
+visite_mai_celia.save!
+
+visite_juin_celia = Booking.new(
+  title: "Visite de juin",
+  completed: false,
+  date: '2019-06-13',
+  comment: ""
+  )
+visite_juin_celia.package = abo1
+visite_juin_celia.boat = boat2
+visite_juin_celia.save!
+
+visite_mai_cecile = Booking.new(
+  title: "Visite de mai",
+  completed: true,
+  date: '2019-05-13',
+  comment: "Un nettoyage des coffres extérieurs serait le bienvenu",
+  check1: true,
+  check2: true,
+  check3: false,
+  check4: true,
+  check5: false,
+  check6: true,
+  check7: true,
+  check8: true
+  )
+visite_mai_cecile.package = abo1
+visite_mai_cecile.boat = boat3
+visite_mai_cecile.save!
+
+visite_juin_cecile = Booking.new(
+  title: "Visite de juin",
+  completed: false,
+  date: '2019-06-13',
+  comment: ""
+  )
+visite_juin_cecile.package = abo1
+visite_juin_cecile.boat = boat3
+visite_juin_cecile.save!
+
 puts "All bookings created"
 
 picture1_mai = Picture.new
 picture1_mai.booking = visite_mai
-picture1_mai. remote_photo_url = "https://images.unsplash.com/photo-1542512766-5de0463dc1cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+picture1_mai.remote_photo_url = "https://images.unsplash.com/photo-1542512766-5de0463dc1cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
 picture1_mai.save!
 
 picture2_mai = Picture.new
 picture2_mai.booking = visite_mai
-picture2_mai. remote_photo_url = "https://images.unsplash.com/photo-1500917832468-298fa6292e2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+picture2_mai.remote_photo_url = "https://images.unsplash.com/photo-1500917832468-298fa6292e2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
 picture2_mai.save!
 
 puts "All pictures created"
