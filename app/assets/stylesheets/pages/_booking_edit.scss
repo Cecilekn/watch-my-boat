@@ -28,8 +28,12 @@
 }
 
 .photo-buttons {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
+  // display: grid;
+  // grid-template-columns: 1fr 3fr;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
 .download-button {
@@ -110,5 +114,11 @@
 
 .camera-booking {
   font-size: 80px;
-  color: #FFD582;
+  color: #FFC147;
+  margin: 0px;
+  margin-left: 20px;
+  padding: 0px;
+}
+.form-group.file.optional.picture_photo {
+  margin-bottom: 0px;
 }
