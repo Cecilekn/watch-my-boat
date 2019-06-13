@@ -46,8 +46,8 @@
   </head>
     <body>
       <div class="container">
-        <div class="email-logo">
-          <%= image_tag "blue-logo-with-brandname.png" %>
+        <div class="email-logo" style="background-color: black;">
+          <%= image_tag "http://localhost:3000/assets/white-logo-b33007f3ac4ebc6ac118a2f8c13732f90309be861c874dddab96388312e76410.png" %>
         </div>
         <div class="email-content">
           <p><strong>Bonjour <%= @booking.boat.owner.first_name %>,</strong></p><br>
@@ -56,7 +56,13 @@
           <p>Merci pour votre confiance,</p>
           <p>L’équipe Watch My Boat</p>
 
-            <a href="http://www.watchmyboat.io/dashboard">Voir le compte-rendu</a>
+            <a href="http://www.watchmyboat.io/dashboard" style="
+            padding: 16px;
+        background-color: #FFD582;
+        color: #3D3D3D;
+        border-radius: 8px;
+        font-weight: bold;
+        box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);">Voir le compte-rendu</a>
 
         </div>
       </div>
