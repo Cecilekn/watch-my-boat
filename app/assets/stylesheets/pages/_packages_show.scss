@@ -25,6 +25,9 @@
 }
 
 .col-left-services {
+  background-image: url("test-background.png");
+  background-size: cover;
+  background-position: center;
   height: 820px;
   display: flex;
   align-items: center;
@@ -41,4 +44,5 @@
 // .card-show-packages-image {
 //   margin-left: 20px;
 // }
+
 

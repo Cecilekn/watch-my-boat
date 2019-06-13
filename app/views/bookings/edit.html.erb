@@ -11,7 +11,7 @@
     </div>
   </div>
 
-  <div class="manager-dashboard-part-right">
+  <div class="manager-dashboard-part-right-edit">
     <div class="boat-info">
       <h1><img src="https://image.flaticon.com/icons/svg/1852/1852551.svg" height="48px" width="48px" alt=""> <%= @booking.boat.name %> </h1>
       <div class="booking-info-card">
@@ -45,6 +45,7 @@
             <%= f.input :photo_cache, as: :hidden %>
             <%= f.submit "Envoyer", class: "button" %>
           </div>
+        </div>
         <% end %>
         <div class="pictures-container">
           <% @booking.pictures.each do |picture| %>
