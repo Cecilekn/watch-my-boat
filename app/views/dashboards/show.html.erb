@@ -20,7 +20,7 @@
             <% end %>
             <% if @last_visit.pictures.length < 5 %>
               <% (5 - @last_visit.pictures.length).times do %>
-                <%= image_tag asset_path "camera", crop: :fill %>
+                <%= image_tag "camera.png", crop: :fill %>
               <% end %>
             <% end %>
           </div>
@@ -30,11 +30,11 @@
         <% else %>
           <div class="mosaic-left">
             <% 5.times do %>
-              <%= image_tag asset_path "camera", crop: :fill %>
+              <%= image_tag "camera.png", crop: :fill %>
             <% end %>
           </div>
           <div class="mosaic-right">
-            <%= image_tag asset_path "camera", crop: :fill %>
+            <%= image_tag "camera.png", crop: :fill %>
           </div>
         <% end %>
       </div>
@@ -43,11 +43,11 @@
       <div class="mosaic-container">
         <div class="mosaic-left">
           <% 5.times do %>
-            <%= image_tag asset_path "camera", crop: :fill %>
+            <%= image_tag "camera.png", crop: :fill %>
           <% end %>
         </div>
           <div class="mosaic-right">
-            <%= image_tag asset_path "camera", crop: :fill %>
+            <%= image_tag "camera.png", crop: :fill %>
           </div>
       </div>
     <% end %>
