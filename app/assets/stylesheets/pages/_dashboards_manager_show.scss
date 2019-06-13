@@ -2,12 +2,13 @@
   color: #1B5456;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: 100vh;
+  width: 100vw;
   padding: 0;
+  background-color: white;
 }
 
 .manager-dashboard-sidebar {
-  width: 25vh;
+  width: 32vh;
   height: 100vh;
   background-color: #FFD582;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -28,11 +29,25 @@
 }
 
 .manager-dashboard-part-right {
-  width: 109vh;
+  width: 76vw;
   margin-right: 0;
   padding-top: 88px;
-  padding-left: 20px;
   padding-right: 24px;
+}
+
+.manager-dashboard-part-right-header {
+  margin-top: 0px;
+  margin-bottom: -128px;
+  padding-left: 20px;
+}
+
+.manager-bookings {
+  padding-left: 20px;
+  padding-top: 4px;
+  padding-bottom: 8px;
+  margin-right: -24px;
+  margin-top: -4px;
+  background-color: #FFE6CE;
 }
 
 .booking-card {
@@ -44,6 +59,7 @@
   border-radius: 10px;
   margin-top: 16px;
   margin-bottom: 16px;
+  margin-right: 20px;
 }
 
 .booking-card-img {
