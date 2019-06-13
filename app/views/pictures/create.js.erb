@@ -1,2 +1,5 @@
-const picturesContainer = document.querySelector(".pictures-container");
-picturesContainer.insertAdjacentHTML("beforeend", '<%= j render "bookings/picture-card", picture: @picture %>')
+function loadNewPicture(){
+  const picturesContainer = document.querySelector(".pictures-container");
+  picturesContainer.insertAdjacentHTML("beforeend", '<%= j render "bookings/picture-card", picture: @picture %>');
+}
+loadNewPicture();
