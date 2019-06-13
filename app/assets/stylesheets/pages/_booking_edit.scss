@@ -34,7 +34,10 @@
   background-color: #FFE6CE;
   padding-top: 10px;
   margin-top: -3px;
-  padding-bottom: 4px
+  padding-bottom: 4px;
+  .col-form-label{
+    width: 400px;
+  }
 }
 
 .photo-upload-form {
