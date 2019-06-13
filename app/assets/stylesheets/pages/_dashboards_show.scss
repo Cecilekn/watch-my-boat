@@ -28,6 +28,10 @@
   margin-top: -126px;
 }
 
+.dashboard-info .fas {
+  font-size: 24px;
+}
+
 .card-info {
   background-color: white;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -35,6 +39,22 @@
   border-radius: 10px;
   margin-top: 16px;
   margin-bottom: 16px;
+}
+
+.card-info-news {
+  display: grid;
+  grid-template-columns: 1fr 10fr;
+}
+
+.card-info-news-date {
+  font-weight: bold;
+  border-right: solid;
+  border-right-width: 1px;
+  padding-right: 8px;
+}
+
+.card-info-news-text {
+  padding-left: 8px;
 }
 
 .user-boat-info-checks {
@@ -48,8 +68,8 @@
 
 .manager-avatar {
   position: absolute;
-  margin-left: 260px;
-  margin-top: 160px;
+  margin-left: 264px;
+  margin-top: 180px;
 }
 
 .dashboard-news {
@@ -107,7 +127,8 @@
 
 .meteo-weather {
   display: flex;
-  margin-top: 4px;
+  margin-top: 12px;
+  margin-left: 8px;
   height: 10%;
   position: relative;
   justify-content: center;
@@ -124,7 +145,7 @@
 
 
 .meteo img {
-  margin-right: 16px;
+  margin-right: 4px;
 }
 
 #weather {
@@ -137,6 +158,10 @@
 
 #weather-temp {
   margin-top: 2%;
+}
+
+#weather-sky:first-letter {
+  text-transform: capitalize;
 }
 
 .your-boat {

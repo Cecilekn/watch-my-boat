@@ -185,12 +185,12 @@
     <div class="meteo-weather">
       <div id="weather" data-lat="<%= @boat.latitude %>" data-lon="<%= @boat.longitude %>">
         <div id="meteo-weather-info">
-          <h4 id="date"><%= l(Time.now, format: "%A %Hh%M") %></h4>
+          <h4 id="date"><%= (l(Time.now, format: "%A %Hh%M")).capitalize %></h4>
           <div class="flexbox icon-temp">
             <img id="weather-img" src="" alt="image à afficher" height="70px">
-            <h2 id="weather-temp"> temperature</h2>
+            <h2 id="weather-temp">temperature</h2>
           </div>
-          <p id="weather-sky">ciel</p>
+          <h4 id="weather-sky">Ciel</h4>
         </div>
       </div>
     </div>
@@ -209,12 +209,21 @@
     <h1>Dernières actualités</h1>
     <ul>
       <% if @last_visit.present? %>
-        <li class="card-info"><%= @last_visit.date.strftime("%d-%m-%y") %> : Dernière visite de votre concierge.</li>
+        <li class="card-info card-info-news">
+          <div class="card-info-news-date"><%= @last_visit.date.strftime("%d-%m-%y") %></div>
+          <div class="card-info-news-text">Dernière visite de votre concierge.</div>
+        </li>
         <% end %>
-        <li class="card-info"> <%= @next_visit.date.strftime("%d-%m-%y") %> : Prochaine visite de votre concierge.</li>
+        <li class="card-info card-info-news">
+          <div class="card-info-news-date"><%= @next_visit.date.strftime("%d-%m-%y") %></div>
+          <div class="card-info-news-text">Prochaine visite de votre concierge.</div>
+        </li>
         <% if !@next_booked_offers.nil? %>
         <% @next_booked_offers.each do |offer| %>
-        <li class="card-info"> <%= offer.date.strftime("%d-%m-%y") %>: Pack "<%= offer.title %>" réservé pour <%= offer.date.strftime("%H:%M") %>.</li>
+        <li class="card-info card-info-news">
+          <div class="card-info-news-date"><%= offer.date.strftime("%d-%m-%y") %></div>
+          <div class="card-info-news-text">Pack "<%= offer.title %>" réservé pour <%= offer.date.strftime("%H:%M") %>.</div>
+        </li>
         <% end %>
       <% end %>
     </ul>
