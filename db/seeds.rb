@@ -476,7 +476,7 @@ booking1.save!
 visite_mai_celia = Booking.new(
   title: "Visite de mai",
   completed: true,
-  date: '2019-05-14',
+  date: '2019-05-15',
   comment: "J'ai resserré les amarres suite au coup de vent.",
   check1: true,
   check2: true,
@@ -494,7 +494,7 @@ visite_mai_celia.save!
 visite_juin_celia = Booking.new(
   title: "Visite de juin",
   completed: false,
-  date: '2019-06-14',
+  date: '2019-06-15',
   comment: ""
   )
 visite_juin_celia.package = abo1
@@ -504,7 +504,7 @@ visite_juin_celia.save!
 visite_mai_cecile = Booking.new(
   title: "Visite de mai",
   completed: true,
-  date: '2019-05-14',
+  date: '2019-05-15',
   comment: "La tempête de sable a sali le pont.",
   check1: true,
   check2: true,
@@ -522,7 +522,7 @@ visite_mai_cecile.save!
 visite_juin_cecile = Booking.new(
   title: "Visite de juin",
   completed: false,
-  date: '2019-06-14',
+  date: '2019-06-15',
   comment: ""
   )
 visite_juin_cecile.package = abo1
