@@ -41,10 +41,15 @@
   margin-top: 0px;
   margin-bottom: -128px;
   padding-left: 28px;
+  background-color: rgba(0,0,0,0);
+  z-index: 10;
+  position: absolute;
 }
 
-.manager-dashboard-part-right-header p {
-  font-size: 24px;
+.fond-rose{
+  width: 798px;
+  z-index: 1;
+  // position: absolute;
 }
 
 .manager-bookings {
