@@ -106,7 +106,7 @@ boat2.owner = celia
 boat2.manager = concierge1
 boat2.category = voilier
 boat2.dimension = small
-boat2.remote_photo_url = "https://cdn.pixabay.com/photo/2016/08/14/18/27/sailing-boat-1593613_1280.jpg"
+boat2.remote_photo_url = "https://res.cloudinary.com/di4pxxpr8/image/upload/v1560501544/Boat_demo_6_beq37c.jpg"
 boat2.save!
 
 boat3 = Boat.new(
@@ -477,7 +477,7 @@ visite_mai_celia = Booking.new(
   title: "Visite de mai",
   completed: true,
   date: '2019-05-14',
-  comment: "Un nettoyage des coffres extérieurs serait le bienvenu",
+  comment: "J'ai resserré les amarres suite au coup de vent.",
   check1: true,
   check2: true,
   check3: false,
@@ -505,7 +505,7 @@ visite_mai_cecile = Booking.new(
   title: "Visite de mai",
   completed: true,
   date: '2019-05-14',
-  comment: "Un nettoyage des coffres extérieurs serait le bienvenu",
+  comment: "La tempête de sable a sali le pont.",
   check1: true,
   check2: true,
   check3: false,
@@ -540,6 +540,16 @@ picture2_mai = Picture.new
 picture2_mai.booking = visite_mai
 picture2_mai.remote_photo_url = "https://res.cloudinary.com/di4pxxpr8/image/upload/v1560458892/interieur_catamaran_vqmlsa.jpg"
 picture2_mai.save!
+
+picture1_mai_celia = Picture.new
+picture1_mai_celia.booking = visite_mai_celia
+picture1_mai_celia.remote_photo_url = "https://res.cloudinary.com/di4pxxpr8/image/upload/v1560501544/Boat_demo_6_beq37c.jpg"
+picture1_mai_celia.save!
+
+picture1_mai_cecile = Picture.new
+picture1_mai_cecile.booking = visite_mai_cecile
+picture1_mai_cecile.remote_photo_url = "https://res.cloudinary.com/di4pxxpr8/image/upload/v1559142909/bmsvjoc78fvgn0cxjcyu.jpg"
+picture1_mai_cecile.save!
 
 puts "All pictures created"
 
