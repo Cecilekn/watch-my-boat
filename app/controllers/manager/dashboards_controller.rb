@@ -1,6 +1,7 @@
 class Manager::DashboardsController < ApplicationController
   def show
-    @boat = current_user.managed_boats.first
-    @bookings = @boat.bookings.where(completed: false).order(date: :asc)
+    @bookings = current_user.managed_boats.map do |boat|
+      boat.bookings.where(completed: false)
+    end.flatten.sort_by(&:date)
   end
 end

@@ -95,7 +95,7 @@ boat1.owner = guillaume
 boat1.manager = concierge1
 boat1.category = voilier
 boat1.dimension = small
-boat1.remote_photo_url = "https://res.cloudinary.com/di4pxxpr8/image/upload/v1560463694/o3f3b0ryuqmptasc915l.jpg"
+boat1.remote_photo_url = "https://res.cloudinary.com/di4pxxpr8/image/upload/v1560498070/newlili_clo72u.jpg"
 boat1.save!
 
 boat2 = Boat.new(
