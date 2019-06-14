@@ -8,6 +8,14 @@ class DashboardsController < ApplicationController
     @offre2 = Package.where(kind: "offre", title: "Hivernage").first
     @offre3 = Package.where(kind: "offre", title: "Maintenance").first
     @offre4 = Package.where(kind: "offre", title: "Départ").first
+    @news = []
+    @news << @next_visit
+    if !@next_booked_offers.nil?
+      @next_booked_offers.each do |offer|
+        @news << offer
+      end
+    end
+    @news_ordered = @news.sort_by{ |e| e[:date] }
   end
 end
 
