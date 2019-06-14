@@ -7,6 +7,8 @@ import "../plugins/flatpickr";
 import { mosaic } from '../components/mosaic';
 import { moveToSelected } from '../components/carroussel';
 import { newFunction } from "../plugins/flatpickr";
+import { initSweetalert } from '../plugins/init_sweetalert';
+
 
 initUpdateNavbarOnScroll();
 fetchWeather();
@@ -14,6 +16,7 @@ initAutocomplete();
 mosaic();
 moveToSelected();
 
+initSweetalert();
 
 // Eventos teclado
 $(document).keydown(function(e) {
