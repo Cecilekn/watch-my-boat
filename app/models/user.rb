@@ -14,7 +14,7 @@ class User < ApplicationRecord
   has_many :managed_providers, class_name: 'Provider', foreign_key: 'manager_id', dependent: :destroy
   has_many :tasks, class_name: 'Task', foreign_key: 'manager_id', dependent: :destroy
   has_many :bookings, through: :owned_boats
-  has_many :bookinfs, through: :managed_boats
+  has_many :bookings, through: :managed_boats
 
   validates :first_name, :last_name, :phone_number, :email, :address, :photo, presence: true
   validates :email, uniqueness: true

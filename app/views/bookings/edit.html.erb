@@ -32,8 +32,8 @@
 
     <div class="feedback-form">
       <div class="photo-upload-form">
-        <h2>Télécharger des photos</h2>
-        <p>Télécharger vos photos une par une ci-dessous afin que <%= @booking.boat.owner.first_name %> puisse avoir des nouvelles de son bateau !</p>
+        <h2>Photos du bateau</h2>
+        <p>Téléchargez vos photos une par une ci-dessous afin que <%= @booking.boat.owner.first_name %> puisse avoir des nouvelles de son bateau !</p>
         <%= simple_form_for([@booking, @picture], remote: true) do |f| %>
 
           <%#= f.input :photo, label: false %>
@@ -127,7 +127,7 @@
                 <fieldset class="form-group radio_buttons optional booking_check4 form-group-booking">
                   <div class="form-group-booking">
                     <div class>
-                      <legend class="col-form-label pt-0">Taud de voile</legend>
+                      <legend class="col-form-label pt-0">Propreté du pont</legend>
                       <input type="hidden" name="booking[check4]" value="">
                     </div>
                     <div class="form-check form-check-inline text-green">

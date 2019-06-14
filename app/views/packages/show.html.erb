@@ -10,13 +10,10 @@
         <div class="card-show-packages-container">
           <div class="card-show-packages">
             <div class="show-packages-card-top">
-              <% i = 1 %>
               <% @package.services.each do |service| %>
                 <div class="show-packages-card-item">
                   <div class="show-packages-card-text">
-                    <p class="show-packages-card-text-title">Service <%= i %></p>
-                    <p class="show-packages-card-text-subtitle"><%= service.title %></p>
-                    <% i += 1 %>
+                    <p class="show-packages-card-text-title"><i class="fas fa-check" style="font-variant: all-small-caps; padding-right: 5px"></i><%= service.title %></p>
                   </div>
                 </div>
               <% end %>
