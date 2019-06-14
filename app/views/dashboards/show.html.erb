@@ -160,11 +160,11 @@
       <h5>Remarques de <%= @boat.manager.first_name %></h5>
       <br>
       <% if @last_visit.present? %>
-        <% if !@last_visit.comment3.nil? && @last_visit.comment3 != "" %>
+        <% if !@last_visit.comment2.nil? && @last_visit.comment2 != "" %>
           <p>Intérieur : <i>"<%= @last_visit.comment2 %>" </i></p>
         <% end %>
 
-        <% if !@last_visit.comment2.nil? && @last_visit.comment2 != "" %>
+        <% if !@last_visit.comment3.nil? && @last_visit.comment3 != "" %>
           <p>Extérieur : <i>"<%= @last_visit.comment3 %>" </i></p>
         <% end %>
 
