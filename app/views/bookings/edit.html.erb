@@ -58,13 +58,13 @@
         <div class="form-inputs style-edit-booking">
           <% if @booking.package.kind =="abonnement" %>
             <%= simple_form_for(@booking) do |f| %>
-              <div class="visit-form-inside visit-form">
-                <h2>Inspection extérieure</h2>
+              <div class="visit-form-outside visit-form">
+                <h2>Inspection intérieure</h2>
 
-                <fieldset class="form-group radio_buttons optional booking_check1">
+                <fieldset class="form-group radio_buttons optional booking_check1 form-group-booking">
                   <div class="form-group-booking">
                     <div class>
-                      <legend class="col-form-label pt-0">Amares</legend>
+                      <legend class="col-form-label pt-0">Vannes d'arrivée d'eau</legend>
                       <input type="hidden" name="booking[check1]" value="">
                     </div>
                     <div class="form-check form-check-inline text-green">
@@ -85,7 +85,7 @@
                 <fieldset class="form-group radio_buttons optional booking_check2 form-group-booking">
                   <div class="form-group-booking">
                     <div class>
-                      <legend class="col-form-label pt-0">Bouts à bord</legend>
+                      <legend class="col-form-label pt-0">Vannes d'arrivée de gaz</legend>
                       <input type="hidden" name="booking[check2]" value="">
                     </div>
                     <div class="form-check form-check-inline text-green">
@@ -106,7 +106,7 @@
                 <fieldset class="form-group radio_buttons optional booking_check3 form-group-booking">
                   <div class="form-group-booking">
                     <div class>
-                      <legend class="col-form-label pt-0">Pare battages</legend>
+                      <legend class="col-form-label pt-0">Batteries</legend>
                       <input type="hidden" name="booking[check3]" value="">
                     </div>
                     <div class="form-check form-check-inline text-green">
@@ -127,7 +127,7 @@
                 <fieldset class="form-group radio_buttons optional booking_check4 form-group-booking">
                   <div class="form-group-booking">
                     <div class>
-                      <legend class="col-form-label pt-0">Propreté du pont</legend>
+                      <legend class="col-form-label pt-0">Humidité</legend>
                       <input type="hidden" name="booking[check4]" value="">
                     </div>
                     <div class="form-check form-check-inline text-green">
@@ -148,13 +148,13 @@
                 <%= f.input :comment2, placeholder: "Rédiger ici votre commentaire" %>
               </div>
 
-              <div class="visit-form-outside visit-form">
-                <h2>Inspection intérieure</h2>
+              <div class="visit-form-inside visit-form">
+                <h2>Inspection extérieure</h2>
 
                 <fieldset class="form-group radio_buttons optional booking_check5 form-group-booking">
                   <div class="form-group-booking">
                     <div class>
-                      <legend class="col-form-label pt-0">Vannes d'arrivée d'eau</legend>
+                      <legend class="col-form-label pt-0">Bouts à bord</legend>
                       <input type="hidden" name="booking[check5]" value="">
                     </div>
                     <div class="form-check form-check-inline text-green">
@@ -175,7 +175,7 @@
                 <fieldset class="form-group radio_buttons optional booking_check6 form-group-booking">
                   <div class="form-group-booking">
                     <div class>
-                      <legend class="col-form-label pt-0">Vannes d'arrivée de gaz</legend>
+                      <legend class="col-form-label pt-0">Pare battages</legend>
                       <input type="hidden" name="booking[check6]" value="">
                     </div>
                     <div class="form-check form-check-inline text-green">
@@ -196,7 +196,7 @@
                 <fieldset class="form-group radio_buttons optional booking_check7 form-group-booking">
                   <div class="form-group-booking">
                     <div class>
-                      <legend class="col-form-label pt-0">Batteries</legend>
+                      <legend class="col-form-label pt-0">Propreté du pont</legend>
                       <input type="hidden" name="booking[check7]" value="">
                     </div>
                     <div class="form-check form-check-inline text-green">
@@ -214,10 +214,10 @@
                   </div>
                 </fieldset>
 
-                <fieldset class="form-group radio_buttons optional booking_check8 form-group-booking">
+                <fieldset class="form-group radio_buttons optional booking_check8">
                   <div class="form-group-booking">
                     <div class>
-                      <legend class="col-form-label pt-0">Humidité</legend>
+                      <legend class="col-form-label pt-0">Amarres</legend>
                       <input type="hidden" name="booking[check8]" value="">
                     </div>
                     <div class="form-check form-check-inline text-green">

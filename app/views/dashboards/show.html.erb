@@ -66,13 +66,13 @@
       <div class="user-boat-info-checks">
 
         <div class="checks-categories">
-          <p>Amares</p>
-          <p>Bouts à bord</p>
-          <p>Pare battages</p>
-          <p>Propreté du pont</p>
+          <p>Vannes d'arrivée d'eau</p>
+          <p>Vannes d'arrivée de gaz</p>
+          <p>Batteries</p>
+          <p>Humidité</p>
         </div>
 
-        <div class="checks-icons1">
+        <div class="checks-icons">
           <% if @last_visit.present? %>
             <p><% if @last_visit.check1 %>
               <i class="fas fa-check-circle text-success"></i>
@@ -109,14 +109,14 @@
           <% end %>
         </div>
 
-        <div class="checks-categories">
-          <p>Vannes d'arrivée d'eau</p>
-          <p>Vannes d'arrivée de gaz</p>
-          <p>Batteries</p>
-          <p>Humidité</p>
+        <div class="checks-categories2">
+          <p>Bouts à bord</p>
+          <p>Pare battages</p>
+          <p>Propreté du pont</p>
+          <p>Amarres</p>
         </div>
 
-        <div class="checks-icons2">
+        <div class="checks-icons">
           <% if @last_visit.present? %>
             <p><% if @last_visit.check5 %>
               <i class="fas fa-check-circle text-success"></i>
@@ -160,12 +160,12 @@
       <h5>Remarques de <%= @boat.manager.first_name %></h5>
       <br>
       <% if @last_visit.present? %>
-        <% if !@last_visit.comment2.nil? && @last_visit.comment2 != "" %>
-          <p>Extérieur : <i>"<%= @last_visit.comment2 %>" </i></p>
+        <% if !@last_visit.comment3.nil? && @last_visit.comment3 != "" %>
+          <p>Intérieur : <i>"<%= @last_visit.comment2 %>" </i></p>
         <% end %>
 
-        <% if !@last_visit.comment3.nil? && @last_visit.comment3 != "" %>
-          <p>Intérieur : <i>"<%= @last_visit.comment3 %>" </i></p>
+        <% if !@last_visit.comment2.nil? && @last_visit.comment2 != "" %>
+          <p>Extérieur : <i>"<%= @last_visit.comment3 %>" </i></p>
         <% end %>
 
         <% if !@last_visit.comment.nil? && @last_visit.comment != ""  %>
