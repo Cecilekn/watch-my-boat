@@ -14,8 +14,8 @@ class DashboardsController < ApplicationController
       @next_booked_offers.each do |offer|
         @news << offer
       end
+      @news_ordered = @news.sort_by{ |e| e[:date] }
     end
-    @news_ordered = @news.sort_by{ |e| e[:date] }
   end
 end
 
