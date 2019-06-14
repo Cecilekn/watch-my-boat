@@ -156,7 +156,7 @@
     </div>
 
     <div class="card-info manager-boat-info">
-      <%= cl_image_tag @boat.manager.photo, class: "avatar dropdown-toggle manager-avatar", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <%= cl_image_tag @boat.manager.photo, crop: :thumb, gravity: :face, width: 50, height: 50, class: "avatar dropdown-toggle manager-avatar", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       <h5>Remarques de <%= @boat.manager.first_name %></h5>
       <br>
       <% if @last_visit.present? %>

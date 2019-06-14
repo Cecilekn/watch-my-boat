@@ -14,9 +14,15 @@
     <div class="footer-menu">
       <h5>Plan du site</h5>
         <ul>
-          <li><a href="https://www.watchmyboat.io">Home</a></li>
-          <li><a href="https://www.watchmyboat.io">Mon tableau de bord</a></li>
-          <li><a href="https://www.watchmyboat.io">Services</a></li>
+          <li><%= link_to "Home", root_path %></li>
+          <% if current_user.nil? %>
+            <li><%= link_to "Mon tableau de bord", new_user_session_path %></li>
+          <% elsif current_user.manager %>
+            <li><%= link_to "Mon tableau de bord", manager_dashboard_path %></li>
+          <% else %>
+            <li><%= link_to "Mon tableau de bord", dashboard_path %></li>
+          <% end %>
+          <li><%= link_to "Nos offres", packages_path %></li>
         </ul>
     </div>
 
