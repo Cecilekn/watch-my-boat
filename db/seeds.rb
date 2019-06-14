@@ -33,7 +33,7 @@ guillaume.save!
 celia = User.new(
   first_name: "Célia",
   last_name: "Heidsieck",
-  email: "celia@gmail.com",
+  email: "celia.heidsieck@hotmail.fr",
   password: "123456",
   phone_number: "0612140043",
   address: "Paris",
@@ -45,7 +45,7 @@ celia.save!
 cecile = User.new(
   first_name: "Cécile",
   last_name: "Kwan Ning",
-  email: "cecile@gmail.com",
+  email: "cecile.kwan-ning16@orange.fr",
   password: "123456",
   phone_number: "0670830910",
   address: "Paris",
