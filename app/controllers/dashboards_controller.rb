@@ -7,7 +7,7 @@ class DashboardsController < ApplicationController
     @offre1 = Package.where(kind: "offre", title: "Convoyage").first
     @offre2 = Package.where(kind: "offre", title: "Hivernage").first
     @offre3 = Package.where(kind: "offre", title: "Maintenance").first
-    @offre4 = Package.where(kind: "offre", title: "Sortie").first
+    @offre4 = Package.where(kind: "offre", title: "Départ").first
   end
 end
 
