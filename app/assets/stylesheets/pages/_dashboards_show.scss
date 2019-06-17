@@ -13,11 +13,22 @@
   font-size: 24px;
 }
 
+
+.mosaic-background{
+  background-image: image-url("bg-dashboard-owner-desktop.png");
+  width: 100vw;
+  height: 850px;
+  background-size: cover;
+  background-position: center;
+  padding-top: 100px;
+  margin-bottom: -165px;
+}
+
 .mosaic-boat-user {
-  background-color: #FFD582;
-  padding: 16px 8px 8px 8px;
-  margin-top: -1px;
-  margin-bottom: -1px;
+  // background-color: #FFD582;
+  // padding: 16px 8px 8px 8px;
+  // margin-top: -1px;
+  // margin-bottom: -1px;
 }
 
 .mosaic-container {
@@ -29,7 +40,7 @@
   display: grid;
   grid-template-columns: 3fr 2fr;
   grid-gap: 16px;
-  margin-top: -126px;
+  // margin-top: -126px;
 }
 
 .dashboard-info .fas {
@@ -85,6 +96,16 @@
   margin-top: 180px;
 }
 
+.dashboard-news-background {
+  background-image: image-url("bg-dashboard-owner-desktop-2.png");
+  width: 100vw;
+  height: 800px;
+  background-size: cover;
+  background-position: center;
+  padding-top: 100px;
+  margin-bottom: -400px;
+}
+
 .dashboard-news {
   padding: 0 72px 0 72px;
   background-color: #FFE6CE;
@@ -112,7 +133,7 @@
 }
 
 .dashboard-packages {
-  margin-top: -400px;
+  // margin-top: -400px;
   padding: 24px;
   h1{
     text-align: center;

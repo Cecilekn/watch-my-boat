@@ -6,56 +6,58 @@
     <p> Bienvenue à bord <%= current_user.first_name %> !</p>
   </div>
 
-<svg width="1024" height="118" viewBox="0 0 1023 118" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- <svg width="1024" height="118" viewBox="0 0 1023 118" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M1023 28.0001V118H-9.5C-9.5 118 203.5 73.5 465 73.5C726.5 73.5 794 -17 920.5 4.00001C1047 25 1023 28.0001 1023 28.0001Z" fill="#FFD582"/>
-</svg>
+</svg> -->
 
-  <div class="mosaic-boat-user">
-    <% if @last_visit.present? %>
-      <div class="mosaic-container">
-        <% if @last_visit.pictures.length > 0 %>
-          <div class="mosaic-left">
-            <% @last_visit.pictures.each do |picture | %>
-              <%= cl_image_tag picture.photo, crop: :fill %>
-            <% end %>
-            <% if @last_visit.pictures.length < 5 %>
-              <% (5 - @last_visit.pictures.length).times do %>
+  <div class="mosaic-background">
+    <div class="mosaic-boat-user">
+      <% if @last_visit.present? %>
+        <div class="mosaic-container">
+          <% if @last_visit.pictures.length > 0 %>
+            <div class="mosaic-left">
+              <% @last_visit.pictures.each do |picture | %>
+                <%= cl_image_tag picture.photo, crop: :fill %>
+              <% end %>
+              <% if @last_visit.pictures.length < 5 %>
+                <% (5 - @last_visit.pictures.length).times do %>
+                  <%= image_tag "camera.png", crop: :fill %>
+                <% end %>
+              <% end %>
+            </div>
+            <div class="mosaic-right">
+              <%=cl_image_tag @last_visit.pictures[0].photo, crop: :fill %>
+            </div>
+          <% else %>
+            <div class="mosaic-left">
+              <% 5.times do %>
                 <%= image_tag "camera.png", crop: :fill %>
               <% end %>
-            <% end %>
-          </div>
-          <div class="mosaic-right">
-            <%=cl_image_tag @last_visit.pictures[0].photo, crop: :fill %>
-          </div>
-        <% else %>
+            </div>
+            <div class="mosaic-right">
+              <%= image_tag "camera.png", crop: :fill %>
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+        <p>Votre concierge n'a pas encore pris de photos de votre bateau !</p>
+        <div class="mosaic-container">
           <div class="mosaic-left">
             <% 5.times do %>
               <%= image_tag "camera.png", crop: :fill %>
             <% end %>
           </div>
-          <div class="mosaic-right">
-            <%= image_tag "camera.png", crop: :fill %>
-          </div>
-        <% end %>
-      </div>
-    <% else %>
-      <p>Votre concierge n'a pas encore pris de photos de votre bateau !</p>
-      <div class="mosaic-container">
-        <div class="mosaic-left">
-          <% 5.times do %>
-            <%= image_tag "camera.png", crop: :fill %>
-          <% end %>
+            <div class="mosaic-right">
+              <%= image_tag "camera.png", crop: :fill %>
+            </div>
         </div>
-          <div class="mosaic-right">
-            <%= image_tag "camera.png", crop: :fill %>
-          </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 
-<svg width="1024" height="119" viewBox="0 0 1024 119" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- <svg width="1024" height="119" viewBox="0 0 1024 119" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0 90V0H1023C1023 0 836 25 671 25C506 25 246.5 115.5 161 118C75.5 120.5 0 90 0 90Z" fill="#FFD582"/>
-</svg>
+</svg> -->
 
 
 
@@ -201,34 +203,36 @@
     </div>
   </div>
 
-<svg width="1024" height="104" viewBox="0 0 1022 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- <svg width="1024" height="104" viewBox="0 0 1022 104" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M1023 13.1457V103.146H0C0 103.146 70 82 374 65.5C678 49 784 3 869.5 0.5C955 -2 1023 13.1457 1023 13.1457Z" fill="#FFE6CE"/>
-</svg>
+</svg> -->
 
-  <div class="dashboard-news">
-    <h1>Prochaines actualités</h1>
-    <ul>
-      <% if !@news_ordered.nil? %>
-        <% @news_ordered.each do |actu| %>
-          <% if actu.package.kind == "abonnement" %>
-            <li class="card-info card-info-news">
-              <div class="card-info-news-date"><%= actu.date.strftime("%d-%m-%y") %></div>
-              <div class="card-info-news-text">Prochaine visite de votre concierge.</div>
-            </li>
-          <% elsif actu.package.kind == "offre" %>
-            <li class="card-info card-info-news">
-              <div class="card-info-news-date"><%= actu.date.strftime("%d-%m-%y") %></div>
-              <div class="card-info-news-text">Pack "<%= actu.title %>" réservé pour <%= actu.date.strftime("%H:%M") %>.</div>
-            </li>
+  <div class="dashboard-news-background">
+    <div class="dashboard-news">
+      <h1>Prochaines actualités</h1>
+      <ul>
+        <% if !@news_ordered.nil? %>
+          <% @news_ordered.each do |actu| %>
+            <% if actu.package.kind == "abonnement" %>
+              <li class="card-info card-info-news">
+                <div class="card-info-news-date"><%= actu.date.strftime("%d-%m-%y") %></div>
+                <div class="card-info-news-text">Prochaine visite de votre concierge.</div>
+              </li>
+            <% elsif actu.package.kind == "offre" %>
+              <li class="card-info card-info-news">
+                <div class="card-info-news-date"><%= actu.date.strftime("%d-%m-%y") %></div>
+                <div class="card-info-news-text">Pack "<%= actu.title %>" réservé pour <%= actu.date.strftime("%H:%M") %>.</div>
+              </li>
+            <% end %>
           <% end %>
         <% end %>
-      <% end %>
-    </ul>
+      </ul>
+    </div>
   </div>
 
-<svg width="1020" height="115" viewBox="0 0 1020 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- <svg width="1020" height="115" viewBox="0 0 1020 115" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0 90.1457V0.145691H1023C1023 0.145691 712.391 15.4225 671 25.1457C629.609 34.8689 246.5 115.646 161 118.146C75.5 120.646 0 90.1457 0 90.1457Z" fill="#FFE6CE"/>
-</svg>
+</svg> -->
 
 
   <div class="dashboard-packages">
