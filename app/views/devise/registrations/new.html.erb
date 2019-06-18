@@ -1,8 +1,8 @@
 <div class="form-container">
   <div class="row">
-    <div class="col-8 col-left">
+    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 col-left-user">
       <div class="content-left">
-        <h2>Renseignez votre profil</h2>
+        <h2>Votre profil</h2>
 
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= f.error_notification %>
@@ -25,7 +25,7 @@
                               label: "Email" %>
                 </div>
                 <div class="input-inline">
-                  <%= f.input :phone_number, label: "Numéro de téléphone" %>
+                  <%= f.input :phone_number, label: "Téléphone" %>
                 </div>
               </div>
                 <%= f.input :address, label: "Adresse" %>
@@ -49,9 +49,8 @@
                 <% end %>
             </div>
           </div>
-    <div class="col-4 col-right-user">
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-right-user">
       <div class="form-text-image">
-        <p>La navigation sans les contraintes</p>
       </div>
     </div>
   </div>
