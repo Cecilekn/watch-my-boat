@@ -1,3 +1,5 @@
+//Version tablette
+
 .footer {
   display:flex;
   justify-content: space-around;
@@ -18,8 +20,6 @@
   font-size: 18px;
   font-weight: 700;
 }
-
-.footer
 
 .footer-elements ul {
   font-size: 12px;
@@ -60,3 +60,22 @@
   }
 }
 
+// version mobile
+@media(max-width: 736px) {
+  .footer-elements {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 18px;
+  }
+
+  .footer {
+    display:flex;
+    justify-content: flex-start;
+    bottom: 0;
+    background-color: #227799;
+    color: white;
+    padding: 16px;
+    padding-left: 62px;
+  }
+
+}
