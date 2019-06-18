@@ -1,4 +1,6 @@
 // Specific CSS for your home-page
+
+//Version tablette
 .home-card {
   width: 430px;
   background-color: white;
@@ -44,7 +46,6 @@
   font-weight: 400;
 }
 
-
 .btn-cent {
   width: 100%;
   margin-top: 16px;
@@ -67,4 +68,32 @@
   font-size: 20px;
   font-weight: bolder;
   margin-right: 10px;
+}
+
+// version desktop
+
+@media(min-width: 992px) {
+  .home-card {
+    width: 430px;
+  }
+}
+
+
+// version mobile
+
+@media(max-width: 736px) {
+  .home-card {
+    width: 331px;
+    background-color: white;
+    opacity: 0.9;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12) !important;
+    color: black;
+    text-align: left;
+    padding: 22px;
+    margin-left: 41px;
+    border-radius: 10px;
+  }
+  .banner {
+    width: auto;
+  }
 }
