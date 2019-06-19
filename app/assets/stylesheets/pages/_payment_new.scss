@@ -1,8 +1,25 @@
+@media (max-width: 700px) {
+  .col-left {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    background-image: url('https://images.pexels.com/photos/2090763/pexels-photo-2090763.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9;
+  }
+}
+
 .content-left.date{
   text-align: center;
   margin-top: 200px;
   margin-left: 0px;
   margin-right: 0px;
+}
+
+@media (max-width: 700px) {
+  .content-left.date{
+    margin-left: 30px;
+    margin-right: 30px;
+  }
 }
 
 .form-inline.date {
@@ -17,6 +34,12 @@
 .datetimepicker.date {
   width: 400px;
   margin-left: 5px;
+}
+
+@media (max-width: 700px) {
+  .datetimepicker.date {
+    width: 142px;
+  }
 }
 
 #date-validation {
