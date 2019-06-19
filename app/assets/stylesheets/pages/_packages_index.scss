@@ -1,3 +1,5 @@
+// version tablette
+
 .packages-index-container {
   height: 100vh;
   display: grid;
@@ -55,3 +57,21 @@
     }
   }
 }
+
+//version mobile
+
+@media(max-width: 736px) {
+  .packages-index-container {
+    height: auto;
+    display: block;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+   }
+ .package-img {
+   height: 50vh;
+   }
+
+ .package-info {
+   height: 67%;
+   }
+ }
+
