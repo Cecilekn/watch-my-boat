@@ -1,8 +1,27 @@
+@media(max-width: 1440px) {
+  .navbar-lewagon{
+    width: 100vw;
+  }
+}
+
+@media(max-width: 1366px) {
+  .navbar-lewagon{
+    width: 1366px;
+  }
+}
+
+@media(max-width: 768px) {
+  .navbar-lewagon{
+    width: 800px;
+  }
+}
+
+
 .navbar-lewagon {
   background-color: transparent;
   justify-content: space-between;
   position: fixed;
-  width: 100vw;
+  // width: 100vw;
   transition: 0.5s background-color ease;
   z-index: 1;
 }
