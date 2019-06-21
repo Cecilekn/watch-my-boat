@@ -12,6 +12,15 @@
 //   transition: 0.5s background-color ease;
 // }
 
+.fa-bars {
+  color:white;
+}
+
+.navbar-nav {
+  text-align: right;
+  flex-direction: column-reverse;
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
