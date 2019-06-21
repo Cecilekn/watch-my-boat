@@ -27,6 +27,12 @@
   }
 }
 
+@media (min-width: 768px) {
+  .manager-dashboard-sidebar {
+    width: 23vw;
+  }
+}
+
 .manager-dashboard-menu {
   margin-left: 24px;
 }
@@ -43,9 +49,9 @@
   padding-right: 24px;
 }
 
-@media (max-width: 375px) {
-  .manager-dashboard-sidebar {
-    width: 100vw;
+@media (min-width: 768px) {
+  .manager-dashboard-part-right {
+    width: 77vw;
   }
 }
 
@@ -68,6 +74,12 @@
   .fond-rose-manager {
     width: 100vw;
     margin-bottom: -114px;
+  }
+}
+
+@media (min-width: 768px) {
+  .fond-rose-manager {
+    width: 77vw;
   }
 }
 
