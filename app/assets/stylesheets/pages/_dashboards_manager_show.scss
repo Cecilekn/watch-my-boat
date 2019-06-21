@@ -58,16 +58,16 @@
   position: absolute;
 }
 
-.fond-rose {
+.fond-rose-manager {
   width: 798px;
   z-index: 1;
   // position: absolute;
 }
 
 @media (max-width: 375px) {
-  .fond-rose {
+  .fond-rose-manager {
     width: 100vw;
-    margin-bottom: -112px;
+    margin-bottom: -114px;
   }
 }
 

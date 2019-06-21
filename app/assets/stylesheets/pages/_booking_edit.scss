@@ -5,6 +5,12 @@
   padding-right: 8px;
 }
 
+@media (max-width: 375px) {
+  .manager-dashboard-part-right-edit {
+    width: 100vw;
+  }
+}
+
 .boat-info {
   display: flex;
   justify-content: space-between;
@@ -13,6 +19,26 @@
   margin-bottom: -76px;
 }
 
+@media (max-width: 375px) {
+  .boat-info {
+    display: grid;
+    margin-bottom: 32px;
+    justify-content: normal;
+  }
+}
+
+.fond-rose-edit {
+  width: 798px;
+  z-index: 1;
+  // position: absolute;
+}
+
+@media (max-width: 375px) {
+  .fond-rose-edit {
+    width: 100vw;
+    margin-bottom: -0px;
+  }
+}
 
 .booking-info-card {
   display: grid;
@@ -24,6 +50,16 @@
   margin-bottom: 16px;
   margin-right: 20px;
   padding: 24px 24px 16px 24px;
+  z-index: 2;
+}
+
+@media (max-width: 375px) {
+  .booking-info-card {
+    margin-top: 16px;
+    margin-bottom: -72px;
+    margin-right: 12px;
+    padding: 24px 8px 16px 8px;
+  }
 }
 
 .booking-info-card img {
@@ -32,11 +68,18 @@
 
 .feedback-form {
   background-color: #FFE6CE;
-  padding-top: 10px;
   margin-top: -3px;
+  padding-top: 10px;
   padding-bottom: 4px;
   .col-form-label{
     width: 400px;
+  }
+}
+
+@media (max-width: 375px) {
+  .feedback-form {
+    width: 100vw;
+    padding-top: 14px;
   }
 }
 
@@ -84,6 +127,12 @@
 .form-group-booking {
   display: grid;
   grid-template-columns: 4fr 1fr 1fr 2fr;
+}
+
+@media (max-width: 375px) {
+  .form-group-booking {
+    display: block;
+  }
 }
 
 .form-group legend {
