@@ -18,7 +18,7 @@
       <p>Vous avez <%= @bookings.count %> missions en cours.</p>
     </div>
 
-    <svg class="fond-rose" viewBox="0 0 818 151" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg class="fond-rose-manager" viewBox="0 0 818 151" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M818 69.6782V151H0C0 151 92.9189 132.909 336 118C579.081 103.091 619.133 3.25894 687.5 1C755.867 -1.25894 818 69.6782 818 69.6782Z" fill="#FFE6CE"/>
     </svg>
 
@@ -32,11 +32,11 @@
             <%= cl_image_tag booking.boat.photo, class: "booking-card-img" %>
           </div>
           <div class="booking-card-info">
-            <p><img src="https://image.flaticon.com/icons/svg/1096/1096713.svg" height="24px" width="24px" alt=""><strong> Mission : </strong><%=  booking.title %></p>
-            <p><img src="https://image.flaticon.com/icons/svg/1852/1852551.svg" height="24px" width="24px" alt=""><strong> Bateau : </strong><%=  booking.boat.name %></p>
-            <p><img src="https://image.flaticon.com/icons/svg/252/252025.svg" height="24px" width="24px" alt=""><strong> Port : </strong><%=  booking.boat.address %></p>
-            <p><img src="https://image.flaticon.com/icons/svg/1077/1077012.svg" height="24px" width="24px" alt=""><strong> Réservée par : </strong><%= booking.boat.owner.first_name %></p>
-            <p><img src="https://image.flaticon.com/icons/svg/1142/1142792.svg" height="24px" width="24px" alt=""><strong> À effectuer pour le : </strong><%= booking.date.strftime("%d-%m-%Y") %></p>
+            <p><img src="https://image.flaticon.com/icons/svg/1096/1096713.svg" alt=""><strong> Mission : </strong><%=  booking.title %></p>
+            <p><img src="https://image.flaticon.com/icons/svg/1852/1852551.svg" alt=""><strong> Bateau : </strong><%=  booking.boat.name %></p>
+            <p><img src="https://image.flaticon.com/icons/svg/252/252025.svg" alt=""><strong> Port : </strong><%=  booking.boat.address %></p>
+            <p><img src="https://image.flaticon.com/icons/svg/1077/1077012.svg" alt=""><strong> Réservée par : </strong><%= booking.boat.owner.first_name %></p>
+            <p><img src="https://image.flaticon.com/icons/svg/1142/1142792.svg" alt=""><strong> À effectuer pour le : </strong><%= booking.date.strftime("%d-%m-%Y") %></p>
           </div>
           <div class="booking-card-cta">
             <%= link_to "Gérer", edit_booking_path(booking), class: "button" %>

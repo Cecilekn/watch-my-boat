@@ -21,6 +21,18 @@
   justify-content: center
 }
 
+@media (max-width: 375px) {
+  .manager-dashboard-sidebar {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .manager-dashboard-sidebar {
+    width: 23vw;
+  }
+}
+
 .manager-dashboard-menu {
   margin-left: 24px;
 }
@@ -37,6 +49,12 @@
   padding-right: 24px;
 }
 
+@media (min-width: 768px) {
+  .manager-dashboard-part-right {
+    width: 77vw;
+  }
+}
+
 .manager-dashboard-part-right-header {
   margin-top: 0px;
   margin-bottom: -128px;
@@ -46,10 +64,23 @@
   position: absolute;
 }
 
-.fond-rose{
+.fond-rose-manager {
   width: 798px;
   z-index: 1;
   // position: absolute;
+}
+
+@media (max-width: 375px) {
+  .fond-rose-manager {
+    width: 100vw;
+    margin-bottom: -114px;
+  }
+}
+
+@media (min-width: 768px) {
+  .fond-rose-manager {
+    width: 77vw;
+  }
 }
 
 .manager-bookings {
@@ -59,6 +90,15 @@
   margin-right: -24px;
   margin-top: -4px;
   background-color: #FFE6CE;
+}
+
+@media (max-width: 375px) {
+  .manager-bookings {
+    width: 100vw;
+    padding-left: 8px;
+    margin-top: 80px;
+    padding-bottom: 24px;
+  }
 }
 
 .booking-card {
@@ -73,6 +113,14 @@
   margin-right: 20px;
 }
 
+@media (max-width: 375px) {
+ .booking-card {
+    height: 120px;
+    margin-right: 8px;
+    margin-bottom: -8px;
+ }
+}
+
 .booking-card-img {
   width: 224px;
   height: 224px;
@@ -83,9 +131,49 @@
   padding: 0;
 }
 
+@media (max-width: 375px) {
+  .booking-card-img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
 .booking-card-info {
   width: 304px;
   margin: 16px 0 0 56px;
+}
+
+@media (max-width: 375px) {
+  .booking-card-info {
+    width: 120px;
+    margin: 4px 0 0 16px;
+  }
+}
+
+.booking-card-info img {
+  height: 24px;
+  width: 24px;
+}
+
+@media (max-width: 375px) {
+  .booking-card-info img {
+    height: 16px;
+    width: 16px;
+    margin-right: 8px;
+  }
+}
+
+@media (max-width: 375px) {
+  .booking-card-info strong {
+    display: none;
+  }
+}
+
+@media (max-width: 375px) {
+  .booking-card-info p {
+    font-size: 8px;
+    margin-bottom: 0.5rem;
+  }
 }
 
 .booking-card-cta {

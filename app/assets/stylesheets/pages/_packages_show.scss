@@ -24,6 +24,13 @@
   margin-right: 116px;
 }
 
+@media (max-width: 700px) {
+  .show-packages-title p {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+}
+
 .col-left-services {
   background-image: image-url("test-background.png");
   background-size: cover;
@@ -33,7 +40,6 @@
   align-items: center;
   padding-right: 0px;
   padding-left: 0px;
-
 }
 
 .content-left-services {
